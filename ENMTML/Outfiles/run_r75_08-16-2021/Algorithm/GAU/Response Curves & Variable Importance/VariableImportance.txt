@@ -1,0 +1,16 @@
+Sp	Algorithm	Variables	Overall
+1	calonectria_pseudonaviculata	GAU	bio15	0.223
+2	calonectria_pseudonaviculata	GAU	bio33	0.126
+3	calonectria_pseudonaviculata	GAU	bio5	0.102
+4	calonectria_pseudonaviculata	GAU	bio6	0.289
+5	calonectria_pseudonaviculata	GAU	bio7	0.26
+1	calonectria_pseudonaviculata	GAU	bio15	0.239
+2	calonectria_pseudonaviculata	GAU	bio33	0.128
+3	calonectria_pseudonaviculata	GAU	bio5	0.11
+4	calonectria_pseudonaviculata	GAU	bio6	0.281
+5	calonectria_pseudonaviculata	GAU	bio7	0.243
+1	calonectria_pseudonaviculata	GAU	bio15	0.239
+2	calonectria_pseudonaviculata	GAU	bio33	0.128
+3	calonectria_pseudonaviculata	GAU	bio5	0.11
+4	calonectria_pseudonaviculata	GAU	bio6	0.281
+5	calonectria_pseudonaviculata	GAU	bio7	0.243

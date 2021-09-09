@@ -1,0 +1,19 @@
+Sp	Algorithm	Variables	Overall
+1	calonectria_pseudonaviculata	MXD	PC1	0.212283511294607
+2	calonectria_pseudonaviculata	MXD	PC2	0.431879048518749
+3	calonectria_pseudonaviculata	MXD	PC3	0.109426954566883
+4	calonectria_pseudonaviculata	MXD	PC4	0.058984885134864
+5	calonectria_pseudonaviculata	MXD	PC5	0.113037433847392
+6	calonectria_pseudonaviculata	MXD	PC6	0.0743881666375051
+1	calonectria_pseudonaviculata	MXD	PC1	0.215858212571615
+2	calonectria_pseudonaviculata	MXD	PC2	0.432275439092696
+3	calonectria_pseudonaviculata	MXD	PC3	0.111118725531646
+4	calonectria_pseudonaviculata	MXD	PC4	0.0652247863545798
+5	calonectria_pseudonaviculata	MXD	PC5	0.10524994618088
+6	calonectria_pseudonaviculata	MXD	PC6	0.0702728902685845
+1	calonectria_pseudonaviculata	MXD	PC1	0.209334941029463
+2	calonectria_pseudonaviculata	MXD	PC2	0.436641364324355
+3	calonectria_pseudonaviculata	MXD	PC3	0.117451480484741
+4	calonectria_pseudonaviculata	MXD	PC4	0.0617042994448318
+5	calonectria_pseudonaviculata	MXD	PC5	0.101122818745558
+6	calonectria_pseudonaviculata	MXD	PC6	0.073745095971053

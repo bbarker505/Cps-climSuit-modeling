@@ -1,0 +1,27 @@
+b1, annual mean temperature
+b2, mean diurnal temperature range
+b3, isothermality
+b4, temperature seasonality
+b5, max temperature of warmest week
+b6, min temperature of coldest week
+b7, temperature annual range
+b8, mean temperature of wettest quarter
+b9, mean temperature of driest quarter
+b10, mean temperature of warmest quarter
+b11, mean temperature of coldest quarter
+b12, annual precipitation
+b13, precipitation of wettest week
+b14, precipitation of driest week
+b15, precipitation seasonality
+b16, precipitation of wettest quarter
+b17, precipitation of driest quarter
+b18, precipitation of warmest quarter
+b19, precipitation of coldest quarter
+b28, annual mean moisture index
+b29, highest weekly moisture index
+b30, lowest weekly moisture index
+b31, moisture index seasonality
+b32, mean moisture index of wettest quarter
+b33, mean moisture index of driest quarter
+b34, mean moisture index of warmest quarter
+b35, mean moisture index of coldest quarter

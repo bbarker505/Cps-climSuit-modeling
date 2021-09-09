@@ -1,0 +1,19 @@
+Sp	Algorithm	Variables	Overall
+1	calonectria_pseudonaviculata	GAM	PC1	0.409
+2	calonectria_pseudonaviculata	GAM	PC2	0.165
+3	calonectria_pseudonaviculata	GAM	PC3	0.043
+4	calonectria_pseudonaviculata	GAM	PC4	0.185
+5	calonectria_pseudonaviculata	GAM	PC5	0.167
+6	calonectria_pseudonaviculata	GAM	PC6	0.031
+1	calonectria_pseudonaviculata	GAM	PC1	0.381
+2	calonectria_pseudonaviculata	GAM	PC2	0.153
+3	calonectria_pseudonaviculata	GAM	PC3	0.013
+4	calonectria_pseudonaviculata	GAM	PC4	0.01
+5	calonectria_pseudonaviculata	GAM	PC5	0.378
+6	calonectria_pseudonaviculata	GAM	PC6	0.065
+1	calonectria_pseudonaviculata	GAM	PC1	0.381
+2	calonectria_pseudonaviculata	GAM	PC2	0.153
+3	calonectria_pseudonaviculata	GAM	PC3	0.013
+4	calonectria_pseudonaviculata	GAM	PC4	0.01
+5	calonectria_pseudonaviculata	GAM	PC5	0.378
+6	calonectria_pseudonaviculata	GAM	PC6	0.065

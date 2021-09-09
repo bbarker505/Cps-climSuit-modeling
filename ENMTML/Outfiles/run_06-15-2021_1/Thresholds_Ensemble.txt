@@ -1,0 +1,8 @@
+"X..i.."	"Sp"	"Algorithm"	"THR"	"THR_VALUE"	"TPR"	"TNR"
+"PCA_SUP"	NA	NA	NA	NA	NA	NA
+NA	"calonectria_pseudonaviculata"	"PCS"	"MAX_KAPPA"	0.59880967	1	1
+NA	"calonectria_pseudonaviculata"	"PCS"	"MAX_TSS"	0.59880967	1	1
+NA	"calonectria_pseudonaviculata"	"PCS"	"LPT"	0.59880967	1	1
+NA	"calonectria_pseudonaviculata"	"PCS"	"SENSITIVITY"	0.99171942	0.892018779342723	1
+NA	"calonectria_pseudonaviculata"	"PCS"	"JACCARD"	0.59880967	1	1
+NA	"calonectria_pseudonaviculata"	"PCS"	"SORENSEN"	0.59880967	1	1

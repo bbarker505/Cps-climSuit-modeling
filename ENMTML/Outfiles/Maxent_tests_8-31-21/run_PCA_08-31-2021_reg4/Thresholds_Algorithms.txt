@@ -1,0 +1,13 @@
+"Sp"	"Algorithm"	"THR"	"THR_VALUE"	"TPR"	"TNR"
+"calonectria_pseudonaviculata"	"MXD"	"MAX_KAPPA"	0.8238444	0.470238095238095	0.9685
+"calonectria_pseudonaviculata"	"MXD"	"MAX_TSS"	0.25180387	0.946428571428571	0.8505
+"calonectria_pseudonaviculata"	"MXD"	"LPT"	0.04535633	1	0.6548
+"calonectria_pseudonaviculata"	"MXD"	"SENSITIVITY"	0.34868134	0.898809523809524	0.8777
+"calonectria_pseudonaviculata"	"MXD"	"JACCARD"	0.8238444	0.470238095238095	0.9685
+"calonectria_pseudonaviculata"	"MXD"	"SORENSEN"	0.8238444	0.470238095238095	0.9685
+"calonectria_pseudonaviculata"	"MXS"	"MAX_KAPPA"	0.76611381	0.577380952380952	0.9543
+"calonectria_pseudonaviculata"	"MXS"	"MAX_TSS"	0.34002786	0.94047619047619	0.86
+"calonectria_pseudonaviculata"	"MXS"	"LPT"	0.04632477	1	0.6366
+"calonectria_pseudonaviculata"	"MXS"	"SENSITIVITY"	0.39703891	0.898809523809524	0.8759
+"calonectria_pseudonaviculata"	"MXS"	"JACCARD"	0.76611381	0.577380952380952	0.9543
+"calonectria_pseudonaviculata"	"MXS"	"SORENSEN"	0.76611381	0.577380952380952	0.9543

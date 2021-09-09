@@ -1,0 +1,1950 @@
+###########################################################
+Start date : 2021-08-17 10:36:48
+End date : 2021-08-17 10:43:52
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:43:58
+End date : 2021-08-17 10:44:41
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:44:46
+End date : 2021-08-17 10:45:30
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:45:36
+End date : 2021-08-17 10:46:17
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:46:22
+End date : 2021-08-17 10:47:02
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:47:08
+End date : 2021-08-17 10:47:50
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:47:55
+End date : 2021-08-17 10:48:37
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:48:43
+End date : 2021-08-17 10:49:27
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:49:32
+End date : 2021-08-17 10:50:12
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:50:17
+End date : 2021-08-17 10:51:03
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:51:07
+End date : 2021-08-17 10:51:50
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:51:55
+End date : 2021-08-17 10:52:35
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:52:40
+End date : 2021-08-17 10:53:21
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:53:26
+End date : 2021-08-17 10:54:15
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:54:21
+End date : 2021-08-17 10:55:01
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:55:06
+End date : 2021-08-17 10:55:48
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:55:53
+End date : 2021-08-17 10:56:34
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:56:40
+End date : 2021-08-17 10:57:21
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:57:26
+End date : 2021-08-17 10:58:08
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:58:13
+End date : 2021-08-17 10:58:55
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:59:00
+End date : 2021-08-17 10:59:40
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 10:59:45
+End date : 2021-08-17 11:00:26
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:00:30
+End date : 2021-08-17 11:01:12
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:01:17
+End date : 2021-08-17 11:02:02
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:02:07
+End date : 2021-08-17 11:02:48
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:02:53
+End date : 2021-08-17 11:03:36
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:03:41
+End date : 2021-08-17 11:04:25
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:04:30
+End date : 2021-08-17 11:05:12
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:05:17
+End date : 2021-08-17 11:05:58
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:06:03
+End date : 2021-08-17 11:06:44
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:06:49
+End date : 2021-08-17 11:07:30
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:07:35
+End date : 2021-08-17 11:08:14
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:08:19
+End date : 2021-08-17 11:09:05
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:09:10
+End date : 2021-08-17 11:09:53
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:09:58
+End date : 2021-08-17 11:10:41
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:10:46
+End date : 2021-08-17 11:11:27
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:11:32
+End date : 2021-08-17 11:12:12
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:12:17
+End date : 2021-08-17 11:13:01
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:13:06
+End date : 2021-08-17 11:13:49
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:13:54
+End date : 2021-08-17 11:14:37
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:14:42
+End date : 2021-08-17 11:15:24
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:15:28
+End date : 2021-08-17 11:16:14
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:16:19
+End date : 2021-08-17 11:17:05
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:17:11
+End date : 2021-08-17 11:17:51
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:17:56
+End date : 2021-08-17 11:18:39
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:18:44
+End date : 2021-08-17 11:19:23
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:19:28
+End date : 2021-08-17 11:20:11
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:20:16
+End date : 2021-08-17 11:21:01
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:21:05
+End date : 2021-08-17 11:21:52
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:21:58
+End date : 2021-08-17 11:22:44
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:27:37
+End date : 2021-08-17 11:31:23
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:31:29
+End date : 2021-08-17 11:32:16
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:32:20
+End date : 2021-08-17 11:33:03
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:33:09
+End date : 2021-08-17 11:33:58
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:34:04
+End date : 2021-08-17 11:34:52
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:35:01
+End date : 2021-08-17 11:35:50
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:35:55
+End date : 2021-08-17 11:37:01
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:37:06
+End date : 2021-08-17 11:38:18
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:38:24
+End date : 2021-08-17 11:39:13
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:39:18
+End date : 2021-08-17 11:39:57
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:40:02
+End date : 2021-08-17 11:40:40
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:40:45
+End date : 2021-08-17 11:41:25
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:41:30
+End date : 2021-08-17 11:42:09
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:42:14
+End date : 2021-08-17 11:42:54
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:42:59
+End date : 2021-08-17 11:43:40
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:43:45
+End date : 2021-08-17 11:44:25
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:44:30
+End date : 2021-08-17 11:45:10
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:45:15
+End date : 2021-08-17 11:45:54
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:45:58
+End date : 2021-08-17 11:46:41
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:46:46
+End date : 2021-08-17 11:47:26
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:47:31
+End date : 2021-08-17 11:48:11
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:48:15
+End date : 2021-08-17 11:48:54
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:48:59
+End date : 2021-08-17 11:49:39
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:49:44
+End date : 2021-08-17 11:50:24
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:50:29
+End date : 2021-08-17 11:51:11
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:51:15
+End date : 2021-08-17 11:51:54
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:51:59
+End date : 2021-08-17 11:52:39
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:52:44
+End date : 2021-08-17 11:53:24
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:53:29
+End date : 2021-08-17 11:54:09
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:54:14
+End date : 2021-08-17 11:54:54
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:54:59
+End date : 2021-08-17 11:55:38
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:55:43
+End date : 2021-08-17 11:56:23
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:56:28
+End date : 2021-08-17 11:57:08
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:57:13
+End date : 2021-08-17 11:57:52
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:57:56
+End date : 2021-08-17 11:58:36
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:58:40
+End date : 2021-08-17 11:59:19
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 11:59:24
+End date : 2021-08-17 12:00:13
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:00:18
+End date : 2021-08-17 12:01:00
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:01:05
+End date : 2021-08-17 12:01:45
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:01:49
+End date : 2021-08-17 12:02:30
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:02:35
+End date : 2021-08-17 12:03:15
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:03:20
+End date : 2021-08-17 12:04:02
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:04:07
+End date : 2021-08-17 12:04:45
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:04:50
+End date : 2021-08-17 12:05:28
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:05:33
+End date : 2021-08-17 12:06:14
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:06:19
+End date : 2021-08-17 12:06:59
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:07:04
+End date : 2021-08-17 12:07:44
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:07:49
+End date : 2021-08-17 12:08:27
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:08:32
+End date : 2021-08-17 12:09:14
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:09:20
+End date : 2021-08-17 12:11:00
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:15:31
+End date : 2021-08-17 12:19:11
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:19:16
+End date : 2021-08-17 12:20:01
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:20:06
+End date : 2021-08-17 12:20:47
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:20:51
+End date : 2021-08-17 12:21:35
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:21:40
+End date : 2021-08-17 12:22:26
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:22:30
+End date : 2021-08-17 12:23:12
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:23:17
+End date : 2021-08-17 12:23:55
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:24:00
+End date : 2021-08-17 12:24:40
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:24:45
+End date : 2021-08-17 12:25:23
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:25:28
+End date : 2021-08-17 12:26:07
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:26:12
+End date : 2021-08-17 12:26:51
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:26:57
+End date : 2021-08-17 12:27:38
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:27:42
+End date : 2021-08-17 12:28:18
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:28:22
+End date : 2021-08-17 12:29:03
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:29:09
+End date : 2021-08-17 12:29:54
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:29:59
+End date : 2021-08-17 12:30:47
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:30:52
+End date : 2021-08-17 12:31:37
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:31:44
+End date : 2021-08-17 12:32:29
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:32:35
+End date : 2021-08-17 12:33:21
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:33:28
+End date : 2021-08-17 12:34:12
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:34:17
+End date : 2021-08-17 12:35:00
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:35:05
+End date : 2021-08-17 12:35:48
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:35:55
+End date : 2021-08-17 12:36:36
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:36:41
+End date : 2021-08-17 12:37:28
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:37:34
+End date : 2021-08-17 12:38:25
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:38:29
+End date : 2021-08-17 12:39:17
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:39:22
+End date : 2021-08-17 12:40:03
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:40:08
+End date : 2021-08-17 12:40:48
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:40:53
+End date : 2021-08-17 12:41:33
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:41:38
+End date : 2021-08-17 12:42:37
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:42:42
+End date : 2021-08-17 12:43:22
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:43:27
+End date : 2021-08-17 12:44:11
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:44:16
+End date : 2021-08-17 12:45:02
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:45:07
+End date : 2021-08-17 12:45:53
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:45:59
+End date : 2021-08-17 12:46:43
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:46:49
+End date : 2021-08-17 12:47:31
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:47:36
+End date : 2021-08-17 12:48:19
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:48:24
+End date : 2021-08-17 12:49:10
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:49:16
+End date : 2021-08-17 12:49:59
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:50:05
+End date : 2021-08-17 12:50:48
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:50:55
+End date : 2021-08-17 12:51:42
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:51:46
+End date : 2021-08-17 12:52:27
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:52:32
+End date : 2021-08-17 12:53:16
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:53:20
+End date : 2021-08-17 12:54:07
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:54:12
+End date : 2021-08-17 12:54:56
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:55:01
+End date : 2021-08-17 12:55:44
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:55:50
+End date : 2021-08-17 12:56:38
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:56:44
+End date : 2021-08-17 12:57:26
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:57:31
+End date : 2021-08-17 12:59:28
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2021-08-17 12:59:33
+End date : 2021-08-17 13:01:47
+Algorithm:	MXD	MXS	SVM	RDF	GAM	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BOOT
+Train percentage (random partition only):	0.7
+PA Mask: 
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_08-17-2021
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
