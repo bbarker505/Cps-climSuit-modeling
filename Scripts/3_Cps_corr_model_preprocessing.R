@@ -156,4 +156,4 @@ for (i in seq_along(1:nlayers(s_sub_crp2))) {
     format = "ascii", overwrite = TRUE)
 }
 
-gc()
+rm(list = ls())

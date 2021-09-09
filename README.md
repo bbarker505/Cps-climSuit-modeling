@@ -47,6 +47,27 @@ All figures (maps) of model outputs will be saved to a folder named "~/Final_fig
 
 Please read the comments within each R script for further clarity on the process.
 
+## Packages
+The below R packages are used in the project. Please note that the ENMTML
+source code was slightly edited so that the Maxent model used a regularization
+multiplier of 4 (the default value is 1). This slightly edited version of 
+ENMTML is also available via my GitHub account.
+
+cowplot
+ENMTML (https://github.com/bbarker505/ENMTML)
+ggalt
+ggrepel
+gtools
+here
+knitr
+maptools
+openxlsx
+raster
+rnaturalearth
+RStoolbox
+sf
+tidyverse
+
 ## History
 
 9/9/2021: Created repository

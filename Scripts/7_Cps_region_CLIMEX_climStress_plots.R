@@ -5,8 +5,8 @@
 # Processes CLIMEX output data - produces rasters and figures
 
 # Libraries
-pkgs <- c("sp", "rgdal", "raster", "tidyverse", "maptools","RColorBrewer", 
-          "cowplot","sf","spData", "here", "openxlsx", "ggalt", "rnaturalearth")
+pkgs <- c("raster", "tidyverse", "maptools",
+          "cowplot","sf", "here", "openxlsx", "ggalt", "rnaturalearth")
 ld_pkgs <- lapply(pkgs, library, character.only = TRUE) # load them
 
 # Load functions
@@ -282,4 +282,5 @@ Stress_conus.p <- plot_grid(GI_conus.p, CS_conus.p, HS_conus.p, DS_conus.p,
 ggsave(Stress_conus.p, file= here("Final_figures", "CLIMEX_4Stress_CONUS.png"),
        width = 8, height = 5.5, units = c('in'), dpi=300)
 
-gc()
+
+rm(list = setdiff(ls(), "outdir"))

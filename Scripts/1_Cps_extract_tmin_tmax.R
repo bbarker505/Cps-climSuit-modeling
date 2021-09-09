@@ -38,4 +38,4 @@ top15_coldest <- data.frame(do.call(cbind, list(recs,
 write.xlsx(top15_coldest, here("Records", "Analysis", "Top15_Coldest.xlsx"), 
            row.names = FALSE, overwrite = TRUE)
 
-gc()
+rm(list = ls())

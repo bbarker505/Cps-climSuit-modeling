@@ -3,8 +3,8 @@
 ## and North America according to the CLIMEX model and ensemble correlative model. 
 
 # Libraries
-pkgs <- c("sp", "rgdal", "raster", "tidyverse", "maptools","RColorBrewer", "knitr",
-          "cowplot","sf","spData", "here", "openxlsx", "ggalt", "rnaturalearth")
+pkgs <- c("raster", "tidyverse", "maptools", "knitr",
+          "cowplot","sf", "here", "openxlsx", "ggalt", "rnaturalearth")
 ld_pkgs <- lapply(pkgs, library, character.only = TRUE) # load them
 
 # Load functions
@@ -494,4 +494,4 @@ ggsave(All_conus.p, file= here("Final_figures", "All_algorithms_CONUS.png"),
        width = 8.5, height = 7.5, units = c('in'), dpi=300)
 knitr::plot_crop(here("Final_figures", "All_algorithms_CONUS.png"))
 
-gc()
+rm(list = setdiff(ls(), "outdir"))

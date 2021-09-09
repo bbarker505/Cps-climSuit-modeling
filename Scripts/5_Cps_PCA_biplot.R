@@ -102,4 +102,4 @@ ggsave(biplot.p, filename = here("Final_figures", "PCA_Biplot.png"),
 ggsave(biplot.p, filename = here("ENMTML", "All_vars",  "PCA_results", "PCA_Biplot.png"),
        width = 6, height = 6, units = c('in'), dpi=300)
 
-gc()
+rm(list = setdiff(ls(), "outdir"))

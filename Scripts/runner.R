@@ -4,8 +4,6 @@
 library(here)
 here()
 
-dat <- format(Sys.Date(), "%m-%d-%Y")
-
 # Min and max weekly temps at occurrence records
 source("Scripts/1_Cps_extract_tmin_tmax.R")
 
@@ -17,6 +15,7 @@ source("Scripts/3_Cps_corr_model_preprocessing.R") # Preproccesing
 
 # Run ENMTML on subset of variables and PCA-transformed variables
 source("Scripts/4_Cps_ENMTML.R") 
+dat <- format(Sys.Date(), "%m-%d-%Y")
 occ_file <- here("ENMTML", "Locations", paste0("Cps_noNZ_sites_", dat, ".txt"))
 out_sub <- here("ENMTML", "Outfiles", paste0("run_r75_", dat))
 ENMTML_subset(occ_file, out_sub) # Run ENMTML with data subset

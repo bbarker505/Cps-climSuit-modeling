@@ -7,7 +7,6 @@ library(ENMTML)
 library(tidyverse)
 library(here)
 library(sf)
-library(sp)
 library(openxlsx)
 
 # Notes
@@ -113,4 +112,4 @@ if (!file.exists(here("Final_figures"))) {
   dir.create(here("Final_figures"))
 }
 
-gc()
+rm(list = setdiff(ls(), "dat"))

@@ -64,4 +64,4 @@ tally_both <- left_join(tally_EILt10, tallyEI0)
 write.xlsx(tally_both, here("CLIMEX", "Final_outfls", "Analysis", 
                             "N_locs_EI_Lt10.xlsx"))
 
-gc()
+rm(list = ls())

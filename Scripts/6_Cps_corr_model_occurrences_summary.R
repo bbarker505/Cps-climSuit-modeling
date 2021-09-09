@@ -44,4 +44,4 @@ recs_summary <- all_recs2 %>%
 write.csv(recs_summary, here(outdir, "Occurrences_Summary.csv"), 
           row.names = FALSE)
 
-gc()
+rm(list = setdiff(ls(), "outdir"))

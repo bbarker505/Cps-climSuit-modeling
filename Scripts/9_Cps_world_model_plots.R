@@ -3,8 +3,8 @@
 ## from CLIMEX model and ensemble correlative model.
 
 # Libraries
-pkgs <- c("raster", "tidyverse", "knitr", "maptools","RColorBrewer",
-          "cowplot","sf","ggspatial", "here", "openxlsx", "ggalt", "rnaturalearth")
+pkgs <- c("raster", "tidyverse", "knitr", "maptools", "cowplot","sf",
+          "here", "openxlsx", "ggalt", "rnaturalearth")
 ld_pkgs <- lapply(pkgs, library, character.only = TRUE) # load them
 
 # Load functions
@@ -291,4 +291,4 @@ ggsave(MOP.p, file = here("Final_figures", "MOP_map.png"),
        width = 7, height = 4, units = c('in'), dpi=300)  
 knitr::plot_crop(here("Final_figures", "MOP_map.png"))
 
-gc()
+rm(list = ls())
