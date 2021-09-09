@@ -3,16 +3,22 @@ BOXB_group/
 DDRP/
 Final_figures/
 Notes/
+
+Scripts/Other/
+
 CLIMEX/CSVs/
 CLIMEX/Figures/
-CLIMEX/Notes
-CLIMEX/Runs
-CLIMEX/TIF_files
+CLIMEX/Notes/
+CLIMEX/Runs/
+CLIMEX/TIF_files/
+
+ENMTML/Notes/
+ENMTML/Outfiles/Old/
 
 Records/Emails/
 Records/Final_MS_table/
 Records/GBIF/
-Records/Other_sources
+Records/Other_sources/
 
 # History files
 .Rhistory

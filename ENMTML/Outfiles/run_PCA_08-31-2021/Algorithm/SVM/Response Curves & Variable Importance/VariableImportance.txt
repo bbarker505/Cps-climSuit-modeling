@@ -1,7 +1,0 @@
-Sp	Algorithm	Variables	Overall
-1	calonectria_pseudonaviculata	SVM	PC1	0.196002901509148
-2	calonectria_pseudonaviculata	SVM	PC2	0.432767208201578
-3	calonectria_pseudonaviculata	SVM	PC3	0.099971158041494
-4	calonectria_pseudonaviculata	SVM	PC4	0.0747292237243456
-5	calonectria_pseudonaviculata	SVM	PC5	0.122539117217639
-6	calonectria_pseudonaviculata	SVM	PC6	0.0739903913057953
