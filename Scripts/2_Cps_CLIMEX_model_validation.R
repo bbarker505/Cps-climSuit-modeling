@@ -33,14 +33,15 @@ recs_extract <- data.frame("EI" = raster::extract(EI_rast, recs_sf),
 # Summarize range of EI and GI values for continents and countries
 sum_stats.set <- recs_extract %>% 
   mutate(Set = ifelse(
-    Continent %in% c("North America", "New Zealand"), "Validation", "Fitting")) %>%
+    Continent %in% c("North America", "New Zealand"), 
+    "Validation", "Fitting")) %>%
   group_by(Set) %>%
   filter(!is.na(EI)) %>%
   summarise(
     mean_EI = round(mean(EI)), min_EI = min(EI), max_EI = max(EI),
     mean_GI = round(mean(GI)), min_GI = min(GI), max_GI = max(GI))
 write.xlsx(sum_stats.set, here("CLIMEX", "Final_outfls", "Analysis", 
-                               "Sumstats_Fit_v_Valid_EI_GI.xlsx"))
+                               "Sumstats_Fit_v_Valid_EI_GI.xlsx"), overwrite = TRUE)
 
 sum_stats.cntry <- recs_extract %>% 
   group_by(Country) %>%
@@ -49,7 +50,7 @@ sum_stats.cntry <- recs_extract %>%
     mean_EI = round(mean(EI)), min_EI = min(EI), max_EI = max(EI),
     mean_GI = round(mean(GI)), min_GI = min(GI), max_GI = max(GI))
 write.xlsx(sum_stats.cntry, here("CLIMEX", "Final_outfls", "Analysis", 
-                                 "Sumstats_country_EI_GI.xlsx"))
+                                 "Sumstats_country_EI_GI.xlsx"), overwrite = TRUE)
 
 # Tally how many localities have EI less than 10
 tally_EILt10 <- recs_extract %>% 
@@ -62,6 +63,6 @@ tallyEI0 <- recs_extract %>%
   count(., name = "n_0") 
 tally_both <- left_join(tally_EILt10, tallyEI0)
 write.xlsx(tally_both, here("CLIMEX", "Final_outfls", "Analysis", 
-                            "N_locs_EI_Lt10.xlsx"))
+                            "N_locs_EI_Lt10.xlsx"), overwrite = TRUE)
 
 rm(list = ls())
