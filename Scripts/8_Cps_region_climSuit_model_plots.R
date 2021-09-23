@@ -16,7 +16,7 @@ CLMX_mod <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI_World.tif"))
 CLMX_mod.ir <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI.ir_World.tif"))
 
 # Correlative model - ensemble
-#outdir <- here("ENMTML", "Outfiles", "run_PCA_08-31-2021")
+outdir <- here("ENMTML", "Outfiles", "run_PCA_09-08-2021")
 ens_mod <- raster(paste0(outdir, "/Ensemble/W_MEAN/calonectria_pseudonaviculata.tif" ))
 
 # Correlative model - presence (Max TSS) across algorithms
@@ -53,10 +53,11 @@ conus_states_p <- conus_states_feats[[1]] # Polygon feature
 conus_states_l <- conus_states_feats[[2]] # Line features
 
 ## Themes and colors for plots ----
-mytheme <- theme(plot.margin = unit(c(t=0.2, b=0, l=0, r=0),"cm"),
+mytheme <- theme(plot.margin = unit(c(t=0, b=0, l=0, r=0),"cm"),
                  panel.grid.major = element_blank(), 
                  panel.grid.minor = element_blank(), 
-                 panel.background = element_blank(), panel.border = element_blank(),
+                 panel.background = element_rect("white"), 
+                 panel.border = element_blank(),
                  axis.title.x = element_blank(), axis.title.y = element_blank(), 
                  axis.ticks = element_blank(),
                  axis.text.x=element_blank(), axis.text.y=element_blank(), 
@@ -334,7 +335,7 @@ all_eur_plots <- plot_grid(Eurasia_CLIMEX.ir.p, Eurasia_CLIMEX.p,
                                       "(d) Potential distribution"),
                            label_size = 12, hjust = 0 , vjust = 1)
 ggsave(all_eur_plots, file= here("Final_figures", "CLIMEX_v_Corr_Eurasia.png"),
-       width = 8, height = 6.7, units = c('in'), dpi=300)
+       width = 8, height = 6.4, units = c('in'), dpi=300)
 knitr::plot_crop(here("Final_figures", "CLIMEX_v_Corr_Eurasia.png"))
 
 all_conus_plots <- plot_grid(CONUS_CLIMEX.ir.p, CONUS_CLIMEX.p, 
@@ -371,8 +372,8 @@ ens_presence_plots <- plot_grid(Eurasia_Corr.p2, Eurasia_presence.p,
                              labels = c("(a)", "(b)", "(c)", "(d)"),
                              label_size = 12, hjust = 0 , vjust = 1.1)
 ggsave(ens_presence_plots, file= here("Final_figures", "Ensemble_v_AlgsPres.png"),
-       width = 8, height = 6, units = c('in'), dpi=300)
-knitr::plot_crop(here("Final_figures", "CLIMEX_v_Corr_CONUS.png"))
+       width = 8, height = 5.5, units = c('in'), dpi=300)
+knitr::plot_crop(here("Final_figures", "Ensemble_v_AlgsPres.png"))
 
 
 # Plots: climate suitability models for 6 correlative algorithms ----
