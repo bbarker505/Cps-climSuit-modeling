@@ -16,7 +16,7 @@ CLMX_mod <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI_World.tif"))
 CLMX_mod.ir <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI.ir_World.tif"))
 
 # Correlative model - ensemble
-outdir <- here("ENMTML", "Outfiles", "run_PCA_09-08-2021")
+outdir <- here("ENMTML", "Outfiles", "run_PCA_09-27-2021")
 ens_mod <- raster(paste0(outdir, "/Ensemble/W_MEAN/calonectria_pseudonaviculata.tif" ))
 
 # Correlative model - presence (Max TSS) across algorithms

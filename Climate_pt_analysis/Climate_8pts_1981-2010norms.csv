@@ -1,0 +1,109 @@
+Month,MeanC,Precipitation,Site,Type
+January,8.4,75,Cannes FR,Mediterranean
+February,8.7,40,Cannes FR,Mediterranean
+March,10.8,40,Cannes FR,Mediterranean
+April,13,70,Cannes FR,Mediterranean
+May,16.9,50,Cannes FR,Mediterranean
+June,20.4,30,Cannes FR,Mediterranean
+July,23.2,15,Cannes FR,Mediterranean
+August,23.3,25,Cannes FR,Mediterranean
+September,20.2,80,Cannes FR,Mediterranean
+October,16.6,120,Cannes FR,Mediterranean
+November,12.2,105,Cannes FR,Mediterranean
+December,9.2,95,Cannes FR,Mediterranean
+January,8.5,105,Naples IT,Mediterranean
+February,8.5,100,Naples IT,Mediterranean
+March,10.5,85,Naples IT,Mediterranean
+April,13,75,Naples IT,Mediterranean
+May,17.5,50,Naples IT,Mediterranean
+June,21,35,Naples IT,Mediterranean
+July,23.5,25,Naples IT,Mediterranean
+August,24,40,Naples IT,Mediterranean
+September,20.5,80,Naples IT,Mediterranean
+October,17,130,Naples IT,Mediterranean
+November,12.5,160,Naples IT,Mediterranean
+December,9.5,120,Naples IT,Mediterranean
+January,5.5,140,Seattle WA,Mediterranean
+February,6.5,90,Seattle WA,Mediterranean
+March,8,95,Seattle WA,Mediterranean
+April,10.5,70,Seattle WA,Mediterranean
+May,13.5,50,Seattle WA,Mediterranean
+June,16,40,Seattle WA,Mediterranean
+July,18.5,20,Seattle WA,Mediterranean
+August,19,22,Seattle WA,Mediterranean
+September,16,40,Seattle WA,Mediterranean
+October,11.5,90,Seattle WA,Mediterranean
+November,7.5,165,Seattle WA,Mediterranean
+December,5,135,Seattle WA,Mediterranean
+January,5.2,125,Portland OR,Mediterranean
+February,6.6,95,Portland OR,Mediterranean
+March,9,95,Portland OR,Mediterranean
+April,11.2,70,Portland OR,Mediterranean
+May,14.6,65,Portland OR,Mediterranean
+June,17.6,45,Portland OR,Mediterranean
+July,20.6,15,Portland OR,Mediterranean
+August,20.8,15,Portland OR,Mediterranean
+September,18,35,Portland OR,Mediterranean
+October,12.8,75,Portland OR,Mediterranean
+November,8.2,145,Portland OR,Mediterranean
+December,4.7,140,Portland OR,Mediterranean
+January,3.3,75,Brussels BE,Atlantic
+February,3.7,60,Brussels BE,Atlantic
+March,6.7,70,Brussels BE,Atlantic
+April,9.6,50,Brussels BE,Atlantic
+May,13.5,65,Brussels BE,Atlantic
+June,16.2,70,Brussels BE,Atlantic
+July,18.4,75,Brussels BE,Atlantic
+August,18,75,Brussels BE,Atlantic
+September,15,70,Brussels BE,Atlantic
+October,11.3,75,Brussels BE,Atlantic
+November,6.9,75,Brussels BE,Atlantic
+December,3.9,80,Brussels BE,Atlantic
+January,6.5,90,Bordeaux FR,Atlantic
+February,7.5,85,Bordeaux FR,Atlantic
+March,10,70,Bordeaux FR,Atlantic
+April,12,80,Bordeaux FR,Atlantic
+May,16,85,Bordeaux FR,Atlantic
+June,19,65,Bordeaux FR,Atlantic
+July,21.5,55,Bordeaux FR,Atlantic
+August,21.5,60,Bordeaux FR,Atlantic
+September,18.5,90,Bordeaux FR,Atlantic
+October,14.5,95,Bordeaux FR,Atlantic
+November,10,105,Bordeaux FR,Atlantic
+December,7.5,105,Bordeaux FR,Atlantic
+January,6.6,105,Atlanta GA,Atlantic
+February,8.7,120,Atlanta GA,Atlantic
+March,12.6,120,Atlanta GA,Atlantic
+April,16.8,85,Atlanta GA,Atlantic
+May,21.4,95,Atlanta GA,Atlantic
+June,25.3,100,Atlanta GA,Atlantic
+July,26.8,135,Atlanta GA,Atlantic
+August,26.3,100,Atlanta GA,Atlantic
+September,23.2,115,Atlanta GA,Atlantic
+October,17.6,85,Atlanta GA,Atlantic
+November,12.5,105,Atlanta GA,Atlantic
+December,7.7,100,Atlanta GA,Atlantic
+January,11.9,130,New Orleans LA,Atlantic
+February,13.8,135,New Orleans LA,Atlantic
+March,17,115,New Orleans LA,Atlantic
+April,20.6,115,New Orleans LA,Atlantic
+May,24.8,120,New Orleans LA,Atlantic
+June,27.5,205,New Orleans LA,Atlantic
+July,28.5,150,New Orleans LA,Atlantic
+August,28.5,150,New Orleans LA,Atlantic
+September,26.5,125,New Orleans LA,Atlantic
+October,21.8,90,New Orleans LA,Atlantic
+November,17,115,New Orleans LA,Atlantic
+December,13.2,135,New Orleans LA,Atlantic
+January,5,80,Virginia Beach VA,Atlantic
+February,6.1,70,Virginia Beach VA,Atlantic
+March,9.3,90,Virginia Beach VA,Atlantic
+April,14.5,85,Virginia Beach VA,Atlantic
+May,18.8,95,Virginia Beach VA,Atlantic
+June,23.6,105,Virginia Beach VA,Atlantic
+July,26,145,Virginia Beach VA,Atlantic
+August,25.1,130,Virginia Beach VA,Atlantic
+September,22.2,115,Virginia Beach VA,Atlantic
+October,16.6,105,Virginia Beach VA,Atlantic
+November,10.8,80,Virginia Beach VA,Atlantic
+December,7.1,85,Virginia Beach VA,Atlantic

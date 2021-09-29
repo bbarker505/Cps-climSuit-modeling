@@ -20,7 +20,7 @@ library(openxlsx)
 source(here("Scripts", "Cps_model_functions.R"))
 
 # Occurrence data
-#occ_file <- here("ENMTML", "Locations", "Cps_noNZ_sites_2021-05-26.txt")
+occ_file <- here("ENMTML", "Locations", "Cps_noNZ_sites_2021-09-27.txt")
 
 # There appears to be a bug in the program that prevents it from using multiple
 # threshold types on the ensemble model so need to do separate runs for each
@@ -107,6 +107,9 @@ ENMTML_PCA <- function(occ_file, out_PCA) {
   Var_contib_tbl(out_PCA)
 }
 
+# Run functions
+ENMTML_PCA(occ_file = occ_file, 
+           out_PCA = here("ENMTML", "Outfiles", paste0("run_PCA_", format(Sys.Date(), "%m-%d-%Y"))))
 # Create directory for final figures to use in manuscript
 if (!file.exists(here("Final_figures"))) {
   dir.create(here("Final_figures"))
