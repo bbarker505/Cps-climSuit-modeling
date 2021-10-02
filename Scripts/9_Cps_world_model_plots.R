@@ -37,17 +37,21 @@ na_states_l <- st_cast(na_states, "MULTILINESTRING")
 # Out files
 
 # CLIMEX - crop, project, and bin EI values
-ei_rast <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI.ir_World.tif")) 
-ei_df <- (Rasts_to_df2(list(ei_rast), ext_world, prj_world)[[1]]) %>%
-  filter(!(value == 0))
-ei_df <- Bin_CLMX("EI", ei_df)[[3]] %>%
-  #mutate(EI = factor(value_bin, levels = c("1-10", "11-20", "21-30", "31-100")))
-  mutate(value_bin = factor(value_bin, 
-                        levels = unique(value_bin[order(value)])))
+ei_rast <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI_World.tif"))
+ei_rast.ir <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI.ir_World.tif"))
+
+ei_dfs <- map(list(ei_rast, ei_rast.ir), function(x) {
+  ei_df <- (Rasts_to_df2(list(x), ext_world, prj_world)[[1]]) %>%
+    filter(!(value == 0))
+  ei_df <- Bin_CLMX("EI", ei_df)[[3]] %>%
+    #mutate(EI = factor(value_bin, levels = c("1-10", "11-20", "21-30", "31-100")))
+    mutate(value_bin = factor(value_bin, 
+                              levels = unique(value_bin[order(value)])))
+})
 
 # Ensemble correlative model for world - probability scores + threshold
 # Crop and project both layers, and bin probability scores
-#outdir <- here("ENMTML", "Outfiles", "run_PCA_08-31-2021")
+outdir <- here("ENMTML", "Outfiles", "run_PCA_09-27-2021")
 
 # Ensemble probability scores to plot
 ens_type <- c("PCA", "PCA_SUP", "W_MEAN")
@@ -89,7 +93,7 @@ cols <- c("#313695","#4575B4","#ABD9E9","#FEF7B3","#FDD992","#FDBC71",
 # CLIMEX plot (EI)
 world_ei.p <- ggplot() + 
   geom_sf(data = world_p, color="gray20",  fill = "gray85", lwd = 0.1) +
-  geom_tile(data = ei_df, aes(x = x, y = y, fill = value_bin)) +
+  geom_tile(data = ei_dfs[[2]], aes(x = x, y = y, fill = value_bin)) +
   scale_fill_manual(values = cols, name = "Ecoclimatic\nindex") +
   geom_sf(data = world_l, lwd = 0.1, color = "gray10") + 
   geom_sf(data = na_states_l, lwd = 0.1, color = "gray10") +
@@ -133,29 +137,38 @@ world_ens_plots <- map(1:length(ens_dfs), function(i) {
 ## Plots: Presence maps (potential distribution) at global scale ----
 
 # CLIMEX: EI > 10 
-ei_thr_rast <- ei_rast >= 10 # Areas w/ EI >= 10 defines potential distribution
-ei_thr_rast[ei_thr_rast <= 0] <- NA # Convert 0 values to NA
-ei_thr_rast_crp <- crop(ei_thr_rast, extent(ext_world)) # Crop and project
-ei_thr_rast_prj <- projectRaster(ei_thr_rast_crp, crs = prj_world, method = "ngb")
-ei_thr_df <- data.frame(rasterToPoints(ei_thr_rast_prj)) %>%
-  rename("CLIMEX" = "layer") %>%
-  filter(CLIMEX == 1)
+ei_pres_dfs <- map(list(ei_rast, ei_rast.ir), function(x) {
+  ei_thr_rast <- x >= 10 # Areas w/ EI >= 10 defines potential distribution
+  ei_thr_rast[ei_thr_rast <= 0] <- NA # Convert 0 values to NA
+  ei_thr_rast_crp <- crop(ei_thr_rast, extent(ext_world)) # Crop and project
+  ei_thr_rast_prj <- projectRaster(ei_thr_rast_crp, crs = prj_world, method = "ngb")
+  ei_thr_df <- data.frame(rasterToPoints(ei_thr_rast_prj)) %>%
+    rename("CLIMEX" = "layer") %>%
+    filter(CLIMEX == 1)
+})
 
-# Correlative: Produce maps of presence output
 # Ensemble probability scores to plot
 ens_types <- c("PCA", "PCA_SUP", "W_MEAN")
-#thr_types <- c("LPT", "MAX_TSS", "JACCARD")
 thr_types <- c("MAX_TSS")
 
+# Color table
+cols_thres <- c("All models" = "purple", "CLIMEX" = "red3",
+                "CLIMEX-irrig" = "orange", "Correlative" = "blue2")
+
+# Plots
 thr_dfs <- map(ens_types, function(e) {
 
   for (t in thr_types) {
+    
+    # Outfile
+    outfl2 <- paste0("CLIMEX_v_", e, "_", t, ".png")
+    
     # Process rasters
     thr_rast <- raster(here(outdir, "Projection", "World", "Ensemble", 
                             e, t, "calonectria_pseudonaviculata.tif"))
     crs(thr_rast) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
     thr_rast[thr_rast <= 0] <- NA
-    thr_rast <- resample(thr_rast, ei_thr_rast) # Same cell size as CLIMEX
+    thr_rast <- resample(thr_rast, ei_rast) # Same cell size as CLIMEX
     thr_rast[!is.na(thr_rast)] <- 1
     thr_rast_crp <- crop(thr_rast, extent(ext_world))
     thr_rast_prj <- projectRaster(thr_rast_crp, crs = prj_world, method = "ngb")
@@ -164,23 +177,25 @@ thr_dfs <- map(ens_types, function(e) {
       rename("Correlative" = "calonectria_pseudonaviculata") %>%
       filter(Correlative == 1)
     
-    #thr_list[[i]] <- thr_df
-    both_thr <- full_join(thr_df, ei_thr_df) %>%
+    # Combine all data frames
+    df <- list(thr_df, ei_pres_dfs[[1]], ei_pres_dfs[[2]]) %>% 
+      reduce(full_join, by = c("x", "y")) %>%
+      rename("CLIMEX" = "CLIMEX.x", "CLIMEX.ir" = "CLIMEX.y") %>%
+      mutate(sum = rowSums(select(., CLIMEX, CLIMEX.ir, Correlative), na.rm = TRUE)) %>%
       replace(is.na(.), 0) %>%
+      filter(!(sum == 0)) %>% 
       mutate(
-        value = factor(ifelse(CLIMEX == 1 & Correlative == 1, "Both",
-                              ifelse(CLIMEX == 1 & Correlative == 0, "CLIMEX", 
-                                     ifelse(CLIMEX == 0 & Correlative == 1, "Correlative", NA)))))
+        value = case_when(CLIMEX.ir == 1 & Correlative == 1 ~ "All models",
+                          CLIMEX.ir == 0 & CLIMEX == 0 & Correlative == 1 ~ "Correlative",
+                          CLIMEX.ir == 1 & CLIMEX == 1 ~ "CLIMEX",
+                          CLIMEX.ir == 1 & CLIMEX == 0 & Correlative == 0 ~ "CLIMEX-irrig")
+      )
     
     # Plot
-    cols_thres <- c("Both" = "purple", "CLIMEX" = "red2", "Correlative" = "blue2")
-    cols_thres_bw <- c("Both" = "gray20", "CLIMEX" = "gray50", "Correlative" = "gray70")
-    outfl2 <- paste0("CLIMEX_v_", e, "_", t, ".png")
-    
     world_thrs.p <- ggplot() + 
       geom_sf(data = world_p, color="gray20",  fill = "gray85", lwd = 0.1) +
-      geom_tile(data = both_thr, aes(x = x, y = y, fill = value)) +
-      scale_fill_manual(values = cols_thres, name = "Prob. of\noccurrence") +
+      geom_tile(data = df, aes(x = x, y = y, fill = value)) +
+      scale_fill_manual(values = cols_thres, name = "Model type") +
       geom_sf(data = world_l, lwd = 0.1, color = "gray10") + 
       geom_sf(data = na_states_l, lwd = 0.1, color = "gray10") +
       mytheme  + 
@@ -292,3 +307,4 @@ ggsave(MOP.p, file = here("Final_figures", "MOP_map.png"),
 knitr::plot_crop(here("Final_figures", "MOP_map.png"))
 
 rm(list = ls())
+

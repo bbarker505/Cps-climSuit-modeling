@@ -253,27 +253,20 @@ ens_thres <- raster(
 # Plots of EI > 10 vs. ensemble model Max TSS threshold maps
 
 # Format results 
-
-# CLIMEX potential distribution
-ei_gt10 <- CLMX_mod >= 10 
-ei_gt10.ir <- CLMX_mod.ir >= 10
-
-# Correlative model potential distribution - formatting
+ei_gt10 <- CLMX_mod.ir >= 10 # CLIMEX potential distribution
 ens_thres[ens_thres <= 0] <- NA # Change 0 values to NA
 ens_thres <- resample(ens_thres, ei_gt10) # Need same grid cell size as CLIMEX
 ens_thres[!is.na(ens_thres)] <- 1 # Resampling alters some cells - change back to 1
 
 # Eurasia
-ens_thres_eur <- Rasts_to_df2(list(ei_gt10, ei_gt10.ir, ens_thres), 
-                              ext_eur, prj_eur)
+ens_thres_eur <- Rasts_to_df2(list(ei_gt10, ens_thres), ext_eur, prj_eur)
 ens_thres_eur <- map(ens_thres_eur, function(x) {
   x$value <- as.integer(x$value)
   return(x)
 })
 
 # CONUS
-ens_thres_conus <- Rasts_to_df2(list(ei_gt10, ei_gt10.ir, ens_thres), 
-                                ext_conus, prj_conus)
+ens_thres_conus <- Rasts_to_df2(list(ei_gt10, ens_thres), ext_conus, prj_conus)
 ens_thres_conus <- map(ens_thres_conus, function(x) {
   x$value <- as.integer(x$value)
   return(x)
@@ -282,8 +275,7 @@ ens_thres_conus <- map(ens_thres_conus, function(x) {
 # Make the plots
 
 # Color table
-cols_thres <- c("All models" = "purple", "CLIMEX" = "red3",
-                "CLIMEX-irrig" = "orange", "Correlative" = "blue2")
+cols_thres <- c("Both" = "purple", "CLIMEX" = "red2", "Correlative" = "blue2")
 
 # Inputs
 regions <- c("Eurasia", "CONUS")
@@ -297,19 +289,19 @@ out_plot_lst3 <- c("Eurasia_potDistro.p", "CONUS_potDistro.p")
 # Plots
 for (i in 1:2) {
   
-  # Combine all data frames
-  df <- all_thres_lst[[i]] %>% 
-    reduce(full_join, by = c("x", "y")) %>%
-    rename("CLIMEX" = "value.x", "CLIMEX.ir" = "value.y", "Corr" = "value") %>%
-    mutate(sum = rowSums(select(., CLIMEX, CLIMEX.ir, Corr), na.rm = TRUE)) %>%
+  # Merge data sets and create new factors
+  df <- Reduce(function(...) 
+    merge(..., by = c("x", "y"), all = TRUE), all_thres_lst[[i]]) %>%
+    data.frame(.[1], value = rowSums(.[3:4])) %>% 
     replace(is.na(.), 0) %>%
-    filter(!(sum == 0)) %>% 
+    rename("CLIMEX" = value.x, "Corr" = value.y, "Both" = value) %>%
     mutate(
-      value = case_when(CLIMEX.ir == 1 & Corr == 1 ~ "All models",
-                        CLIMEX.ir == 0 & CLIMEX == 0 & Corr == 1 ~ "Correlative",
-                        CLIMEX.ir == 1 & CLIMEX == 1 ~ "CLIMEX",
-                        CLIMEX.ir == 1 & CLIMEX == 0 & Corr == 0 ~ "CLIMEX-irrig")
-      )
+      value = ifelse(CLIMEX == 1 & Corr == 0, "CLIMEX",
+                     ifelse(CLIMEX == 0 & Corr == 1, "Correlative",
+                            ifelse(CLIMEX == 0 & Corr == 0, NA,
+                                   "Both")))) %>%
+    filter(!is.na(value))
+  df$value <- factor(df$value, levels = c("Both", "CLIMEX", "Correlative"))
   
   # Plot
   p <- ggplot() + 

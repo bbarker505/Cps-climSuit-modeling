@@ -20,7 +20,7 @@ library(openxlsx)
 source(here("Scripts", "Cps_model_functions.R"))
 
 # Occurrence data
-occ_file <- here("ENMTML", "Locations", "Cps_noNZ_sites_2021-09-27.txt")
+occ_file <- here("ENMTML", "Locations", "Cps_noNZ_sites_09-27-2021.txt")
 
 # There appears to be a bug in the program that prevents it from using multiple
 # threshold types on the ensemble model so need to do separate runs for each

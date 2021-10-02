@@ -4,7 +4,7 @@ library(tidyverse)
 library(here)
 
 # Occurrence records - all records and final subset used for correlative models
-#outdir <- here("ENMTML", "Outfiles", "run_PCA_08-31-2021")
+outdir <- here("ENMTML", "Outfiles", "run_PCA_09-27-2021")
 all_recs <- read.xlsx(here("Records", "Cps_locations_updated_Apr2021.xlsx")) %>%
   filter(!(Country == "New Zealand")) # NZ occurrences not used in models
 sub_recs <- read.table(
