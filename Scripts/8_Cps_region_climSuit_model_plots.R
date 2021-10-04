@@ -253,7 +253,6 @@ ens_thres <- raster(
 # Plots of EI > 10 vs. ensemble model Max TSS threshold maps
 
 # Format results 
-
 # CLIMEX potential distribution
 ei_gt10 <- CLMX_mod >= 10 
 ei_gt10.ir <- CLMX_mod.ir >= 10
@@ -380,7 +379,7 @@ ens_presence_plots <- plot_grid(Eurasia_Corr.p2, Eurasia_presence.p,
                              labels = c("(a)", "(b)", "(c)", "(d)"),
                              label_size = 12, hjust = 0 , vjust = 1.1)
 ggsave(ens_presence_plots, file= here("Final_figures", "Ensemble_v_AlgsPres.png"),
-       width = 8, height = 5.5, units = c('in'), dpi=300)
+       width = 7.5, height = 5.28, units = c('in'), dpi=300)
 knitr::plot_crop(here("Final_figures", "Ensemble_v_AlgsPres.png"))
 
 
@@ -485,7 +484,7 @@ All_eur.p <- plot_grid(eur_plots2[[1]],
                        labels = labs,
                        label_size = 12, hjust = 0, vjust = 1)
 ggsave(All_eur.p, file= paste0(outdir, "/All_algorithms_Eurasia.png"),
-       width = 8, height = 10, units = c('in'), dpi=300)
+       width = 8, height = 9.7, units = c('in'), dpi=300)
 
 All_conus.p <- plot_grid(conus_plots2[[1]], conus_plots[[2]], conus_plots[[3]], 
                          conus_plots[[4]], conus_plots[[5]], conus_plots[[6]],
@@ -497,10 +496,10 @@ ggsave(All_conus.p, file= paste0(outdir, "/All_algorithms_CONUS.png"),
 
 # Save to "Final_figures" folder
 ggsave(All_eur.p, file = here("Final_figures", "All_algorithms_Eurasia.png"),
-       width = 8, height = 10, units = c('in'), dpi=300)
+       width = 8, height = 9.7, units = c('in'), dpi=300)
 knitr::plot_crop(here("Final_figures", "All_algorithms_Eurasia.png"))
 ggsave(All_conus.p, file= here("Final_figures", "All_algorithms_CONUS.png"),
-       width = 8.5, height = 7.5, units = c('in'), dpi=300)
+       width = 8, height = 7.5, units = c('in'), dpi=300)
 knitr::plot_crop(here("Final_figures", "All_algorithms_CONUS.png"))
 
 rm(list = setdiff(ls(), "outdir"))

@@ -245,7 +245,7 @@ strs_plots <- lapply(1:length(vars), function(i) {
   
   # Plot
   p <- ggplot() + 
-    geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.3) +
+    geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.1) +
     geom_tile(data = strs_out[[3]], aes(x = x, y = y, fill = value)) +
     scale_fill_gradient2(low = low_cols[i], mid = mid_cols[i], high = hi_cols[i], 
                          na.value = "transparent", 
@@ -259,8 +259,8 @@ strs_plots <- lapply(1:length(vars), function(i) {
                            ticks.colour = "black",
                            ticks.linewidth = 2)) +
    # scale_fill_manual(values = cols_hs, name = c("Heat stress")) +
-    geom_sf(data = world_l, lwd = 0.2, color = "gray10") + 
-    geom_sf(data = na_states_l, lwd = 0.2, color = "gray10") +
+    geom_sf(data = world_l, lwd = 0.1, color = "gray10") + 
+    geom_sf(data = na_states_l, lwd = 0.1, color = "gray10") +
     mytheme 
   
 })
@@ -295,12 +295,12 @@ MOP_df <- Rasts_to_df1(MOP, ext_world, prj_world) %>%
 cols2 <- c("navyblue", cols)
 cols_bw <- scale_fill_gradient(low = "black", high = "gray90")
 MOP.p <- ggplot() + 
-  geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.3) +
+  geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.1) +
   geom_tile(data = MOP_df, aes(x = x, y = y, fill = value_bin)) +
   #scale_fill_manual(values = cols, name = "MOP index") +
   scale_fill_manual(values = viridis::magma(10), name = "MOP index") +
-  geom_sf(data = world_l, lwd = 0.2, color = "gray10") + 
-  geom_sf(data = na_states_l, lwd = 0.2, color = "gray10") +
+  geom_sf(data = world_l, lwd = 0.1, color = "gray10") + 
+  geom_sf(data = na_states_l, lwd = 0.1, color = "gray10") +
   mytheme 
 ggsave(MOP.p, file = here("Final_figures", "MOP_map.png"),
        width = 7, height = 4, units = c('in'), dpi=300)  
