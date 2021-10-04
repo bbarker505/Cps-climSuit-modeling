@@ -334,11 +334,11 @@ for (i in 1:2) {
 
 # Arrange and save climate suitability and potential distribution plots 
 # for figures in main manuscript
-all_eur_plots <- plot_grid(Eurasia_CLIMEX.ir.p, Eurasia_CLIMEX.p, 
+all_eur_plots <- plot_grid(Eurasia_CLIMEX.p, Eurasia_CLIMEX.ir.p, 
                            Eurasia_Corr.p, Eurasia_potDistro.p,
                            ncol = 2,
-                           labels = c("(a) CLIMEX model with irrigation", 
-                                      "(b) CLIMEX model without irrigation",
+                           labels = c("(a) CLIMEX model",
+                                      "(b) CLIMEX model with irrigation", 
                                       "(c) Correlative model (ensemble)",
                                       "(d) Potential distribution"),
                            label_size = 12, hjust = 0 , vjust = 1)
@@ -346,11 +346,11 @@ ggsave(all_eur_plots, file= here("Final_figures", "CLIMEX_v_Corr_Eurasia.png"),
        width = 8, height = 6.4, units = c('in'), dpi=300)
 knitr::plot_crop(here("Final_figures", "CLIMEX_v_Corr_Eurasia.png"))
 
-all_conus_plots <- plot_grid(CONUS_CLIMEX.ir.p, CONUS_CLIMEX.p, 
+all_conus_plots <- plot_grid(CONUS_CLIMEX.p, CONUS_CLIMEX.ir.p, 
                            CONUS_Corr.p, CONUS_potDistro.p,
                            ncol = 2,
-                           labels = c("(a) CLIMEX model with irrigation", 
-                                      "(b) CLIMEX model without irrigation",
+                           labels = c("(a) CLIMEX model", 
+                                      "(b) CLIMEX model with irrigation",
                                       "(c) Correlative model (ensemble)",
                                       "(d) Potential distribution"),
                            label_size = 12, hjust = 0 , vjust = 1.1)
