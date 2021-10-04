@@ -121,7 +121,7 @@ for (i in seq_along(CLMX_pts_eur)) {
   cols2 <- setNames(cols_binned[[i]], levels(df2$value_bin))
   
   eur.p <- print(ggplot() + 
-    geom_sf(data = eur_cntry_p, color="gray20",  fill = "gray85", lwd = 0.3) +
+    geom_sf(data = eur_cntry_p, color="gray20",  fill = "gray90", lwd = 0.3) +
     geom_tile(data = df, aes(x = x, y = y, fill = value)) +
     #geom_tile(data = df, aes(x = Longitude, y = Latitude, fill = value), 
     #          width = 0.2, height = 0.2) + # Specify w and h, or get white lines
@@ -167,7 +167,7 @@ for (i in seq_along(CLMX_pts_eur)) {
   
   # Plot with categorical scale (binned data)
   eur.p2 <- print(ggplot() + 
-      geom_sf(data = eur_cntry_p, color="gray20",  fill = "gray85", lwd = 0.3) +
+      geom_sf(data = eur_cntry_p, color="gray20",  fill = "gray90", lwd = 0.3) +
       geom_tile(data = df2, aes(x = x, y = y, fill = value_bin)) +
       scale_fill_manual(values = cols2, name = lgd_titl) +
       geom_sf(data = eur_cntry_l, lwd = 0.2, color = "gray10") + 
@@ -217,7 +217,7 @@ for (i in seq_along(CLMX_pts_conus)) {
     
   # Make the plot
   p <- print(ggplot() + 
-    geom_sf(data = conus_states_p, color="gray20",  fill = "gray85", lwd = 0.3) +
+    geom_sf(data = conus_states_p, color="gray20",  fill = "gray90", lwd = 0.3) +
     geom_tile(data = df, aes(x = x, y = y, fill = value)) +
     scale_fill_gradient2(low=low_cols[i], mid = mid_cols[i], high = high_cols[i], 
                         na.value = "transparent",
@@ -260,7 +260,7 @@ for (i in seq_along(CLMX_pts_conus)) {
     
     # Plot with categorical scale (binned data)
     p2 <- print(ggplot() + 
-      geom_sf(data = conus_states_p, color="gray20",  fill = "gray85", lwd = 0.3) +
+      geom_sf(data = conus_states_p, color="gray20",  fill = "gray90", lwd = 0.3) +
       geom_tile(data = df2, aes(x = x, y = y, fill = value_bin)) +
       scale_fill_manual(values = cols2, name = lgd_titl) +
       geom_sf(data = conus_states_l, lwd = 0.2, color = "gray10") + 

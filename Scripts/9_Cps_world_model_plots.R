@@ -92,7 +92,7 @@ cols <- c("#313695","#4575B4","#ABD9E9","#FEF7B3","#FDD992","#FDBC71",
 
 # CLIMEX plot (EI)
 world_ei.p <- ggplot() + 
-  geom_sf(data = world_p, color="gray20",  fill = "gray85", lwd = 0.1) +
+  geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.1) +
   geom_tile(data = ei_dfs[[2]], aes(x = x, y = y, fill = value_bin)) +
   scale_fill_manual(values = cols, name = "Ecoclimatic\nindex") +
   geom_sf(data = world_l, lwd = 0.1, color = "gray10") + 
@@ -108,7 +108,7 @@ world_ens_plots <- map(1:length(ens_dfs), function(i) {
   ens_df <- ens_dfs[[i]]
   outfl <- paste0(names(ens_dfs[i]), ".png")
   world_ens.p <- ggplot() + 
-    geom_sf(data = world_p, color="gray20",  fill = "gray85", lwd = 0.1) +
+    geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.1) +
     geom_tile(data = ens_df, aes(x = x, y = y, fill = value_bin)) +
     scale_fill_manual(values = cols, name = "Prob. of\noccurrence") +
     geom_sf(data = world_l, lwd = 0.1, color = "gray10") + 
@@ -193,7 +193,7 @@ thr_dfs <- map(ens_types, function(e) {
     
     # Plot
     world_thrs.p <- ggplot() + 
-      geom_sf(data = world_p, color="gray20",  fill = "gray85", lwd = 0.1) +
+      geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.1) +
       geom_tile(data = df, aes(x = x, y = y, fill = value)) +
       scale_fill_manual(values = cols_thres, name = "Model type") +
       geom_sf(data = world_l, lwd = 0.1, color = "gray10") + 
@@ -245,7 +245,7 @@ strs_plots <- lapply(1:length(vars), function(i) {
   
   # Plot
   p <- ggplot() + 
-    geom_sf(data = world_p, color="gray20",  fill = "gray85", lwd = 0.3) +
+    geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.3) +
     geom_tile(data = strs_out[[3]], aes(x = x, y = y, fill = value)) +
     scale_fill_gradient2(low = low_cols[i], mid = mid_cols[i], high = hi_cols[i], 
                          na.value = "transparent", 
@@ -293,9 +293,9 @@ MOP_df <- Rasts_to_df1(MOP, ext_world, prj_world) %>%
 
 # MOP plot
 cols2 <- c("navyblue", cols)
-cols_bw <- scale_fill_gradient(low = "black", high = "gray85")
+cols_bw <- scale_fill_gradient(low = "black", high = "gray90")
 MOP.p <- ggplot() + 
-  geom_sf(data = world_p, color="gray20",  fill = "gray85", lwd = 0.3) +
+  geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.3) +
   geom_tile(data = MOP_df, aes(x = x, y = y, fill = value_bin)) +
   #scale_fill_manual(values = cols, name = "MOP index") +
   scale_fill_manual(values = viridis::magma(10), name = "MOP index") +
@@ -307,4 +307,3 @@ ggsave(MOP.p, file = here("Final_figures", "MOP_map.png"),
 knitr::plot_crop(here("Final_figures", "MOP_map.png"))
 
 rm(list = ls())
-

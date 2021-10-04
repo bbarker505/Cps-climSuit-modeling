@@ -147,7 +147,7 @@ for (i in 1:2) {
                             levels = unique(mod_df$value_bin[order(mod_df$value)]))
     # Plot
     p <- ggplot() + 
-      geom_sf(data = poly, color="gray20",  fill = "gray85", lwd = 0.3) +
+      geom_sf(data = poly, color="gray20",  fill = "gray90", lwd = 0.3) +
       geom_tile(data = mod_df, 
                 aes(x = x, y = y, fill = value_bin)) +
       scale_fill_manual(values = cols, drop = FALSE, na.value = "transparent") +
@@ -220,7 +220,7 @@ for (i in 1:2) {
   
   # Plot
   p <- ggplot() + 
-    geom_sf(data = poly_lst[[i]], color="gray20", fill = "gray85", lwd = 0.3) +
+    geom_sf(data = poly_lst[[i]], color="gray20", fill = "gray90", lwd = 0.3) +
     geom_tile(data = df, 
               aes(x = x, y = y, fill = value)) +
     #scale_fill_viridis_d(option = "plasma", direction = -1) +
@@ -313,7 +313,7 @@ for (i in 1:2) {
   
   # Plot
   p <- ggplot() + 
-    geom_sf(data = poly_lst[[i]], color="gray20", fill = "gray85", lwd = 0.3) +
+    geom_sf(data = poly_lst[[i]], color="gray20", fill = "gray90", lwd = 0.3) +
     geom_tile(data = df, aes(x = x, y = y, fill = value)) +
     #scale_fill_viridis_d(option = "plasma", direction = -1) +
     scale_fill_manual(values = cols_thres,
@@ -421,7 +421,7 @@ for (i in 1:2) {
                             levels = unique(df2$value_bin[order(df2$value)]))
     # Plot
     p <- ggplot() + 
-      geom_sf(data = poly, color="gray20",  fill = "gray85", lwd = 0.3) +
+      geom_sf(data = poly, color="gray20",  fill = "gray90", lwd = 0.3) +
       geom_tile(data = df2, 
                 aes(x = x, y = y, fill = value_bin)) +
       scale_fill_manual(values = cols, drop = FALSE,
