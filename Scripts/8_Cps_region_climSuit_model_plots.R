@@ -354,7 +354,7 @@ all_conus_plots <- plot_grid(CONUS_CLIMEX.p, CONUS_CLIMEX.ir.p,
                                       "(d) Potential distribution"),
                            label_size = 12, hjust = 0 , vjust = 1.1)
 ggsave(all_conus_plots, file= here("Final_figures", "CLIMEX_v_Corr_CONUS.png"),
-       width = 8, height = 5.5, units = c('in'), dpi=300)
+       width = 8.5, height = 5.5, units = c('in'), dpi=300)
 knitr::plot_crop(here("Final_figures", "CLIMEX_v_Corr_CONUS.png"))
 
 # Plots: ensemble model vs. presence predictions for each algorithm ----
