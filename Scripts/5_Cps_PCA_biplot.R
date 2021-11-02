@@ -9,9 +9,18 @@ library(here)
 library(ggrepel)
 library(gtools)
 
+# Environmental data to use
+climdat <- "EUR_NA"
+outdir <- here(out_PCA, "Final_PCA_outs")
+
+# Create directory to save results - can't be in the climate data folder
+if (!file.exists(outdir)) {
+  dir.create(outdir)
+}
+
 # Conduct PCA of 27 bioclimatic variables
-s <- stack(list.files(here("ENMTML", "All_vars", "Predictors"), pattern = ".asc", 
-                      full.names = TRUE))
+s <- stack(list.files(here("ENMTML", "All_vars", "Predictors", climdat), 
+                      pattern = ".asc", full.names = TRUE))
 s_pca <- RStoolbox::rasterPCA(s, spca = TRUE)
 
 scores <- data.frame(PC1 = matrix(s_pca$map$PC1),
@@ -24,7 +33,7 @@ pca_mod <- s_pca$model
 # Loadings ----
 
 # Variable names to tack onto loadings table
-var_names <- read.table(here("ENMTML", "All_vars",  "PCA_results", "variable_names.txt"),
+var_names <- read.table(here("ENMTML", "All_vars", "variable_names.txt"),
                         sep = ",")
 
 loadings <- varimax(pca_mod$loadings[, 1:6])$loadings
@@ -35,27 +44,27 @@ loadings <- rownames_to_column(round(loadings, 3) )
 names(loadings) <- c("Variable", "PC1", "PC2", "PC3", "PC4", "PC5", "PC6")
 loadings <- arrange(loadings, order(mixedorder(Variable))) %>%
   mutate(Name = var_names$V2) %>%
-  select(Variable, Name, everything())
+  dplyr::select(Variable, Name, everything())
 
 # Save table of formatted loadings
-write.xlsx(loadings, here("ENMTML", "All_vars",  "PCA_results", "Loadings.xls"),
-           overwrite = TRUE)
+write.xlsx(loadings, here(outdir, "Loadings.xlsx"), overwrite = TRUE)
 
 # Importance (proportion and cumulative variation) ----
 prop_var <- data.frame(
-  cum_prop = round(100 *cumsum(pca_mod$sdev^2 / sum(pca_mod$sdev^2))[1:6] , 1)) %>%
+  cum_prop = round(
+    100 *cumsum(pca_mod$sdev^2 / sum(pca_mod$sdev^2))[1:6] , 1)
+  ) %>%
   mutate(prop = cum_prop - lag(cum_prop, default = first(cum_prop)),
          axis = c("PC1", "PC2", "PC3", "PC4", "PC5", "PC6")) %>%
-  select(axis, prop, cum_prop)
+  dplyr::select(axis, prop, cum_prop)
 prop_var[1,2] <- prop_var[1,3] # Fix cell value 
-write.xlsx(prop_var, here("ENMTML", "All_vars",  "PCA_results", "Importance.xls"),
-           overwrite = TRUE)
+write.xlsx(prop_var, here(outdir, "Proportion_variance_PC1-6.xlsx"), overwrite = TRUE)
 
 # Reformat importance table to match format of loadings table
 prop_var2 <-  data.frame(t(as.matrix(prop_var)))
 prop_var2 <- rownames_to_column(prop_var2) %>%
   filter(rowname %in% c("prop", "cum_prop")) %>%
-  select(-rowname) %>%
+  dplyr::select(-rowname) %>%
   mutate(Variable = NA, Name = NA)
 names(prop_var2) <- c("PC1", "PC2", "PC3", "PC4", "PC5", "PC6", "Variable", "Name")
 prop_var2 <- data.frame(lapply(prop_var2[1:6], function(x) 
@@ -65,12 +74,10 @@ prop_var2 <- data.frame(lapply(prop_var2[1:6], function(x)
 # Merge tables and save
 both <- bind_rows(loadings, prop_var2) %>%
   mutate(Variable = paste0(str_to_sentence(Name), " (", Variable, ")")) %>%
-  select(-Name) 
+  dplyr::select(-Name) 
 both[28,1] <- "Proportion explained by each PC (%)"
 both[29,1] <- "Accumulated proportion explained by the PCs (%)"
-write.xlsx(both, 
-           here("ENMTML", "All_vars",  "PCA_results", "Loadings_importance.xlsx"),
-           overwrite = TRUE)
+write.xlsx(both, here(outdir, "Loadings_Proportions.xlsx"), overwrite = TRUE)
 
 # Make the biplot (loadings only)
 pc1_var <- prop_var[1,2]
@@ -99,7 +106,5 @@ biplot.p <- ggplot()+
 # Save biplot
 ggsave(biplot.p, filename = here("Final_figures", "PCA_Biplot.png"),
        width = 6, height = 6, units = c('in'), dpi=300)
-ggsave(biplot.p, filename = here("ENMTML", "All_vars",  "PCA_results", "PCA_Biplot.png"),
+ggsave(biplot.p, filename = here(outdir, "PCA_Biplot.png"),
        width = 6, height = 6, units = c('in'), dpi=300)
-
-rm(list = setdiff(ls(), "outdir"))

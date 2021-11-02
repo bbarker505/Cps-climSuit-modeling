@@ -2,15 +2,18 @@ library(tidyverse)
 library(patchwork)
 library(cowplot)
 
-dat <- read.csv(here("Climate_pt_analysis", "Climate_8pts_1981-2010norms.csv"))
-dat <- dat %>% 
+# Produces lines plots comparing monthly temperatures and rainfall across 8
+# localities in Europe and North America, based on 1981-2010 norms from the 
+# World Meteorlogical Organization (https://climatedata-catalogue.wmo.int/)
+clim <- read.csv(here("Climate_pt_analysis", "Climate_8pts_1981-2010norms.csv"))
+clim <- clim %>% 
   mutate(Month = factor(str_sub(Month, 1, 3),
                         levels = c("Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                                    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")))
 
-med <- dat %>% 
+med <- clim %>% 
   filter(Type == "Mediterranean")
-atl <- dat %>% 
+atl <- clim %>% 
   filter(Type == "Atlantic") %>% 
   filter(!(Site == "New Orleans LA"))
 

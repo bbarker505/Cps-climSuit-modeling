@@ -91,12 +91,15 @@ write.csv(pts_1x_rand.all,
           here("Records", "Subsampled", "Cps_locations_noDups_rand80p_10min.csv"),
           row.names = FALSE)
 
-# Save set with only North America and Eurasia sites in the ENMTML locations folder
+# Save sets to go in the ENMTML locations folder
 pts_1x_rand.all_noNZ <- pts_1x_rand.all %>% 
-  filter(Continent %in% c("Asia", "Europe", "North America"))
+  filter(Continent %in% c("Asia", "Europe", "North America")) # No NZ
+pts_1x_rand.all_noNZ_noUS <- pts_1x_rand.all %>% # No NZ or North America
+  filter(Continent %in% c("Asia", "Europe"))
                            
 WriteTable(pts_1x_rand.all, "Cps_all_sites") 
 WriteTable(pts_1x_rand.all_noNZ, "Cps_noNZ_sites")
+WriteTable(pts_1x_rand.all_noNZ_noUS, "Cps_EurAsia_only_sites")
 
 # Format input climate data ----
 
@@ -109,36 +112,39 @@ s <- stack(
 )
 
 # Drop radiation variables and crop to calibration area (Eurasia/CONUS)
+# Also produce layers for Eurasia only as the calibration area
 s_sub <- dropLayer(s, 20:27) 
 names(s_sub) <- paste0("bio", c(1:19, 28:35))
 s_sub_crp <- crop(s_sub, 
                   extent(c(xmin = -170, xmax = 61.9, ymin= 25.5, ymax = 71.3)))
+s_sub_crp2 <- crop(s_sub, 
+                   extent(c(xmin = -11.5, xmax = 61.9, ymin = 25.5, ymax = 71.3)))
 
 # Export variables to ENMTML folders 
 
-# All biocimatic variables (except radiation vars)
+# Save cropped bioclimatic variables (proj + calibration area)
+infls <- list(s_sub, s_sub_crp, s_sub_crp2)
+dirs <- c("Projection", "Predictors", "Predictors")
+flds <- c("World", "EUR_NA", "EUR_only")
 
-# World (projection area)
-for (i in seq_along(1:nlayers(s_sub))) {
-  nam <- names(s_sub)[[i]]
-  writeRaster(s_sub[[i]], 
-    filename = here("ENMTML", "All_vars", "Projection", "World", paste0(nam, ".asc")),
-    format = "ascii", overwrite = TRUE)
-}
-
-# Training background (calibration area)
-for (i in seq_along(1:nlayers(s_sub_crp))) {
-  nam <- names(s_sub_crp)[[i]]
-  writeRaster(s_sub_crp[[i]], 
-    filename = here("ENMTML", "All_vars", "Predictors", paste0(nam, ".asc")),
-    format = "ascii", overwrite = TRUE)
+for (i in seq_along(infls)) {
+  
+  s <- infls[[i]]
+  
+  for (j in seq_along(1:nlayers(s))) {
+    nam <- names(s)[[j]]
+    writeRaster(s[[j]], 
+      filename = here("ENMTML", "All_vars", dirs[i], flds[i], paste0(nam, ".asc")),
+      format = "ascii", overwrite = TRUE)
+  }
+  
 }
 
 # Subset of minimally correlated bioclimatic variables:
 # bio5, bio6, bio7, bio15, bio33
 s_sub2 <- raster::subset(s_sub, grep("bio5|bio6|bio7|bio15|bio33", 
                                      names(s_sub), value = TRUE))
-s_sub_crp2 <- raster::subset(s_sub_crp, grep("bio5|bio6|bio7|bio15|bio33", 
+s_sub_crp3 <- raster::subset(s_sub_crp, grep("bio5|bio6|bio7|bio15|bio33", 
                                         names(s_sub_crp), value = TRUE))
   
 for (i in seq_along(1:nlayers(s_sub2))) {
@@ -149,9 +155,9 @@ for (i in seq_along(1:nlayers(s_sub2))) {
 }
 
 # Training background (calibration area)
-for (i in seq_along(1:nlayers(s_sub_crp2))) {
-  nam <- names(s_sub_crp2)[[i]]
-  writeRaster(s_sub_crp2[[i]], 
+for (i in seq_along(1:nlayers(s_sub_crp3))) {
+  nam <- names(s_sub_crp3)[[i]]
+  writeRaster(s_sub_crp3[[i]], 
     filename = here("ENMTML", "Sub_vars", "Predictors", paste0(nam, ".asc")),
     format = "ascii", overwrite = TRUE)
 }

@@ -16,11 +16,12 @@ CLMX_mod <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI_World.tif"))
 CLMX_mod.ir <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI.ir_World.tif"))
 
 # Correlative model - ensemble
-outdir <- here("ENMTML", "Outfiles", "run_PCA_09-27-2021")
-ens_mod <- raster(paste0(outdir, "/Ensemble/W_MEAN/calonectria_pseudonaviculata.tif" ))
+#out_PCA <- here("ENMTML", "Outfiles", "run_PCA_9-27-2021")
+ens_mod <- raster(paste0(out_PCA, 
+                         "/Ensemble/W_MEAN/calonectria_pseudonaviculata.tif" ))
 
 # Correlative model - presence (Max TSS) across algorithms
-all_fls <- list.files(outdir, 
+all_fls <- list.files(out_PCA, 
                       pattern = glob2rx("*calonectria_pseudonaviculata*.tif$*"),
                       recursive = TRUE, full.names = TRUE)
 fls <- all_fls[-grep("Projection", all_fls)]
@@ -247,7 +248,7 @@ CONUS_presence.p <- CONUS_presence.p +
 
 ## Plots: potential distribution (CLIMEX vs. correlative ensemble model) ----
 ens_thres <- raster(
-  paste0(outdir, "/Ensemble/PCA_SUP/MAX_TSS/calonectria_pseudonaviculata.tif")
+  paste0(out_PCA, "/Ensemble/PCA_SUP/MAX_TSS/calonectria_pseudonaviculata.tif")
   )
 
 # Plots of EI > 10 vs. ensemble model Max TSS threshold maps
@@ -300,7 +301,7 @@ for (i in 1:2) {
   df <- all_thres_lst[[i]] %>% 
     reduce(full_join, by = c("x", "y")) %>%
     rename("CLIMEX" = "value.x", "CLIMEX.ir" = "value.y", "Corr" = "value") %>%
-    mutate(sum = rowSums(select(., CLIMEX, CLIMEX.ir, Corr), na.rm = TRUE)) %>%
+    mutate(sum = rowSums(dplyr::select(., CLIMEX, CLIMEX.ir, Corr), na.rm = TRUE)) %>%
     replace(is.na(.), 0) %>%
     filter(!(sum == 0)) %>% 
     mutate(
@@ -483,7 +484,7 @@ All_eur.p <- plot_grid(eur_plots2[[1]],
                        ncol = 2, nrow = 3,
                        labels = labs,
                        label_size = 12, hjust = 0, vjust = 1)
-ggsave(All_eur.p, file= paste0(outdir, "/All_algorithms_Eurasia.png"),
+ggsave(All_eur.p, file= paste0(out_PCA, "/All_algorithms_Eurasia.png"),
        width = 8, height = 9.7, units = c('in'), dpi=300)
 
 All_conus.p <- plot_grid(conus_plots2[[1]], conus_plots[[2]], conus_plots[[3]], 
@@ -491,7 +492,7 @@ All_conus.p <- plot_grid(conus_plots2[[1]], conus_plots[[2]], conus_plots[[3]],
                          ncol = 2, nrow = 3,
                          labels = labs,
                          label_size = 12, hjust = 0, vjust = 1)
-ggsave(All_conus.p, file= paste0(outdir, "/All_algorithms_CONUS.png"),
+ggsave(All_conus.p, file= paste0(out_PCA, "/All_algorithms_CONUS.png"),
        width = 8.5, height = 7.5, units = c('in'), dpi=300)
 
 # Save to "Final_figures" folder
@@ -502,4 +503,4 @@ ggsave(All_conus.p, file= here("Final_figures", "All_algorithms_CONUS.png"),
        width = 8, height = 7.5, units = c('in'), dpi=300)
 knitr::plot_crop(here("Final_figures", "All_algorithms_CONUS.png"))
 
-rm(list = setdiff(ls(), "outdir"))
+#rm(list = setdiff(ls(), "out_PCA"))

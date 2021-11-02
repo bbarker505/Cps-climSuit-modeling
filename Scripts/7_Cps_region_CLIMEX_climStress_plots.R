@@ -283,4 +283,4 @@ ggsave(Stress_conus.p, file= here("Final_figures", "CLIMEX_4Stress_CONUS.png"),
        width = 8, height = 5.5, units = c('in'), dpi=300)
 
 
-rm(list = setdiff(ls(), "outdir"))
+#rm(list = setdiff(ls(), "outdir"))

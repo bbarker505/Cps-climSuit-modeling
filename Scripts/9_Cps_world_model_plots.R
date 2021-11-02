@@ -51,13 +51,13 @@ ei_dfs <- map(list(ei_rast, ei_rast.ir), function(x) {
 
 # Ensemble correlative model for world - probability scores + threshold
 # Crop and project both layers, and bin probability scores
-outdir <- here("ENMTML", "Outfiles", "run_PCA_09-27-2021")
+#out_PCA <- here("ENMTML", "Outfiles", "run_PCA_9-27-2021")
 
 # Ensemble probability scores to plot
 ens_type <- c("PCA", "PCA_SUP", "W_MEAN")
 
 ens_dfs <- map(ens_type, function(ens) {
-  rast <- raster(here(outdir, "Projection", "World", "Ensemble", 
+  rast <- raster(here(out_PCA, "Projection", "World", "Ensemble", 
                       ens, "calonectria_pseudonaviculata.tif"))
   prob_df <- Rasts_to_df1(rast, ext_world, prj_world) %>%
     filter(complete.cases(value)) %>%
@@ -115,7 +115,7 @@ world_ens_plots <- map(1:length(ens_dfs), function(i) {
     geom_sf(data = na_states_l, lwd = 0.1, color = "gray10") +
     mytheme 
   ggsave(world_ens.p, 
-         filename = here(outdir, outfl),
+         filename = here(out_PCA, outfl),
              width = 8, height = 4, units = c('in'), device = "png", dpi=300) 
   #return(world_ens.p)
   
@@ -164,7 +164,7 @@ thr_dfs <- map(ens_types, function(e) {
     outfl2 <- paste0("CLIMEX_v_", e, "_", t, ".png")
     
     # Process rasters
-    thr_rast <- raster(here(outdir, "Projection", "World", "Ensemble", 
+    thr_rast <- raster(here(out_PCA, "Projection", "World", "Ensemble", 
                             e, t, "calonectria_pseudonaviculata.tif"))
     crs(thr_rast) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
     thr_rast[thr_rast <= 0] <- NA
@@ -181,7 +181,7 @@ thr_dfs <- map(ens_types, function(e) {
     df <- list(thr_df, ei_pres_dfs[[1]], ei_pres_dfs[[2]]) %>% 
       reduce(full_join, by = c("x", "y")) %>%
       rename("CLIMEX" = "CLIMEX.x", "CLIMEX.ir" = "CLIMEX.y") %>%
-      mutate(sum = rowSums(select(., CLIMEX, CLIMEX.ir, Correlative), na.rm = TRUE)) %>%
+      mutate(sum = rowSums(dplyr::select(., CLIMEX, CLIMEX.ir, Correlative), na.rm = TRUE)) %>%
       replace(is.na(.), 0) %>%
       filter(!(sum == 0)) %>% 
       mutate(
@@ -204,7 +204,7 @@ thr_dfs <- map(ens_types, function(e) {
             legend.box.background = element_rect(fill = "white", color = "white"),
             legend.key =  element_rect(fill = "white"))
     ggsave(world_thrs.p, 
-           filename = here(outdir, outfl2),
+           filename = here(out_PCA, outfl2),
            width = 8, height = 4, units = c('in'), device = "png", dpi=300) 
     
     #return(world_thrs.p)
@@ -282,7 +282,7 @@ knitr::plot_crop(here("Final_figures", "World_CLIMEX_Stress.png"))
 
 # High MOP index values indicate high similarity between climates in 
 # modeling training and projection areas
-MOP <- raster(here(outdir, "Projection", "World", 
+MOP <- raster(here(out_PCA, "Projection", "World", 
                    "Extrapolation", "calonectria_pseudonaviculata_MOP.tif"))
 crs(MOP) <- CRS("+proj=longlat +datum=WGS84")
 
@@ -305,5 +305,3 @@ MOP.p <- ggplot() +
 ggsave(MOP.p, file = here("Final_figures", "MOP_map.png"),
        width = 7, height = 4, units = c('in'), dpi=300)  
 knitr::plot_crop(here("Final_figures", "MOP_map.png"))
-
-rm(list = ls())
