@@ -123,7 +123,7 @@ world_ens_plots <- map(1:length(ens_dfs), function(i) {
   if (ens_type[i] == "W_MEAN") {
     Both_world.p <- plot_grid(world_ei.p, world_ens.p, 
                              ncol = 1, label_x = 0.05,
-                             labels = c("(a) CLIMEX", "(b) Correlative (ensemble)"),                             
+                             labels = c("(A) CLIMEX", "(B) Correlative (ensemble)"),                             
                              label_size = 11, hjust = 0, vjust = 1)
     ggsave(Both_world.p, file = here("Final_figures", "World_CLIMEX_Ensemble.png"),
            width = 8, height = 7, units = c('in'), dpi=300)
@@ -268,8 +268,8 @@ strs_plots <- lapply(1:length(vars), function(i) {
 # Arrange plots and save
 strs_world.p <- plot_grid(strs_plots[[2]], strs_plots[[1]], strs_plots[[3]],
                          ncol = 1,
-                         labels = c("(a) Cold stress", "(b) Heat stress", 
-                                    "(c) Dry stress"),
+                         labels = c("(A) Cold stress", "(B) Heat stress", 
+                                    "(C) Dry stress"),
                          label_size = 11, hjust = -0.5, vjust = 1)
 
 ggsave(strs_world.p, file = here("Final_figures", "World_CLIMEX_Stress.png"),

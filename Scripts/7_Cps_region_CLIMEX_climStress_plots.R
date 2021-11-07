@@ -185,9 +185,9 @@ for (i in seq_along(CLMX_pts_eur)) {
 # Combine plots and save
 Stress_eur.p <- plot_grid(GI_eur.p, CS_eur.p, HS_eur.p, DS_eur.p,
                        ncol = 2, nrow = 2,
-                       labels = c("(a) Growth index", "(b) Cold stress",
-                                  "(c) Heat stress", "(d) Dry stress"),
-                       label_size = 14, hjust = 0.05 , vjust = 1)
+                       labels = c("(A) Growth index", "(B) Cold stress",
+                                  "(C) Heat stress", "(D) Dry stress"),
+                       label_size = 14, hjust = 0.005 , vjust = 1)
 ggsave(Stress_eur.p, file= here("Final_figures", "CLIMEX_4Stress_Eurasia.png"),
        width = 8, height = 6.7, units = c('in'), dpi=300)
 
@@ -278,8 +278,8 @@ for (i in seq_along(CLMX_pts_conus)) {
 # Combine plots and save
 Stress_conus.p <- plot_grid(GI_conus.p, CS_conus.p, HS_conus.p, DS_conus.p,
                           ncol = 2, nrow = 2,
-                          labels = c("(a) Growth index", "(b) Cold stress",
-                                     "(c) Heat stress", "(d) Dry stress"),
+                          labels = c("(A) Growth index", "(B) Cold stress",
+                                     "(C) Heat stress", "(D) Dry stress"),
                           label_size = 14, hjust = 0 , vjust = 1)
 ggsave(Stress_conus.p, file= here("Final_figures", "CLIMEX_4Stress_CONUS.png"),
        width = 8, height = 5.5, units = c('in'), dpi=300)

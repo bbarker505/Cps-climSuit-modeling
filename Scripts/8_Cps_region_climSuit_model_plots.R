@@ -337,10 +337,10 @@ for (i in 1:2) {
 all_eur_plots <- plot_grid(Eurasia_CLIMEX.p, Eurasia_CLIMEX.ir.p, 
                            Eurasia_Corr.p, Eurasia_potDistro.p,
                            ncol = 2,
-                           labels = c("(a) CLIMEX model",
-                                      "(b) CLIMEX model with irrigation", 
-                                      "(c) Correlative model (ensemble)",
-                                      "(d) Potential distribution"),
+                           labels = c("(A) CLIMEX model",
+                                      "(B) CLIMEX model with irrigation", 
+                                      "(C) Correlative model (ensemble)",
+                                      "(D) Potential distribution"),
                            label_size = 12, hjust = 0 , vjust = 1)
 ggsave(all_eur_plots, file= here("Final_figures", "CLIMEX_v_Corr_Eurasia.png"),
        width = 8, height = 6.4, units = c('in'), dpi=300)
@@ -349,10 +349,10 @@ knitr::plot_crop(here("Final_figures", "CLIMEX_v_Corr_Eurasia.png"))
 all_conus_plots <- plot_grid(CONUS_CLIMEX.p, CONUS_CLIMEX.ir.p, 
                            CONUS_Corr.p, CONUS_potDistro.p,
                            ncol = 2,
-                           labels = c("(a) CLIMEX model", 
-                                      "(b) CLIMEX model with irrigation",
-                                      "(c) Correlative model (ensemble)",
-                                      "(d) Potential distribution"),
+                           labels = c("(A) CLIMEX model", 
+                                      "(B) CLIMEX model with irrigation",
+                                      "(C) Correlative model (ensemble)",
+                                      "(D) Potential distribution"),
                            label_size = 12, hjust = 0 , vjust = 1.1)
 ggsave(all_conus_plots, file= here("Final_figures", "CLIMEX_v_Corr_CONUS.png"),
        width = 8.5, height = 5.5, units = c('in'), dpi=300)
@@ -377,7 +377,7 @@ CONUS_Corr.p2 = CONUS_Corr.p +
 ens_presence_plots <- plot_grid(Eurasia_Corr.p2, Eurasia_presence.p, 
                           CONUS_Corr.p2, CONUS_presence.p,  
                              ncol = 2,
-                             labels = c("(a)", "(b)", "(c)", "(d)"),
+                             labels = c("(A)", "(B)", "(C)", "(D)"),
                              label_size = 12, hjust = 0 , vjust = 1.1)
 ggsave(ens_presence_plots, file= here("Final_figures", "Ensemble_v_AlgsPres.png"),
        width = 7.5, height = 5.28, units = c('in'), dpi=300)
@@ -476,8 +476,8 @@ conus_plots2 <- map(list(conus_plots[[1]], conus_plots[[6]]), function(p) {
 })
 
 # Arrange and save plots for the 6 algorithms (supporting info)
-labs <- c("(a) BRT", "(b) GAM", "(c) GAU", "(d) MXS", 
-          "(e) RDF", "(f) SVM")
+labs <- c("(A) BRT", "(B) GAM", "(C) GAU", "(D) MXS", 
+          "(E) RDF", "(F) SVM")
 All_eur.p <- plot_grid(eur_plots2[[1]], 
                        eur_plots[[2]], eur_plots[[3]], 
                        eur_plots[[4]], eur_plots[[5]], eur_plots[[6]],
