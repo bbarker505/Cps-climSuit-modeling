@@ -27,6 +27,8 @@ recs_sf <- st_as_sf(recs)
 
 ## Extents, projection definitions, and spatial features ----
 
+sf_use_s2(FALSE) # Avoid "Error in s2_geography_from_wkb..."
+
 # Eurasia
 ext_eur <- c(xmin = -12, xmax = 61.9, ymin= 34, ymax = 71.3)
 prj_eur <- CRS("+proj=lcc +lat_1=43 +lat_2=62 +lat_0=30 +lon_0=10 +x_0=0 +y_0=0 
@@ -284,3 +286,4 @@ ggsave(Stress_conus.p, file= here("Final_figures", "CLIMEX_4Stress_CONUS.png"),
 
 
 #rm(list = setdiff(ls(), "outdir"))
+
