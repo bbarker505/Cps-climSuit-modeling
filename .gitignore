@@ -17,6 +17,9 @@ Records/Final_MS_table/
 Records/GBIF/
 Records/Other_sources/
 
+# Entire dataset used for modeling (confidential OR info)
+Records/Cps_locations_updated_Apr2021.xlsx
+
 # History files
 .Rhistory
 .Rapp.history
