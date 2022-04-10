@@ -1,2 +1,0 @@
-"sp"	"Moran.s.I"	"MESS"	"Moran.s.I_SD"	"MESS_SD"
-"calonectria_pseudonaviculata"	0.432231804857298	12.4097777192937	0.0646326588103384	1.90365916275868

@@ -1,0 +1,325 @@
+###########################################################
+Start date : 2022-03-29 16:12:30
+End date : 2022-03-29 16:15:20
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_03-29-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 16:15:22
+End date : 2022-03-29 16:15:48
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_03-29-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 16:15:50
+End date : 2022-03-29 16:16:16
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_03-29-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 16:16:18
+End date : 2022-03-29 16:16:42
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_03-29-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 16:16:43
+End date : 2022-03-29 16:17:08
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_03-29-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 21:49:53
+End date : 2022-03-29 21:51:01
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: MAX_KAPPA
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 21:51:04
+End date : 2022-03-29 21:51:29
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: MAX_KAPPA
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 21:51:30
+End date : 2022-03-29 21:51:53
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: MAX_KAPPA
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 21:51:55
+End date : 2022-03-29 21:52:20
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: MAX_KAPPA
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 21:52:22
+End date : 2022-03-29 21:52:45
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: MAX_KAPPA
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 21:55:37
+End date : 2022-03-29 21:56:41
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 21:56:43
+End date : 2022-03-29 21:57:06
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 21:57:07
+End date : 2022-03-29 21:57:32
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 21:57:34
+End date : 2022-03-29 21:57:57
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-29 21:57:59
+End date : 2022-03-29 21:58:23
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: JACCARD
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-30 09:12:30
+End date : 2022-03-30 09:13:45
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: SORENSEN
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-30 09:13:47
+End date : 2022-03-30 09:14:15
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: SORENSEN
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-30 09:14:17
+End date : 2022-03-30 09:14:44
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: SORENSEN
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-30 09:14:46
+End date : 2022-03-30 09:15:11
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: SORENSEN
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-30 09:15:13
+End date : 2022-03-30 09:15:39
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: SORENSEN
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-30 09:38:51
+End date : 2022-03-30 09:40:00
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-30 09:40:03
+End date : 2022-03-30 09:40:30
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-30 09:40:31
+End date : 2022-03-30 09:40:56
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-30 09:40:57
+End date : 2022-03-30 09:41:24
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-30 09:41:26
+End date : 2022-03-30 09:41:52
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_kfold_prev1_03-29-2022
+No species: 1
+Threshold: LPT
+calonectria_pseudonaviculata

@@ -1,0 +1,19 @@
+Sp	Algorithm	Variables	Importance
+1	calonectria_pseudonaviculata	BRT	PC1	0.289998692144477
+2	calonectria_pseudonaviculata	BRT	PC2	0.156150020632123
+3	calonectria_pseudonaviculata	BRT	PC3	0.210159352039539
+4	calonectria_pseudonaviculata	BRT	PC4	0.174186640006046
+5	calonectria_pseudonaviculata	BRT	PC5	0.118177096992372
+6	calonectria_pseudonaviculata	BRT	PC6	0.0513281981854427
+1	calonectria_pseudonaviculata	BRT	PC1	0.281714482182454
+2	calonectria_pseudonaviculata	BRT	PC2	0.154126531807561
+3	calonectria_pseudonaviculata	BRT	PC3	0.211415795403933
+4	calonectria_pseudonaviculata	BRT	PC4	0.168436843088718
+5	calonectria_pseudonaviculata	BRT	PC5	0.12801369496527
+6	calonectria_pseudonaviculata	BRT	PC6	0.0562926525520638
+1	calonectria_pseudonaviculata	BRT	PC1	0.281714482182454
+2	calonectria_pseudonaviculata	BRT	PC2	0.154126531807561
+3	calonectria_pseudonaviculata	BRT	PC3	0.211415795403933
+4	calonectria_pseudonaviculata	BRT	PC4	0.168436843088718
+5	calonectria_pseudonaviculata	BRT	PC5	0.12801369496527
+6	calonectria_pseudonaviculata	BRT	PC6	0.0562926525520638

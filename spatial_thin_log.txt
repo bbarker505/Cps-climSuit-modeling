@@ -1,0 +1,90 @@
+********************************************** 
+ Beginning Spatial Thinning.
+ Script Started at: Tue Mar 22 10:00:29 2022
+
+Thinning Parameter Used (in km): 0.166666666665909
+Number of replicates of thinning script: 90
+
+Elapsed time for thinning completion
+0.01 0 0.11 NA NA
+
+Number of data.frames per locations retained
+loc.cnt df.freq
+90
+90
+Maximum number of records after thinning: 90
+Number of data.frames with max records: 90
+
+**New *.csv file creation:**
+********************************************** 
+ Beginning Spatial Thinning.
+ Script Started at: Tue Mar 22 10:05:05 2022
+
+Thinning Parameter Used (in km): 0.166666666665909
+Number of replicates of thinning script: 90
+
+Elapsed time for thinning completion
+0 0 0 NA NA
+
+Number of data.frames per locations retained
+loc.cnt df.freq
+90
+90
+Maximum number of records after thinning: 90
+Number of data.frames with max records: 90
+
+**New *.csv file creation:**
+Writing new *.csv files to output directory: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Cps_thinned_thin1.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Cps_thinned_thin2.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Cps_thinned_thin3.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Cps_thinned_thin4.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Cps_thinned_thin5.csv
+********************************************** 
+ Beginning Spatial Thinning.
+ Script Started at: Tue Mar 22 10:05:43 2022
+
+Thinning Parameter Used (in km): 0.166666666665909
+Number of replicates of thinning script: 90
+
+Elapsed time for thinning completion
+0.01 0 0.09 NA NA
+
+Number of data.frames per locations retained
+loc.cnt df.freq
+90
+90
+Maximum number of records after thinning: 90
+Number of data.frames with max records: 90
+
+**New *.csv file creation:**
+Writing new *.csv files to output directory: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Cps_thinned_thin1.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Cps_thinned_thin2.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Cps_thinned_thin3.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Cps_thinned_thin4.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Cps_thinned_thin5.csv
+********************************************** 
+ Beginning Spatial Thinning.
+ Script Started at: Tue Mar 22 10:05:58 2022
+
+Thinning Parameter Used (in km): 0.166666666665909
+Number of replicates of thinning script: 90
+
+Elapsed time for thinning completion
+0 0 0.09 NA NA
+
+Number of data.frames per locations retained
+loc.cnt df.freq
+90
+90
+Maximum number of records after thinning: 90
+Number of data.frames with max records: 90
+
+**New *.csv file creation:**
+Writing new *.csv files to output directory: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Thinned
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Thinned/Cps_thinned_thin1.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Thinned/Cps_thinned_thin2.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Thinned/Cps_thinned_thin3.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Thinned/Cps_thinned_thin4.csv
+Writing file: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Locations/Thinned/Cps_thinned_thin5.csv

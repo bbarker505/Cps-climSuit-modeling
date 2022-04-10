@@ -1,7 +1,0 @@
-Sp	Algorithm	Variables	IncNodePurity
-1	calonectria_pseudonaviculata	RDF	PC1	0.26
-2	calonectria_pseudonaviculata	RDF	PC2	0.583
-3	calonectria_pseudonaviculata	RDF	PC3	0.052
-4	calonectria_pseudonaviculata	RDF	PC4	0.011
-5	calonectria_pseudonaviculata	RDF	PC5	0.064
-6	calonectria_pseudonaviculata	RDF	PC6	0.03

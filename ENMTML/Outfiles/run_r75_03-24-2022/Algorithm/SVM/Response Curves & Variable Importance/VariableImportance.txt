@@ -1,0 +1,6 @@
+Sp	Algorithm	Variables	Overall
+1	calonectria_pseudonaviculata	SVM	bio15	0.201862779280558
+2	calonectria_pseudonaviculata	SVM	bio33	0.0912209442316505
+3	calonectria_pseudonaviculata	SVM	bio5	0.0217076591466002
+4	calonectria_pseudonaviculata	SVM	bio6	0.347064543487637
+5	calonectria_pseudonaviculata	SVM	bio7	0.338144073853555

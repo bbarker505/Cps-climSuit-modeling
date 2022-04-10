@@ -2,6 +2,121 @@
 ## pseudonaviculata, a fungal pathogen causing boxwood blight. This file is 
 ## required for running scripts in the R project for this study.
 
+# Plots climatic suitability (correlative models) across regions
+Alg_suit_plots <- function(region_outs, types, ln_feat, pol_feat, lgd) {
+  
+  map(types, function(type) {
+    
+    names(region_outs) <- types
+    df <- region_outs[names(region_outs) == type] %>%
+      do.call(rbind.data.frame, .)
+    
+    # Format results for plotting data in categories (bin probabilities)
+    df2 <- Bin_pres2(df) %>%
+      filter(!is.na(value_bin))
+    df2$value_bin <- factor(df2$value_bin,
+                           levels = unique(df2$value_bin[order(df2$value)]))
+    
+    # Plot
+    p <- ggplot() + 
+      geom_sf(data = pol_feat, color="gray20",  fill = "gray90", lwd = 0.3) +
+      geom_raster(data = df2, 
+                  aes(x = x, y = y, fill = value_bin)) +
+      scale_fill_manual(values = cols, drop = FALSE,
+                        na.value = "transparent") +
+      geom_sf(data = ln_feat, lwd = 0.2, color = "gray10") +
+      #geom_sf(data=recs_eur_sf, shape=21, size=1, fill= "cyan", color = "black") +
+      mytheme +
+      theme(legend.title = element_text(angle = 90, size = 8.5, face = "bold")) +
+      lgd +
+      guides(fill = guide_legend(title.position = "left", title.hjust = 0.5,
+                                 title = "Prob. of occurrence"))
+    
+    # Distance scale (in km)
+    # if (type == first(types)) {
+    #   p <- p + 
+    #     ggspatial::annotation_scale(
+    #       location = "br",
+    #       pad_x = unit(2.7, "cm"),
+    #       bar_cols = c("grey60", "white"),
+    #       text_cex = 0.5,
+    #       height = unit(0.15, "cm")
+    #     )  
+    # }
+    
+  })
+  
+}
+
+# Creates a plot depicting overlap in presence predictions among 4 different
+# correlative modeling algorithms
+Alg_pres_plot <- function(thres_dfs, ln_feat, pol_feat, recs, region,
+                          plot_recs, lgd, size, scale, outfl) {
+  
+  # Colors
+  cols_viridis <- colorRampPalette(c( "#453781FF", "#1F968BFF", "#FDE725FF"))(4)
+  
+  # Add presence values (=1) across the 4 algorithms to assess agreement
+  # Need to show extrapolated areas if its world plots
+  if (region == "world") {
+    df <- Sum_presence(thres_dfs) %>%
+      mutate(x = as.integer(x), y = as.integer(y)) %>%
+      full_join(., mop_df, by = c("x", "y")) %>%
+      drop_na() %>%
+      mutate(value = ifelse(mop == 1, "MOP < 0.9", value)) 
+    df$value <- factor(df$value, levels = c("1", "2", "3", "4", "MOP<0.9"))
+    
+    # Add gray for extrapolated areas 
+    cols_viridis <- c(cols_viridis, "gray50")
+    ln_wd <- 0.1
+    
+  } else {
+    df <- Sum_presence(thres_dfs)
+    ln_wd <- 0.3
+  }
+
+  # Plot
+  p <- ggplot() + 
+    geom_sf(data = pol_feat, color="gray20", fill = "gray90", lwd = ln_wd) +
+    geom_raster(data = df, aes(x = x, y = y, fill = value)) +
+    #scale_fill_viridis_d(option = "plasma", direction = -1) +
+    scale_fill_manual(breaks = as.character(1:4),
+                      values = cols_viridis,
+                      name = c("Correlative models\nwith presence")) +
+    geom_sf(data = ln_feat, lwd = 0.2, color = "gray10") +
+    #geom_sf(data = na_states_l, lwd = 0.1, color = "gray10") +
+    mytheme  +
+    theme(legend.title = element_text(angle = 0, size = 9, face = "bold"),
+          legend.text = element_text(angle = 0, size = 9),
+          legend.background = element_rect(fill = "white"),
+          legend.box.background = element_rect(fill = "white", color = "white"),
+          legend.key =  element_rect(fill = "white")) +
+    lgd 
+  
+  if (scale == "TRUE") {
+    ggspatial::annotation_scale(
+      location = "br",
+      bar_cols = c("grey60", "white"),
+      text_cex = 0.6,
+      height = unit(0.3, "cm")
+    )     
+  }
+  
+  if (plot_recs == 1) {
+    p <- p + 
+      #geom_sf(data = recs, shape=21, size=0.65, fill= "magenta", color = "black") 
+      geom_sf(data = recs, shape=19, size=1.2, color = "white") +
+      geom_sf(data = recs, shape=21, size=0.8, fill= "#FF69B4", color = "black") 
+  }
+  
+  # # Save individual plot in output dir
+  ggsave(p, filename = here(outdir, paste0(outfl, ".png")),
+         width = size, height = size, units = c('in'), device = "png", dpi=300)
+  
+  return(p)
+  
+}
+
 # Converting CLIMEX tables to raster functions
 Assign_extent <- function(x) {
   ext <-  raster(xmn=min(x$Longitude), xmx=max(x$Longitude), 
@@ -14,12 +129,12 @@ Assign_extent <- function(x) {
 Bin_CLMX <-  function(var, df) {
   
   # GI and EI categorical formatting
-  if (var %in% c("EI", "EI.ir")) {
+  if (var == "EI") {
 
     # Col with bins
-    df2 <- Format_EI(df, 9)
+    df2 <- Format_EI(df, 7)
     labs <- sort(unique(df2$value_bin))
-    brks <- as.numeric(str_split_fixed(labs, "-", 2)[,1])
+    brks <- suppressWarnings(as.numeric(str_split_fixed(labs, "-", 2)[,1]))
     
     # Climate stresses categorical formatting
   } else {
@@ -47,8 +162,8 @@ Bin_CLMX <-  function(var, df) {
 # Format for plotting data in categories - correlative modeling algorithsms
 Bin_pres <- function(df) {
   df2 <- df %>%
-    mutate(value_bin = case_when(#value > 0 & value <= 0.1 ~ "0-0.1",
-                                 value >= 0.1 & value <= 0.2 ~ "0.1-0.2",
+    mutate(value_bin = case_when(value > 0 & value <= 0.1 ~ "0-0.1",
+                                 value > 0.1 & value <= 0.2 ~ "0.1-0.2",
                                  value > 0.2 & value <= 0.3 ~ "0.2-0.3",
                                  value > 0.3 & value <= 0.4 ~ "0.3-0.4",
                                  value > 0.4 & value <= 0.5 ~ "0.4-0.5",
@@ -58,15 +173,15 @@ Bin_pres <- function(df) {
                                  value > 0.8 & value <= 0.9 ~ "0.8-0.9",
                                  value > 0.9 ~ "0.9-1.0"))
   df2$value_bin <- factor(df2$value_bin, 
-                          #levels = c("0-0.1", "0.1-0.2", "0.2-0.3", "0.3-0.4",
-                          levels = c("0.1-0.2", "0.2-0.3", "0.3-0.4",
+                          levels = c("0-0.1", "0.1-0.2", "0.2-0.3", "0.3-0.4",
+                          #levels = c("0.01-0.2", "0.2-0.3", "0.3-0.4",
                           "0.4-0.5", "0.5-0.6", "0.6-0.7", "0.7-0.8", "0.8-0.9", "0.9-1.0"))
   return(df2)
 }
 
 Bin_pres2 <- function(df) {
   df2 <- df %>%
-    mutate(value_bin = case_when(value > 0 & value <= 0.1 ~ "0-0.1",
+    mutate(value_bin = case_when(value < 0.1 ~ "<0.1",
       value >= 0.1 & value <= 0.2 ~ "0.1-0.2",
       value > 0.2 & value <= 0.3 ~ "0.2-0.3",
       value > 0.3 & value <= 0.4 ~ "0.3-0.4",
@@ -77,7 +192,7 @@ Bin_pres2 <- function(df) {
       value > 0.8 & value <= 0.9 ~ "0.8-0.9",
       value > 0.9 ~ "0.9-1.0"))
   df2$value_bin <- factor(df2$value_bin, 
-                          levels = c("0-0.1", "0.1-0.2", "0.2-0.3", "0.3-0.4",
+                          levels = c("<0.1", "0.1-0.2", "0.2-0.3", "0.3-0.4",
                                      "0.4-0.5", "0.5-0.6", "0.6-0.7", "0.7-0.8", "0.8-0.9", "0.9-1.0"))
   return(df2)
 }
@@ -100,6 +215,49 @@ CLMX_proc <- function(p, templ){
   return(clmx.c)
 }
 
+# Produce plots of CLIMEX estimates of climate suitability (EI)
+CLMX_suit_plots <- function(rast, ext, prj, pol_feat, ln_feat, lgd, recs, km_scl) {
+  
+  mod_df <- Rasts_to_df1(rast, ext, prj)
+  
+  # Remove 0 values and bin EI values
+  mod_df2 <- mod_df %>%
+    #filter(value > 0) %>%
+    drop_na %>%
+    Bin_CLMX("EI", .) 
+  mod_df2 <- mod_df2[[3]]
+  
+  # Order factor levels
+  mod_df2$value_bin <- factor(mod_df2$value_bin,
+                              levels = unique(mod_df2$value_bin[order(mod_df2$value)]))
+  # Plot
+  cols <- c("gray90", colorRampPalette(
+    c("#313695", "#4575B4","#ABD9E9","#FEF7B3","#FDD992","#FDBC71", "#EB8B55", "#A50026"))(7))
+  
+  p <- ggplot() + 
+    geom_sf(data = pol_feat, color="gray20",  fill = "gray90", lwd = 0.3) +
+    geom_raster(data = mod_df2, 
+                aes(x = x, y = y, fill = value_bin)) +
+    scale_fill_manual(values = cols, drop = FALSE, na.value = "transparent") +
+    geom_sf(data = ln_feat, lwd = 0.2, color = "gray10") +
+    #geom_sf(data=recs, shape=21, size=1, fill= "purple", color = "white") +
+    mytheme +
+    theme(legend.title = element_text(angle = 90, size = 8, hjust = 0.5, face = "bold")) +
+    lgd +
+    guides(fill = guide_legend(title.position = "left", title.hjust = 0.5,
+                               title = "Ecoclimatic index"))
+  
+  if (km_scl == 1) {
+    p <- p + ggspatial::annotation_scale(
+      location = "br",
+      pad_x = unit(2.7, "cm"),
+      bar_cols = c("grey60", "white"),
+      text_cex = 0.5,
+      height = unit(0.15, "cm")
+    )
+  }
+  return(p)
+}
 
 # Convert raster into a data frame for plotting
 ConvDF <- function(rast) {
@@ -107,6 +265,98 @@ ConvDF <- function(rast) {
   df <- as.data.frame(spdf)
   colnames(df) <- c("value", "x", "y")
   return(df)
+}
+
+# Maps of overlap between CLIMEX and correlative models of potential distribution
+Corr_CLMX_plot <- function(corr_dfs, region, ext, prj, pol_feat, ln_feat, lgd) {
+  
+  if (!grepl("ens", region)) {
+    corr_consens_df <- Sum_presence(corr_dfs) %>%
+      mutate(value = ifelse(as.numeric(value) < 4, 0, 1)) 
+  } else {
+    corr_consens_df <- data.frame(corr_dfs)
+  }
+  
+  # Save the consensus output to validate correlative models for CONUS
+  # Create directory for consensus rasters
+  if (!file.exists(here(outdir, "Conensus_rasts"))) {
+    dir.create(here(outdir, "Conensus_rasts"))
+  }
+  
+  # Convert data frames to rasters and save them for model validation
+  #corr_consens_rast <- rasterFromXYZ(corr_consens_df)
+  #writeRaster(corr_consens_rast, 
+  #            file = here(outdir, "Consensus_rasts", paste0(region, "_consensus.tif")),
+  #            format = "GTiff", overwrite = TRUE)
+
+  # Combine with CLIMEX outputs (both with and without irrigation)
+  CLMX_df <- Rasts_to_df1(ei_gt10_r, ext, prj)
+ # ei_gt10_df <- CLMX_df %>% dplyr::filter(value > 0)
+  all_models_list <- list(CLMX_df, corr_consens_df) %>%
+    map(~ mutate(.x, across(everything(), as.integer)))
+  all_models_df <- purrr::reduce(all_models_list, dplyr::full_join, by = c("x", "y")) %>%
+    #mutate(value = rowSums(.[3:last(ncol(.))], na.rm = TRUE)) %>%
+    rename("CLIMEX" = "value.x",  "Corr" = "value.y") %>%
+    replace(is.na(.), 0) %>%
+    filter(!(CLIMEX == 0 & Corr == 0))
+  
+  if (grepl("europe", region)) {
+    all_models_df2 <- mutate(all_models_df,
+                             value = factor(case_when(CLIMEX == 1 & Corr == 1 ~ "All models",
+                                                      CLIMEX == 1 & Corr == 0 ~ "CLIMEX model",
+                                                      CLIMEX == 0 & Corr == 1 ~ "Correlative models"),
+                                            levels = c("All models", "CLIMEX model", "Correlative models")))
+    cols_pres <- c("All models" = "purple", "CLIMEX model" = "red2",  
+                   "Correlative models" = "blue2")
+    ln_wd <- 0.3
+    
+    # Need to consider areas of extrapolation outside the calibration area
+  } else {
+    mop_df <- Rasts_to_df1(mop, ext, prj) %>%
+      drop_na() %>%
+      mutate(mop = ifelse(value >= 0.9, 0, 1),
+             x = as.integer(x), y = as.integer(y))  %>%
+      select(-value)
+    
+    all_models_df2 <- all_models_df %>%
+      left_join(., mop_df, by = c("x", "y")) %>%
+      mutate(Corr = ifelse(mop == 1, 2, Corr)) %>%
+      replace(is.na(.), 0) %>%
+      mutate(value = case_when(CLIMEX == 1 & Corr == 1 ~ "Both",
+                               CLIMEX == 1 & Corr == 2 ~ "Both",
+                               CLIMEX == 1 & Corr == 0 ~ "CLIMEX",
+                               # CLIMEX == 0 & Corr == 1 ~ paste0("Corr. (MOP ", intToUtf8(8805), " 0.9)"),
+                               # CLIMEX == 0 & Corr == 2 ~ "Corr. (MOP < 0.9)")) %>%
+                              CLIMEX == 0 & Corr == 1 ~ paste0("Correlative (MOP ", intToUtf8(8805), " 0.9)"),
+                              CLIMEX == 0 & Corr == 2 ~ "Correlative (MOP < 0.9)")) %>%
+      filter(!(is.na(value)))
+    all_models_df2$value <- factor(
+      all_models_df2$value, levels = c("Both", "CLIMEX", 
+                                       paste0("Correlative (MOP ", intToUtf8(8805), " 0.9)"),
+                                       "Correlative (MOP < 0.9)"))
+    # paste0("Corr. (MOP ", intToUtf8(8805), " 0.9)"), "Corr. (MOP < 0.9)"))
+    cols_pres <- c("purple", "red2", "blue2", "gray50")
+    ln_wd <- 0.1
+  }
+  
+  # Plot results
+  # Note: resampling may cause decimals in x and y coords - these need to 
+  # be rounded us "as.integer" above
+  p <- ggplot() + 
+    geom_sf(data = pol_feat, color="gray20", fill = "gray90", lwd = ln_wd) +
+    geom_raster(data = all_models_df2, aes(x = x, y = y, fill = value)) +
+    #scale_fill_viridis_d(option = "plasma", direction = -1) +
+    scale_fill_manual(values = cols_pres,
+                      name = c("Model type")) +
+    geom_sf(data = ln_feat, lwd = ln_wd, color = "gray10") +
+    #geom_sf(data = occ_recs[[i]], shape=21, size=1, fill= "black", color = "white") +
+    mytheme  +
+    lgd  +
+    theme(legend.title = element_text(angle = 0, size = 9, face = "bold"),
+          legend.text = element_text(angle = 0, size = 9),
+          legend.background = element_blank(),
+          legend.box.background = element_rect(fill = "white", color = "white"),
+          legend.key =  element_rect(fill = "white"))
 }
 
 # Export rasters for creating map in ArcMap 
@@ -182,8 +432,8 @@ Eval_stats_tbl <- function(result_dir) {
     arrange(type) %>%
     dplyr::select(-type) %>%
     mutate(
-      Algorithm_nm = case_when(Algorithm == "BRT" ~ "Boosted Regression Tree",
-                               Algorithm == "GAM" ~ "Generalized Additive Models",
+      Algorithm_nm = case_when(#Algorithm == "BRT" ~ "Boosted Regression Tree",
+                               #Algorithm == "GAM" ~ "Generalized Additive Models",
                                Algorithm == "GAU" ~ "Gaussian Process Usage",
                                #Algorithm == "MXD" ~ "Maxent (default)",
                                Algorithm == "MXS" ~ "Maxent (simple)",
@@ -210,13 +460,24 @@ Format_EI <- function(df, bins) {
     
   } else if (bins == 7) {
     EI_df <- df %>% 
-      mutate(value_bin = case_when(value > 0 & value <= 5 ~ "1-5",
+      mutate(value_bin = case_when(value < 1 ~ "<1",
+                                   value >= 1 & value <= 5 ~ "1-5",
                                    value > 5 & value <= 10 ~ "6-10",
                                    value > 10 & value <= 15 ~ "11-15",
                                    value > 15 & value <= 20 ~ "16-20",
                                    value > 20 & value <= 25 ~ "21-25",
                                    value > 25 & value <= 30 ~ "26-30",
                                    value > 30 ~ "31-100")) 
+  } else if (bins == 8) {
+    EI_df <- df %>% 
+      mutate(value_bin = case_when(value > 0 & value <= 5 ~ "1-5",
+                                   value > 5 & value <= 10 ~ "6-10",
+                                   value > 10 & value <= 15 ~ "11-15",
+                                   value > 15 & value <= 20 ~ "16-20",
+                                   value > 20 & value <= 25 ~ "21-25",
+                                   value > 25 & value <= 30 ~ "26-30",
+                                   value > 30 & value <= 35 ~ "31-35",
+                                   value > 35 ~ "36-100")) 
   } else if (bins == 9) {
     EI_df <- df %>% 
       mutate(value_bin = case_when(value > 0 & value <= 5 ~ "1-5",
@@ -239,10 +500,62 @@ long2UTM <- function(long) {
   (floor((long + 180)/6) %% 60) + 1
 }
 
+# Creates presence plots for individual correlative algorithms and outputs
+# the formatted data frame of raster results
+Pres_plots_algs <- function(thres, sens_dfs, region, ext, prj) {
+  
+  map(types, function(t) {
+    
+    if (thres != "SENSITIVITY") {
+      rast <- raster(here(outdir, "Projection", "World", 
+                          t, thres, "calonectria_pseudonaviculata.tif"))
+      #rast[rast <= 0] <- NA
+      thres_df <- Rasts_to_df1(rast, ext, prj) 
+    } else {
+      thres_df <- sens_dfs[[grep(t, names(sens_dfs))]]
+    }
+    
+    # Plots
+    outfl <- paste0("World_pres_", t, "_", thres, ".png")
+    
+    if (region == "world") {
+      thres.p <- ggplot() + 
+        geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.1) +
+        geom_raster(data = filter(thres_df, value == 1), aes(x = x, y = y, fill = value)) +
+        geom_sf(data = world_l, lwd = 0.1, color = "gray10") + 
+        geom_sf(data = na_states_l, lwd = 0.1, color = "gray10") +
+        mytheme 
+    } else if (region == "europe") {
+      thres.p <- ggplot() + 
+        geom_sf(data = eur_cntry_p, color="gray20",  fill = "gray90", lwd = 0.1) +
+        geom_raster(data = filter(thres_df, value == 1), aes(x = x, y = y, fill = value)) +
+        geom_sf(data = eur_cntry_p, lwd = 0.1, color = "gray10") + 
+        geom_sf(data = eur_cntry_l, lwd = 0.1, color = "gray10") +
+        mytheme 
+    } else if (region == "conus") {
+      thres.p <- ggplot() + 
+        geom_sf(data = conus_states_p, color="gray20",  fill = "gray90", lwd = 0.1) +
+        geom_raster(data = filter(thres_df, value == 1), aes(x = x, y = y, fill = value)) +
+        geom_sf(data = conus_states_p, lwd = 0.1, color = "gray10") + 
+        geom_sf(data = conus_states_l, lwd = 0.1, color = "gray10") +
+        mytheme 
+    }
+
+    ggsave(thres.p,
+         filename = here(outdir, outfl),
+        width = 8, height = 4, units = c('in'), device = "png", dpi=300)
+    
+    # Save output data frame after converting value back to numeric
+    thres_df$value <- as.numeric(thres_df$value)
+    return(thres_df)
+    
+  })
+}
+
 # Project CLIMEX results by converting them to raster format, and then convert
 # back to points for plotting in ggplot
 Rasts_to_df1 <- function(rast, ext, prj) {
-  #crs(rast) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
+  crs(rast) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
   rast_crp <- crop(rast, extent(ext))
   rast_prj <- projectRaster(rast_crp, crs = prj, method = "ngb")
   df <-  data.frame(rasterToPoints(rast_prj)) 
@@ -254,6 +567,7 @@ Rasts_to_df2 <- function(rast_lst, ext, prj) {
   out_lst <- list()
   for (i in 1:length(rast_lst)) {
     rast <- rast_lst[[i]]
+    crs(rast) <- "+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0"
     rast_crp <- crop(rast, extent(ext))
     rast_prj <- projectRaster(rast_crp, crs = prj, method = "ngb")
     rast_pts <-  data.frame(rasterToPoints(rast_prj))
@@ -301,6 +615,17 @@ Rescale <- function(x){
   x2 <- (x-cellStats(x,"min"))/(cellStats(x,"max")-cellStats(x,"min")) * 1000 
 } 
 
+# Add presence values (=1) across the 4 algorithms to assess agreement
+Sum_presence <- function(thres_dfs) {
+  n_cols <- 2 + length(thres_dfs) 
+  df <- purrr::reduce(thres_dfs, dplyr::left_join, by = c("x", "y")) %>%
+    mutate(value = rowSums(.[3:n_cols], na.rm = TRUE)) %>%
+    filter(!(value == 0)) %>%
+    dplyr::select(x, y, value)
+  df$value <- factor(df$value)
+  return(df)
+}
+
 # Function to compile percent contribution/variable importance outputs from
 # ENMTML (across algorithms) and export the table as an Excel file
 Var_contib_tbl <- function(result_dir) {
@@ -327,9 +652,12 @@ Var_contib_tbl <- function(result_dir) {
   all_contribs <- bind_rows(var_contribs) %>%
     spread(key = Algorithm, value = Percent_contribution_or_importance) %>%
     rowwise() %>%
-    mutate(mean = round(mean(c(BRT, GAM, GAU, MXS, RDF, SVM)), 1),
-           min= min(BRT, GAM, GAU, MXS, RDF, SVM),
-           max = max(BRT, GAM, GAU, MXS, RDF, SVM)) %>%
+    mutate(mean = round(mean(c(BRT, GAU, MXS, RDF)), 1),
+           min= min(BRT, GAU, MXS, RDF),
+           max = max(BRT, GAU, MXS, RDF)) %>%
+    # mutate(mean = round(mean(c(BRT, GAM, GAU, MXS, RDF, SVM)), 1),
+    #        min= min(BRT, GAM, GAU, MXS, RDF, SVM),
+    #        max = max(BRT, GAM, GAU, MXS, RDF, SVM)) %>%
     write.xlsx(., here(result_dir, "Variable_contributions.xlsx"),
                overwrite = TRUE)
 
@@ -344,7 +672,7 @@ WriteTable <- function(x, nam) {
   }
   
   x2 <- x %>% 
-    dplyr::select("longitude" = Longitude, "latitude" = Latitude)  %>%
+    dplyr::select(longitude, latitude)  %>%
     mutate(species = "calonectria_pseudonaviculata")
   write.table(x2, here("ENMTML", "Locations", 
                        paste0(nam, "_",  format(Sys.Date(), "%m-%d-%Y"),".txt")), 

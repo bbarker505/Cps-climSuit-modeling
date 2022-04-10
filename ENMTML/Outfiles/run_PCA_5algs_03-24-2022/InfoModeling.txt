@@ -1,0 +1,13 @@
+###########################################################
+Start date : 2022-03-24 20:47:51
+End date : 2022-03-24 20:51:57
+Algorithm:	MXS	SVM	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BLOCK
+Train percentage (random partition only):
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_5algs_03-24-2022/BLOCK
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_5algs_03-24-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata

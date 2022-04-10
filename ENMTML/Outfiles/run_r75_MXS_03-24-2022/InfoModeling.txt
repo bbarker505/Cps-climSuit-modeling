@@ -1,0 +1,39 @@
+###########################################################
+Start date : 2022-03-24 13:57:11
+End date : 2022-03-24 13:59:11
+Algorithm:	MXS
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BLOCK
+Train percentage (random partition only):
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_r75_MXS_03-24-2022/BLOCK
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_r75_MXS_03-24-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-24 14:34:56
+End date : 2022-03-24 14:35:48
+Algorithm:	MXS
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BLOCK
+Train percentage (random partition only):
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_r75_MXS_03-24-2022/BLOCK
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_r75_MXS_03-24-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-24 14:41:50
+End date : 2022-03-24 14:42:28
+Algorithm:	MXS
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BLOCK
+Train percentage (random partition only):
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_r75_MXS_03-24-2022/BLOCK
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_r75_MXS_03-24-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata

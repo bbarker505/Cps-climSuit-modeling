@@ -1,0 +1,2 @@
+"Sp"	"N.grid"	"cellSize.pp."	"Imoran.Grid.P"	"Eucl.Grid.P"	"Sd.Grid.P"
+"calonectria_pseudonaviculata"	29	16.1034482758621	0.182	7.535	0.157

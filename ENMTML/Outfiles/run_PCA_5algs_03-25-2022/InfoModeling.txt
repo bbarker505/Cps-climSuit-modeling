@@ -1,0 +1,26 @@
+###########################################################
+Start date : 2022-03-25 15:27:42
+End date : 2022-03-25 15:31:02
+Algorithm:	MXS	SVM	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BLOCK
+Train percentage (random partition only):
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_5algs_03-25-2022/BLOCK
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_5algs_03-25-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-03-25 21:08:46
+End date : 2022-03-25 21:10:29
+Algorithm:	MXS	SVM	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	BLOCK
+Train percentage (random partition only):
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_5algs_03-25-2022/BLOCK
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_5algs_03-25-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
