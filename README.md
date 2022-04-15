@@ -1,7 +1,7 @@
 # Climate suitability modeling study of Calonectria pseudonaviculata
 
 Files in this repository replicate results presented in the climate suitability 
-study of *Calonectria pseudonaviculata*, a fungal pathogen that causes boxwood blight. The Repository contents include one R project, 10 R scripts, raw and
+study of *Calonectria pseudonaviculata*, a fungal pathogen that causes boxwood blight. The repository contents include one R project, 10 R scripts, raw and
 processed CliMond data used for modeling (27 variables), the full and 
 subsampled occurrence record datasets used for modeling, and the CLIMEX 
 outfiles. 
