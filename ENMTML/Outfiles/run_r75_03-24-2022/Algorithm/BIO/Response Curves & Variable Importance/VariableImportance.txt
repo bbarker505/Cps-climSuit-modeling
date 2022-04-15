@@ -1,6 +1,0 @@
-Sp	Algorithm	Variables	Overall
-1	calonectria_pseudonaviculata	BIO	bio15	0.325127357244004
-2	calonectria_pseudonaviculata	BIO	bio33	0.0984107429290805
-3	calonectria_pseudonaviculata	BIO	bio5	0.11894972897594
-4	calonectria_pseudonaviculata	BIO	bio6	0.178188450513892
-5	calonectria_pseudonaviculata	BIO	bio7	0.279323720337083

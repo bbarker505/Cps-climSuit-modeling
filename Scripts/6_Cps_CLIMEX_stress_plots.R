@@ -314,9 +314,9 @@ Stress_conus.p <- plot_grid(con_maps[[1]], con_maps[[2]], con_maps[[3]], con_map
                           ncol = 2, nrow = 2,
                           labels = c("(a) Growth index", "(b) Cold stress",
                                      "(c) Heat stress", "(d) Dry stress"),
-                          label_size = 14, hjust = 0 , vjust = 1)
+                          label_size = 14, hjust = 0 , vjust = 1.05)
 ggsave(Stress_conus.p, file= here("Final_figures", "CLIMEX_4Stress_CONUS.png"),
-       width = 8, height = 5.5, units = c('in'), dpi=300)
+       width = 8, height = 5.1, units = c('in'), dpi=300)
 
 
 ## Plots for global scale ----

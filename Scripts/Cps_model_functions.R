@@ -3,10 +3,11 @@
 ## required for running scripts in the R project for this study.
 
 # Plots climatic suitability (correlative models) across regions
-Alg_suit_plots <- function(region_outs, types, ln_feat, pol_feat, lgd) {
+Alg_suit_plots <- function(region_outs, region, types, ln_feat, pol_feat, lgd) {
   
   map(types, function(type) {
     
+   # Data
     names(region_outs) <- types
     df <- region_outs[names(region_outs) == type] %>%
       do.call(rbind.data.frame, .)
@@ -17,21 +18,47 @@ Alg_suit_plots <- function(region_outs, types, ln_feat, pol_feat, lgd) {
     df2$value_bin <- factor(df2$value_bin,
                            levels = unique(df2$value_bin[order(df2$value)]))
     
+    # Also plot sensitivity threshold (0.3)
+    r <- rasterFromXYZ(df)
+    thres <- rasterToContour(r >= 0.3 )
+    
     # Plot
     p <- ggplot() + 
       geom_sf(data = pol_feat, color="gray20",  fill = "gray90", lwd = 0.3) +
-      geom_raster(data = df2, 
-                  aes(x = x, y = y, fill = value_bin)) +
-      scale_fill_manual(values = cols, drop = FALSE,
-                        na.value = "transparent") +
+      geom_raster(data = df2, aes(x = x, y = y, fill = value_bin)) +
+      scale_fill_manual(values = cols, drop = FALSE, na.value = "transparent") +
       geom_sf(data = ln_feat, lwd = 0.2, color = "gray10") +
-      #geom_sf(data=recs_eur_sf, shape=21, size=1, fill= "cyan", color = "black") +
+      #geom_path(data = thres, aes(x = long, y = lat, group = group), 
+      #          color = "cyan", lwd = 0.1) +
       mytheme +
       theme(legend.title = element_text(angle = 90, size = 8.5, face = "bold")) +
       lgd +
       guides(fill = guide_legend(title.position = "left", title.hjust = 0.5,
                                  title = "Prob. of occurrence"))
     
+    # Mask out areas with model extrapolation
+    # if (region == "conus") {
+    # 
+    #   ens_suit_msk <- df %>%
+    #     mutate(x = as.integer(x), y = as.integer(y)) %>%
+    #     left_join(., mop_df_conus, by = c("x", "y")) %>%
+    #     filter(mop == 0)
+    #   
+    #   ens_suit_extr <- df %>%
+    #     mutate(x = as.integer(x), y = as.integer(y)) %>%
+    #     anti_join(., ens_suit_msk, by = c("x", "y")) 
+    #   
+    #   p <- p +
+    #     geom_raster(data = ens_suit_extr, aes(x = x, y = y), fill = "gray50") +
+    #     geom_sf(data = conus_states_l, lwd = 0.1, color = "gray10") 
+    # }
+    
+    if (region %in% c("europe", "conus")) {
+      p <- p + geom_path(data = thres, aes(x = long, y = lat, group = group), 
+                         color = "cyan", lwd = 0.1) 
+    } 
+    
+    return(p)
     # Distance scale (in km)
     # if (type == first(types)) {
     #   p <- p + 
@@ -45,7 +72,7 @@ Alg_suit_plots <- function(region_outs, types, ln_feat, pol_feat, lgd) {
     # }
     
   })
-  
+
 }
 
 # Creates a plot depicting overlap in presence predictions among 4 different
@@ -216,9 +243,13 @@ CLMX_proc <- function(p, templ){
 }
 
 # Produce plots of CLIMEX estimates of climate suitability (EI)
-CLMX_suit_plots <- function(rast, ext, prj, pol_feat, ln_feat, lgd, recs, km_scl) {
+CLMX_suit_plots <- function(rast, region, ext, prj, pol_feat, ln_feat, lgd, recs, km_scl) {
   
   mod_df <- Rasts_to_df1(rast, ext, prj)
+  
+  # Contour for EI cut-off to binarize maps
+  r <- rasterFromXYZ(mod_df)
+  thres <- rasterToContour(r >= 10 )
   
   # Remove 0 values and bin EI values
   mod_df2 <- mod_df %>%
@@ -233,19 +264,27 @@ CLMX_suit_plots <- function(rast, ext, prj, pol_feat, ln_feat, lgd, recs, km_scl
   # Plot
   cols <- c("gray90", colorRampPalette(
     c("#313695", "#4575B4","#ABD9E9","#FEF7B3","#FDD992","#FDBC71", "#EB8B55", "#A50026"))(7))
-  
+
   p <- ggplot() + 
     geom_sf(data = pol_feat, color="gray20",  fill = "gray90", lwd = 0.3) +
     geom_raster(data = mod_df2, 
                 aes(x = x, y = y, fill = value_bin)) +
     scale_fill_manual(values = cols, drop = FALSE, na.value = "transparent") +
     geom_sf(data = ln_feat, lwd = 0.2, color = "gray10") +
+    # geom_path(data = thres, aes(x = long, y = lat, group = group), 
+    #           color = "cyan", lwd = 0.1) +
     #geom_sf(data=recs, shape=21, size=1, fill= "purple", color = "white") +
     mytheme +
     theme(legend.title = element_text(angle = 90, size = 8, hjust = 0.5, face = "bold")) +
     lgd +
     guides(fill = guide_legend(title.position = "left", title.hjust = 0.5,
                                title = "Ecoclimatic index"))
+  
+  if (region %in% c("europe", "conus")) {
+    p <- p + geom_path(data = thres, aes(x = long, y = lat, group = group), 
+                       color = "cyan", lwd = 0.1) 
+    #ln_wdth <- 0.005
+  }
   
   if (km_scl == 1) {
     p <- p + ggspatial::annotation_scale(
@@ -318,22 +357,43 @@ Corr_CLMX_plot <- function(corr_dfs, region, ext, prj, pol_feat, ln_feat, lgd) {
              x = as.integer(x), y = as.integer(y))  %>%
       select(-value)
     
-    all_models_df2 <- all_models_df %>%
-      left_join(., mop_df, by = c("x", "y")) %>%
-      mutate(Corr = ifelse(mop == 1, 2, Corr)) %>%
-      replace(is.na(.), 0) %>%
-      mutate(value = case_when(CLIMEX == 1 & Corr == 1 ~ "Both",
-                               CLIMEX == 1 & Corr == 2 ~ "Both",
-                               CLIMEX == 1 & Corr == 0 ~ "CLIMEX",
-                               # CLIMEX == 0 & Corr == 1 ~ paste0("Corr. (MOP ", intToUtf8(8805), " 0.9)"),
-                               # CLIMEX == 0 & Corr == 2 ~ "Corr. (MOP < 0.9)")) %>%
-                              CLIMEX == 0 & Corr == 1 ~ paste0("Correlative (MOP ", intToUtf8(8805), " 0.9)"),
-                              CLIMEX == 0 & Corr == 2 ~ "Correlative (MOP < 0.9)")) %>%
-      filter(!(is.na(value)))
-    all_models_df2$value <- factor(
-      all_models_df2$value, levels = c("Both", "CLIMEX", 
-                                       paste0("Correlative (MOP ", intToUtf8(8805), " 0.9)"),
-                                       "Correlative (MOP < 0.9)"))
+    if (grepl("conus", region)) {
+      
+      all_models_df2 <- all_models_df %>%
+        left_join(., mop_df, by = c("x", "y")) %>%
+        mutate(Corr = ifelse(mop == 1, 2, Corr)) %>%
+        replace(is.na(.), 0) %>%
+        mutate(value = case_when(CLIMEX == 1 & Corr == 1 ~ "Both",
+                                 CLIMEX == 1 & Corr == 2 ~ "Both",
+                                 CLIMEX == 1 & Corr == 0 ~ "CLIMEX",
+                                 # CLIMEX == 0 & Corr == 1 ~ paste0("Corr. (MOP ", intToUtf8(8805), " 0.9)"),
+                                 # CLIMEX == 0 & Corr == 2 ~ "Corr. (MOP < 0.9)")) %>%
+                                CLIMEX == 0 & Corr == 1 ~ paste0("Corr. (MOP ", intToUtf8(8805), " 0.9)"),
+                                CLIMEX == 0 & Corr == 2 ~ "Corr. (MOP < 0.9)")) %>%
+        filter(!(is.na(value)))
+      all_models_df2$value <- factor(
+        all_models_df2$value, levels = c("Both", "CLIMEX", 
+                                         paste0("Corr. (MOP ", intToUtf8(8805), " 0.9)"),
+                                         "Corr. (MOP < 0.9)"))
+    } else if (grepl("world", region)) {
+    
+      all_models_df2 <- all_models_df %>%
+        left_join(., mop_df, by = c("x", "y")) %>%
+        mutate(Corr = ifelse(mop == 1, 2, Corr)) %>%
+        replace(is.na(.), 0) %>%
+        mutate(value = case_when(CLIMEX == 1 & Corr == 1 ~ "Both",
+                                 CLIMEX == 1 & Corr == 2 ~ "Both",
+                                 CLIMEX == 1 & Corr == 0 ~ "CLIMEX",
+                                 # CLIMEX == 0 & Corr == 1 ~ paste0("Corr. (MOP ", intToUtf8(8805), " 0.9)"),
+                                 # CLIMEX == 0 & Corr == 2 ~ "Corr. (MOP < 0.9)")) %>%
+                                 CLIMEX == 0 & Corr == 1 ~ paste0("Correlative (MOP ", intToUtf8(8805), " 0.9)"),
+                                 CLIMEX == 0 & Corr == 2 ~ "Correlative (MOP < 0.9)")) %>%
+        filter(!(is.na(value)))
+      all_models_df2$value <- factor(
+        all_models_df2$value, levels = c("Both", "CLIMEX", 
+                                         paste0("Correlative (MOP ", intToUtf8(8805), " 0.9)"),
+                                         "Correlative (MOP < 0.9)"))
+  }
     # paste0("Corr. (MOP ", intToUtf8(8805), " 0.9)"), "Corr. (MOP < 0.9)"))
     cols_pres <- c("purple", "red2", "blue2", "gray50")
     ln_wd <- 0.1

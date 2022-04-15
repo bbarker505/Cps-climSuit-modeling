@@ -24,8 +24,8 @@ CLMX_mod <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI_World.tif"))
 #CLMX_mod.ir <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI.ir_World.tif"))
 
 # Correlative model - ensemble for Eurasia
-ens_eur <- raster(here(outdir, "Ensemble", "W_MEAN", "calonectria_pseudonaviculata.tif"))
-ens_conus <- raster(here(outdir, "Projection", "World", "Ensemble", "W_MEAN", "calonectria_pseudonaviculata.tif"))
+ens_eur <- raster(here(outdir, "Ensemble", "PCA", "calonectria_pseudonaviculata.tif"))
+ens_conus <- raster(here(outdir, "Projection", "World", "Ensemble", "PCA", "calonectria_pseudonaviculata.tif"))
 
 # Correlative model - presence across algorithms
 all_fls <- list.files(outdir, 
@@ -145,11 +145,11 @@ cols_thres <- colorRampPalette(c( "#453781FF", "#1F968BFF", "#FDE725FF"))(6)
 ## Plots: CLIMEX ----
 
 # Make plots
-CLMX_eur.p <- CLMX_suit_plots(CLMX_mod, ext_eur, prj_eur, eur_cntry_p, eur_cntry_l, eur_lgd, recs_eur_sf, 1)
+CLMX_eur.p <- CLMX_suit_plots(CLMX_mod, "europe", ext_eur, prj_eur, eur_cntry_p, eur_cntry_l, eur_lgd, recs_eur_sf, 1)
 #CLMX_eur_ir.p <- CLMX_suit_plots(CLMX_mod.ir, ext_eur, prj_eur, eur_cntry_p, eur_cntry_l, eur_lgd, recs_eur_sf, 1)
-CLMX_conus.p <- CLMX_suit_plots(CLMX_mod, ext_conus, prj_conus, conus_states_p, conus_states_l, conus_lgd, recs_conus_sf, 1)
+CLMX_conus.p <- CLMX_suit_plots(CLMX_mod, "conus", ext_conus, prj_conus, conus_states_p, conus_states_l, conus_lgd, recs_conus_sf, 1)
 #CLMX_conus_ir.p <- CLMX_suit_plots(CLMX_mod.ir, ext_conus, prj_conus, conus_states_p, conus_states_l, conus_lgd, recs_conus_sf, 1)
-CLMX_world.p <- CLMX_suit_plots(CLMX_mod, ext_world, prj_world, world_p, world_l, world_lgd, NA, 0) +
+CLMX_world.p <- CLMX_suit_plots(CLMX_mod, "world", ext_world, prj_world, world_p, world_l, world_lgd, NA, 0) +
   geom_sf(data = na_states_l, lwd = 0.1, color = "gray10")
 
 # Save world plot
@@ -168,41 +168,66 @@ mop_df <- Rasts_to_df1(mop, ext_world, prj_world) %>%
   mutate(mop = ifelse(value >= 0.9, 0, 1),
          x = as.integer(x), y = as.integer(y))  %>%
   select(-value)
+ 
+# For CONUS
+mop_df_conus <- Rasts_to_df1(mop, ext_conus, prj_conus) %>% 
+  drop_na() %>%
+  mutate(mop = ifelse(value >= 0.9, 0, 1),
+         x = as.integer(x), y = as.integer(y))  %>%
+  select(-value)
+# 
+# mop_df2 <-  Rasts_to_df1(mop, ext_world, prj_world) %>% 
+#   drop_na() %>%
+#   mutate(value_bin = case_when(value >= 0 & value <= 0.86 ~ "<0.86",
+#                                value > 0.86 & value <= 0.88 ~ "0.86 - 0.88",
+#                                value > 0.88 & value <= 0.9 ~ "0.88 - 0.90",
+#                                value > 0.9 & value <= 0.92 ~ "0.90 - 0.92",
+#                                value > 0.92 & value <= 0.94 ~ "0.92 - 0.94",
+#                                value > 0.94 & value <= 0.96 ~ "0.94 - 0.96",
+#                                value > 0.96 & value <= 0.98 ~ "0.96 - 0.98",
+#                                value > 0.98 ~ "0.98 - 1"))
 
 mop_df2 <-  Rasts_to_df1(mop, ext_world, prj_world) %>% 
   drop_na() %>%
-  mutate(value_bin = case_when(value >= 0 & value <= 0.86 ~ "<0.86",
-                               value > 0.86 & value <= 0.88 ~ "0.86 - 0.88",
-                               value > 0.88 & value <= 0.9 ~ "0.88 - 0.90",
-                               value > 0.9 & value <= 0.92 ~ "0.90 - 0.92",
-                               value > 0.92 & value <= 0.94 ~ "0.92 - 0.94",
-                               value > 0.94 & value <= 0.96 ~ "0.94 - 0.96",
-                               value > 0.96 & value <= 0.98 ~ "0.96 - 0.98",
-                               value > 0.98 ~ "0.98 - 1"))
+  mutate(value_bin = cut_interval(value, 20, dig.lab = 2),
+         value1 = as.numeric(gsub("\\(", "", str_split_fixed(value_bin, "[,]", 2)[,1])),
+         value2 = as.numeric(gsub("\\]", "", str_split_fixed(value_bin, "[,]", 2)[,2]))) %>%
+  mutate(value1 = ifelse(is.na(value1), 0, value1))
+
+mop_df2$value_bin <- paste0(as.character(format(round(mop_df2$value1, 2), nsmall = 2)), 
+                            "-", 
+                            as.character(format(round(mop_df2$value2, 2), nsmall = 2)))
+
 mop_df2$value_bin <- factor(mop_df2$value_bin,
-                           levels = unique(mop_df2$value_bin[order(mop_df2$value)]))
+                            levels = unique(mop_df2$value_bin[order(mop_df2$value)]))
 
 # Edit turbo color scales so last color isn't so dark
-mop_cols <- rev(viridis::turbo(8))
-mop_cols <- c(mop_cols[-8], "#482677FF")
+mop_cols <- viridis::magma(20)
+#mop_cols <- c(mop_cols[-1], "#482677FF")
 
 # MOP plot
 mop.p <- ggplot() + 
   geom_sf(data = world_p, color="gray20",  fill = "gray90", lwd = 0.1) +
   geom_raster(data = mop_df2, aes(x = x, y = y, fill = value_bin)) +
+  #viridis::scale_fill_viridis(option = "turbo", direction = -1) +
   scale_fill_manual(values = mop_cols, name = "MOP index") +
   geom_sf(data = world_l, lwd = 0.1, color = "gray10") + 
   geom_sf(data = na_states_l, lwd = 0.1, color = "gray10") +
   mytheme +
+  #theme(legend.position = "none")
   world_lgd +
-  theme(legend.position = c(0.15, 0.3))
+  theme(legend.position = c(0.11, 0.4),
+        legend.key.width = unit(0.5,"line"), 
+        legend.key.height = unit(0.5,"line"),
+        legend.title = element_text(size = 6.5, face = "bold"),
+        legend.text=element_text(size = 6.5))
 
 # Save plots
 ggsave(mop.p, file = here(outdir, "MOP_map2.png"),
        width = 7, height = 4, units = c('in'), dpi=300)
-ggsave(mop.p, file = here("Final_figures", "MOP_map.png"),
+ggsave(mop.p, file = here("Final_figures", "MOP_map2.png"),
        width = 7, height = 4, units = c('in'), dpi=300)  
-knitr::plot_crop(here("Final_figures", "MOP_map.png"))
+knitr::plot_crop(here("Final_figures", "MOP_map2.png"))
 
 rm(mop_df2, mop.p)
 
@@ -214,7 +239,7 @@ alg_fls <- alg_fls[-grep("MAX_TSS|MAX_KAPPA|LPT|SENSITIVITY|JACCARD|SORENSEN", a
 # Also make plot for weighted mean (ensemble)
 proj_fls <- all_fls[grep("Projection", all_fls)]
 alg_fls <- proj_fls[-grep("MAX_TSS|LPT|SORENSEN|MAX_KAPPA|JACCARD|Extrapolation", proj_fls)]
-alg_fls <- alg_fls[-grep("\\/PCA|\\/PCA_SUP", alg_fls)]
+alg_fls <- alg_fls[-grep("\\/W_MEAN|\\/PCA_SUP", alg_fls)]
 alg_fls <- c(alg_fls[1], alg_fls[3:5], alg_fls[2]) # Reorder
 
 # Format rasters and convert to data frames
@@ -227,14 +252,14 @@ types <- c("BRT", "GAU", "MXS", "RDF", "Ensemble")
 cols <- c("gray90", c(colorRampPalette(c("#313695", "#4575B4","#ABD9E9","#FEF7B3","#FDD992","#FDBC71",
                            "#EB8B55", "#A50026"))(9)))
 # Plots
-eur_alg_suit_plots <- Alg_suit_plots(alg_outs.eur, types, eur_cntry_l, 
+eur_alg_suit_plots <- Alg_suit_plots(alg_outs.eur, "europe", types, eur_cntry_l, 
                                      eur_cntry_p, eur_lgd)
-conus_alg_suit_plots <- Alg_suit_plots(alg_outs.conus, types, conus_states_l, 
+conus_alg_suit_plots <- Alg_suit_plots(alg_outs.conus, "conus", types, conus_states_l, 
                                        conus_states_p, conus_lgd)
-world_alg_suit_plots <- Alg_suit_plots(alg_outs.world, types, world_l, 
+world_alg_suit_plots <- Alg_suit_plots(alg_outs.world, "world", types, world_l, 
                                        world_p, world_lgd)
 
-# Create separate map for ensmble showing areas of extrapolation
+# Create separate map for ensemble showing areas of extrapolation
 ens_suit_msk <- alg_outs.world[[5]] %>%
   mutate(x = as.integer(x), y = as.integer(y)) %>%
   left_join(., mop_df, by = c("x", "y")) %>%
@@ -247,13 +272,14 @@ ens_suit_extr <- alg_outs.world[[5]] %>%
 
 world_ens.p <- world_alg_suit_plots[[5]] +
   geom_raster(data = ens_suit_extr, aes(x = x, y = y), fill = "gray50") +
-  geom_sf(data = world_l, lwd = 0.1, color = "gray10") 
+  geom_sf(data = world_l, lwd = 0.1, color = "gray10") +
+  geom_sf(data = na_states_l, lwd = 0.1, color = "gray10") 
 
 # Arrange plot of CLIMEX vs. ensemble model suitability
-Both_suit_world.p <- plot_grid(CLMX_world.p, world_ens.p, 
-                          ncol = 1, label_x = 0.05,
-                          labels = c("(a) CLIMEX", "(b) Correlative (ensemble)"),                             
-                          label_size = 11, hjust = -0.25, vjust = 1)
+Both_suit_world.p <- plot_grid(CLMX_world.p, world_ens.p, ncol = 1, 
+                          labels = c(str_pad(c(" (a) CLIMEX   "), 30, side = c("right")), "(b) Correlative (ensemble)"),                             
+                          label_size = 11, vjust = 1, label_x = 0.05, align = "both", hjust = -0.3)
+
 ggsave(Both_suit_world.p, file = here("Final_figures", "World_CLIMEX_Ensemble.png"),
        width = 8, height = 7, units = c('in'), dpi=300)
 knitr::plot_crop(here("Final_figures", "World_CLIMEX_Ensemble.png"))
@@ -275,7 +301,7 @@ ggsave(All_algs_suit_conus.p, file= paste0(outdir, "/All_algs_suit_CONUS_noPts.p
        width = 7, height = 5, units = c('in'), dpi=300)
 
 # Create a figure with CLIMEX plot, 4 algorithms, and the ensemble corr. model
-labs2 <- c("(a) CLIMEX", "(b) BRT", "(c) GAU", "(d) MXS", "(e) RDF", "(f) ENS-W")
+labs2 <- c("(a) CLIMEX", "(b) BRT", "(c) GAU", "(d) MXS", "(e) RDF", "(f) ENS-PCA")
 
 # Europe - add points to last plot
 # eur_alg_suit_plots[[5]] <- eur_alg_suit_plots[[5]] +
@@ -420,6 +446,23 @@ ggsave(both_regions_ens_pres_plot, file= here("Final_figures", "All_models_Ensem
        width = 8, height = 6.2, units = c('in'), device = "png", dpi=300)
 knitr::plot_crop(here("Final_figures", "All_models_Ensemble_pres_Eur_v_CONUS_0.3.png"))
 
+# Plots for regions alone
+eur_only_ens_pres_plot <- plot_grid(eur_alg_pres_plot, eur_ens_pres_plot,
+                                        nrow = 1, labels = c("(a)", "(b)"),
+                                        label_size = 15, hjust = 0, vjust = 2.2)
+ggsave(eur_only_ens_pres_plot, file= here("Final_figures", "All_models_Ensemble_pres_Europe_only_0.3.png"),
+       width = 8.1, height = 3.75, units = c('in'), device = "png", dpi=300)
+knitr::plot_crop(here("Final_figures", "All_models_Ensemble_pres_Europe_only_0.3.png"))
+
+conus_alg_pres_plot2 <- conus_alg_pres_plot + 
+  theme(legend.text = element_text(size = 7.5), legend.position = c(0.88, 0.37))
+conus_only_ens_pres_plot <- plot_grid(conus_alg_pres_plot2, conus_ens_pres_plot,
+                                    nrow = 1, labels = c("(a)", "(b)"),
+                                    label_size = 15, hjust = 0, vjust = 1)
+ggsave(conus_only_ens_pres_plot, file= here("Final_figures", "All_models_Ensemble_pres_CONUS_only_0.3.png"),
+       width = 9.5, height = 2.9, units = c('in'), device = "png", dpi=300)
+knitr::plot_crop(here("Final_figures", "All_models_Ensemble_pres_CONUS_only_0.3.png"))
+
 # Save world plot
 ggsave(world_all_pres_plot , filename = here(outdir, "World_CLIMEX_v_Corr_presence_0.3.png"),
        width = 8.5, height = 4, units = c('in'), device = "png", dpi=300) 
@@ -434,6 +477,3 @@ ggsave(world_ens_pres_plot,
        filename = here("Final_figures", "World_CLIMEX_v_Corr_Ensemble_presence.png"),
        width = 8.5, height = 4, units = c('in'), device = "png", dpi=300) 
 knitr::plot_crop(here("Final_figures", "World_CLIMEX_v_Corr_Ensemble_presence.png"))
-
-#rm(list = setdiff(ls(), "out_PCA"))
-
