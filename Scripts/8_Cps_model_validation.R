@@ -1,6 +1,5 @@
-## Script to extract ecoclimatic index (EI) values from Calonectria
-## pseudonaviculata occurrence records for North America as a form of model
-## validation
+## Script to model outputs from Calonectria pseudonaviculata occurrence records
+## for North America as a form of model validation
 
 # Libraries
 library(raster)
