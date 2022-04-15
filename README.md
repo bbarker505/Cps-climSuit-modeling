@@ -25,11 +25,7 @@ Simply clone the repository and follow the instructions below.
 
 ## Usage
 
-Open the R project "Cps_climSuit_modeling.Rproj" in RStudio and click on the 
-"runner.R" script. Running this script will source nine auxillary scripts
-that conduct correlative modeling anlayses and creates tables and maps of
-model outputs produced by CLIMEX and correlatve modeling anlyses. 
-The "runner.R" script can also be run from the command line using RScript.
+Open the R project "Cps_climSuit_modeling.Rproj" and run scripts in numerical order (number in first character of file name). The scripts will conduct correlative modeling anlayses and creates tables and maps of model outputs produced by CLIMEX and correlatve modeling anlyses. 
 
 The "Cps_model_functions.R" script has functions that are used by most 
 of the 9 auxillary scripts. 
