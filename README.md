@@ -45,22 +45,22 @@ The below R packages are used in the project. Please note that the ENMTML
 source code was slightly edited (see manuscript for details). This slightly edited version of 
 ENMTML is also available via my GitHub account.
 
-cowplot
-ENMTML (https://github.com/bbarker505/ENMTML)
-ggalt
-ggrepel
-gtools
-here
-knitr
-maptools
-openxlsx
-raster
-rnaturalearth
-RStoolbox
-sf
-sp
-spatialEco
-tidyverse
+`cowplot`  
+`ENMTML` (https://github.com/bbarker505/ENMTML)  
+`ggalt`  
+`ggrepel`  
+`gtools`  
+`here`  
+`knitr`  
+`maptools`  
+`openxlsx`  
+`raster`  
+`rnaturalearth`  
+`RStoolbox`  
+`sf`  
+`sp`  
+`spatialEco`  
+`tidyverse`  
 
 ## History
 4/15/2022: Completed manuscript revisions; major updates to repository
