@@ -9,6 +9,7 @@ CLIMEX/Figures/
 CLIMEX/Notes/
 CLIMEX/Runs/
 CLIMEX/TIF_files/
+ENMeval/
 ENMTML/Notes/
 ENMTML/Outfiles/Old/
 ENMTML/Correlation_vars/
@@ -16,6 +17,7 @@ Records/Emails/
 Records/Final_MS_table/
 Records/GBIF/
 Records/Other_sources/
+Reports/
 
 # Entire dataset used for modeling (confidential OR info)
 Records/Cps_locations_updated_Apr2021.xlsx
