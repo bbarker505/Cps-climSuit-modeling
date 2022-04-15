@@ -63,7 +63,6 @@ ENMTML is also available via my GitHub account.
 `tidyverse`  
 
 ## History
-4/15/2022: Completed manuscript revisions; major updates to repository
-11/2/2021: Submitted manuscript and updated repository
-9/9/2021: Created repository
-11/2/2021: Last updates
+9/9/2021: Created repository  
+11/2/2021: Last updates before first manuscript submission    
+4/15/2022: Completed manuscript revisions; major updates to repository  
