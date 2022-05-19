@@ -123,7 +123,7 @@ s_sub_Eur <- crop(s_sub, extent(c(xmin = -11.5, xmax = 57, ymin = 35.6, ymax = 7
 # Save cropped bioclimatic variables 
 infls <- list(s_sub, s_sub_EurNA, s_sub_Eur)
 dirs <- c("Projection", "Predictors", "Predictors")
-flds <- c("World", "EUR_NA", "EUR_only")
+flds <- c("World", "EUR_NA_CliMond", "EUR_CliMond")
 
 for (i in seq_along(infls)) {
   
@@ -150,7 +150,7 @@ s_5_vars_Eur <- raster::subset(s_sub_Eur, grep("bio5|bio6|bio7|bio15|bio33",
 # Save cropped bioclimatic variables  
 infls <- list(s_5vars, s_5vars_EurNA, s_5_vars_Eur)
 dirs <- c("Projection", "Predictors", "Predictors")
-flds <- c("World", "EUR_NA", "EUR_only")
+flds <- c("World", "EUR_NA_CliMond", "EUR_CliMond")
 
 for (i in seq_along(infls)) {
   

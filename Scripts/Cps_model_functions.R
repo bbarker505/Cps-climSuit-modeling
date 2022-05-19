@@ -15,21 +15,22 @@ Alg_suit_plots <- function(region_outs, region, types, ln_feat, pol_feat, lgd) {
     # Format results for plotting data in categories (bin probabilities)
     df2 <- Bin_pres2(df) %>%
       filter(!is.na(value_bin))
-    df2$value_bin <- factor(df2$value_bin,
-                           levels = unique(df2$value_bin[order(df2$value)]))
     
-    # Also plot sensitivity threshold (0.3)
+    # Also plot sensitivity threshold (0.3) for Europe and CONUS
     r <- rasterFromXYZ(df)
-    thres <- rasterToContour(r >= 0.3 )
+    if (region %in% c("europe", "conus")) {
+      thres <- rasterToContour(r >= 0.3 )
+    }
     
     # Plot
+    cols <- c("gray90", c(colorRampPalette(c("#313695", "#4575B4","#ABD9E9",
+              "#FEF7B3","#FDD992","#FDBC71","#EB8B55", "#A50026"))(9)))
+
     p <- ggplot() + 
       geom_sf(data = pol_feat, color="gray20",  fill = "gray90", lwd = 0.3) +
       geom_raster(data = df2, aes(x = x, y = y, fill = value_bin)) +
       scale_fill_manual(values = cols, drop = FALSE, na.value = "transparent") +
       geom_sf(data = ln_feat, lwd = 0.2, color = "gray10") +
-      #geom_path(data = thres, aes(x = long, y = lat, group = group), 
-      #          color = "cyan", lwd = 0.1) +
       mytheme +
       theme(legend.title = element_text(angle = 90, size = 8.5, face = "bold")) +
       lgd +
@@ -37,25 +38,25 @@ Alg_suit_plots <- function(region_outs, region, types, ln_feat, pol_feat, lgd) {
                                  title = "Prob. of occurrence"))
     
     # Mask out areas with model extrapolation
-    # if (region == "conus") {
-    # 
-    #   ens_suit_msk <- df %>%
-    #     mutate(x = as.integer(x), y = as.integer(y)) %>%
-    #     left_join(., mop_df_conus, by = c("x", "y")) %>%
-    #     filter(mop == 0)
-    #   
-    #   ens_suit_extr <- df %>%
-    #     mutate(x = as.integer(x), y = as.integer(y)) %>%
-    #     anti_join(., ens_suit_msk, by = c("x", "y")) 
-    #   
-    #   p <- p +
-    #     geom_raster(data = ens_suit_extr, aes(x = x, y = y), fill = "gray50") +
-    #     geom_sf(data = conus_states_l, lwd = 0.1, color = "gray10") 
-    # }
+    if (region == "conus") {
+
+      ens_suit_msk <- df %>%
+        mutate(x = as.integer(x), y = as.integer(y)) %>%
+        left_join(., mop_df_conus, by = c("x", "y")) %>%
+        filter(mop == 0)
+
+      ens_suit_extr <- df %>%
+        mutate(x = as.integer(x), y = as.integer(y)) %>%
+        anti_join(., ens_suit_msk, by = c("x", "y"))
+
+      p <- p +
+        geom_raster(data = ens_suit_extr, aes(x = x, y = y), fill = "gray50") +
+        geom_sf(data = conus_states_l, lwd = 0.1, color = "gray10")
+    }
     
     if (region %in% c("europe", "conus")) {
       p <- p + geom_path(data = thres, aes(x = long, y = lat, group = group), 
-                         color = "cyan", lwd = 0.1) 
+                         color = "magenta", lwd = 0.1) 
     } 
     
     return(p)
@@ -99,6 +100,7 @@ Alg_pres_plot <- function(thres_dfs, ln_feat, pol_feat, recs, region,
     
   } else {
     df <- Sum_presence(thres_dfs)
+    df$value <- factor(df$value, levels = c("1", "2", "3", "4"))
     ln_wd <- 0.3
   }
 
@@ -108,7 +110,7 @@ Alg_pres_plot <- function(thres_dfs, ln_feat, pol_feat, recs, region,
     geom_raster(data = df, aes(x = x, y = y, fill = value)) +
     #scale_fill_viridis_d(option = "plasma", direction = -1) +
     scale_fill_manual(breaks = as.character(1:4),
-                      values = cols_viridis,
+                      values = cols_viridis, drop = FALSE,
                       name = c("Correlative models\nwith presence")) +
     geom_sf(data = ln_feat, lwd = 0.2, color = "gray10") +
     #geom_sf(data = na_states_l, lwd = 0.1, color = "gray10") +
@@ -258,9 +260,10 @@ CLMX_suit_plots <- function(rast, region, ext, prj, pol_feat, ln_feat, lgd, recs
     Bin_CLMX("EI", .) 
   mod_df2 <- mod_df2[[3]]
   
-  # Order factor levels
-  mod_df2$value_bin <- factor(mod_df2$value_bin,
-                              levels = unique(mod_df2$value_bin[order(mod_df2$value)]))
+  # Order factor levels 
+    mod_df2$value_bin <- factor(mod_df2$value_bin,
+                                levels = unique(mod_df2$value_bin[order(mod_df2$value)]))
+  
   # Plot
   cols <- c("gray90", colorRampPalette(
     c("#313695", "#4575B4","#ABD9E9","#FEF7B3","#FDD992","#FDBC71", "#EB8B55", "#A50026"))(7))
@@ -282,7 +285,7 @@ CLMX_suit_plots <- function(rast, region, ext, prj, pol_feat, ln_feat, lgd, recs
   
   if (region %in% c("europe", "conus")) {
     p <- p + geom_path(data = thres, aes(x = long, y = lat, group = group), 
-                       color = "cyan", lwd = 0.1) 
+                       color = "magenta", lwd = 0.1) 
     #ln_wdth <- 0.005
   }
   

@@ -85,12 +85,12 @@ ENMTML_PCA <- function(occ_file, out_PCA) {
   
   # Climate data
   #pred_dir <- here("ENMTML", "All_vars", "Predictors")
-  pred_dir <- here("ENMTML", "All_vars", "Predictors", "EUR_only")
+  pred_dir <- here("ENMTML", "All_vars", "Predictors", "EUR_eobs_21yr")
   proj_dir <- here("ENMTML", "All_vars", "Projection")
   
   for (thres in thresholds) {
     ENMTML(pred_dir = pred_dir, 
-           proj_dir = proj_dir, 
+           #proj_dir = proj_dir, 
            result_dir = out_PCA, 
            occ_file = occ_file,
            sp = "species",
@@ -107,8 +107,8 @@ ENMTML_PCA <- function(occ_file, out_PCA) {
            pres_abs_ratio = 1,
            #part = c(method = "BOOT", replicates = "10", proportion = "0.7"),
            # Partition background data using the "Block" method
-           part = c(method = "BLOCK"),
-           #part = c(method = "KFOLD", folds = '5'),
+           #part = c(method = "BLOCK"),
+           part = c(method = "KFOLD", folds = '5'),
            #algorithm = c("MXS", "MXD"),
            algorithm = c("BRT", "GAU", "MXS", "RDF"),
            thr = c(thres),
@@ -116,7 +116,7 @@ ENMTML_PCA <- function(occ_file, out_PCA) {
            msdm = NULL,
            save_final = TRUE,
            ensemble = c(method = c("W_MEAN", "PCA", "PCA_SUP"), metric="Fpb"),
-           extrapolation = TRUE,
+           extrapolation = FALSE,
            cores = 4)
   }
     

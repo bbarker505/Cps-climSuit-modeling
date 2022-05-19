@@ -10,7 +10,7 @@ library(ggrepel)
 library(gtools)
 
 # Environmental data to use
-climdat <- "EUR_only"
+climdat <- "EUR_CliMond"
 outdir <- here("ENMTML", "Outfiles", "run_PCA_4algs_kfold_prev1_03-29-2022")
 
 # Create directory to save results - can't be in the climate data folder

@@ -5,7 +5,7 @@ library(here)
 
 # Occurrence records - all records and final subset used for correlative models
 #out_PCA <- here("ENMTML", "Outfiles", "run_PCA_09-27-2021")
-all_recs <- read.xlsx(here("Records", "Cps_locations_updated_Apr2021.xlsx")) %>%
+all_recs <- read.xlsx(here("Records", "Cps_locations_updated_Apr2022.xlsx")) %>%
   filter(!(Country == "New Zealand")) # NZ occurrences not used in models
 sub_recs <- read.table(
   here(out_PCA, "Occurrences_Cleaned.txt"), 
@@ -43,5 +43,7 @@ recs_summary <- all_recs2 %>%
 
 write.csv(recs_summary, here(out_PCA, "Occurrences_Summary.csv"), 
           row.names = FALSE)
+
+# count number of county records for CONUS
 
 #rm(list = setdiff(ls(), "out_PCA"))

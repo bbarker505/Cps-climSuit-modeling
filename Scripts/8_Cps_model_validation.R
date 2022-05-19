@@ -5,6 +5,9 @@
 library(raster)
 library(sf)
 library(tidyverse)
+library(tigris)
+library(here)
+library(openxlsx)
 
 # Create folder for analysis results if it doesn't already exist
 if (!file.exists(here("CLIMEX", "Final_outfls", "Analysis"))) {
@@ -17,11 +20,14 @@ GI_rast <- raster(here("CLIMEX", "Final_outfls", "TIFs", "GI_World.tif"))
 
 # Predictions of presence for correlative models
 outdir <- "run_PCA_4algs_kfold_prev1_03-29-2022"
-world_ens <- raster(here("ENMTML", "Outfiles", outdir, 
-                         "Consensus_rasts", "world_ens_consensus.tif"))
+val_dir <- paste0(outdir, "/Validation")
+world_pres <- raster(here("ENMTML", "Outfiles", outdir, "Projection", "World", 
+                          "Ensemble", "PCA", "calonectria_pseudonaviculata.tif"))
+world_pres[world_pres >= 0.3] <- 1
+world_pres[world_pres < 0.3] <- 0
 
 # Occurrence records for North American and New Zealand 
-recs <- read.xlsx(here("Records", "Cps_locations_subm_Nov2021.xlsx"))
+recs <- read.xlsx(here("Records", "Cps_locations_updated_Apr2022.xlsx"))
 #recs <- read.csv(here("Records", "Subsampled", "Cps_locations_noDups_10min.csv"))
 recs_sf <- st_as_sf(recs, coords = c("Longitude", "Latitude"), crs = "+proj=longlat +datum=WGS84")
 recs_val <- filter(recs_sf, Continent %in% c("North America", "New Zealand"))
@@ -71,15 +77,13 @@ write.xlsx(tally_both, here("CLIMEX", "Final_outfls", "Analysis",
                             "N_locs_EI_Lt10.xlsx"), overwrite = TRUE)
 
 ## Validate correlative ensemble model predictions of presence ----
-recs_val.corr <- st_transform(recs_val, CRS("+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 
-                 +datum=WGS84 +units=m +no_defs"))
-Pres_val_corr <- data.frame("Presence" = raster::extract(world_ens, recs_val.corr)) %>%
-  mutate("Continent" = recs_val.corr$Continent, 
-         "Lat" = recs_val.corr$Latitude, "Long" = recs_val.corr$Longitude,
-         "Site" = recs_val.corr$Site, "Country" = recs_val.corr$Country,
-         "State" = recs_val.corr$Region) 
-write.xlsx(sum_stats_corr.cntry, 
-           here("ENMTML", "Outfiles", outdir, "Pt_validation_allData.xlsx"), overwrite = TRUE)
+Pres_val_corr <- data.frame("Presence" = raster::extract(world_pres, recs_val)) %>%
+  mutate("Continent" = recs_val$Continent, 
+         "Lat" = recs_val$Latitude, "Long" = recs_val$Longitude,
+         "Site" = recs_val$Site, "Country" = recs_val$Country,
+         "State" = recs_val$Region) 
+write.xlsx(Pres_val_corr, 
+           here("ENMTML", "Outfiles", val_dir, "Pt_validation_allData.xlsx"), overwrite = TRUE)
 
 sum_stats_corr.cntry <- Pres_val_corr %>% 
   group_by(Continent) %>%
@@ -87,8 +91,68 @@ sum_stats_corr.cntry <- Pres_val_corr %>%
   count(Presence, name = "count") %>%
   mutate(Perc = round(ifelse(Continent == "North America", count/153 * 100, count/6 * 100), 1))
 write.xlsx(sum_stats_corr.cntry, 
-           here("ENMTML", "Outfiles", outdir, "Pt_validation_summary.xlsx"), overwrite = TRUE)
+           here("ENMTML", "Outfiles", val_dir, "Pt_validation_summary.xlsx"), overwrite = TRUE)
 
+## Check that predictions are consistent for city- and county-level records for CONUS
+# Convert EI rast to binary form
+EI_rast[EI_rast < 10] <- 0
+EI_rast[EI_rast >= 10] <- 1
 
-  
+# Spatial info
+county_sf <- tigris::counties(year = 2018, cb = TRUE) 
+city_sf <- tigris::core_based_statistical_areas(year = 2018, cb = TRUE) 
+recs_conus <- filter(recs_val, Country == "United States") %>%
+  st_transform(., st_crs(county_sf))
+
+# Intersect point data with county and city information
+# Result is point object with all columns from sf objects
+county_recs <- filter(recs_conus, grepl("County", Site))
+county_int <- st_intersection(county_sf, county_recs)
+county_sf2 <- st_join(county_sf, county_int, left = FALSE)
+county_sp <- as(county_sf2, "Spatial")
+
+city_recs <- recs_conus %>%
+  filter(!grepl("County", Site)) %>%
+  filter(!(Type == "GBIF"))
+city_int <- st_intersection(county_sf, city_recs)
+city_sf2 <- st_join(city_sf, city_int, left = FALSE)
+city_sp <- as(city_sf2, "Spatial")
+
+# Function to extract predictions
+RasterExtr <- function(rast, feat_sp, feat_df) {
+  extr <- raster::extract(rast, feat_sp, na.rm = TRUE)
+  extr_dfs <- lapply(extr, function(x) { 
+    df <- data.frame(x) %>% 
+      distinct(x)
+    if(nrow(df) == 2) {
+      df <- data.frame(x = "both")
+    }
+    return(df)
+  })
+  extr_dfs2 <- cbind("pres-abs" = do.call("rbind", extr_dfs), 
+                      select(feat_df, Region, Site))
+}
+
+# Extract predictions for CLIMEX model
+# The 0 values for most records are incorrect - the "extract" raster function 
+# is converting NA values to 0 and I can't figure out how to change it.
+clmx_county <- RasterExtr(EI_rast, county_sp, county_sf2) %>% rename("clmx" = "x")
+clmx_city <- RasterExtr(EI_rast, city_sp, city_sf2) %>% rename("clmx" = "x")
+ens_county <- RasterExtr(world_pres, county_sp, county_sf2) %>% rename("ens" = "x")
+ens_city <- RasterExtr(world_pres, city_sp, city_sf2) %>% rename("ens" = "x")
+
+# Join different model results
+both_county <- left_join(clmx_county, ens_county, by = c("Region", "Site", "geometry"))
+both_city <- left_join(clmx_city, ens_city, by = c("Region", "Site", "geometry"))
+
+# Remove erroneous results for CLIMEX
+mixed_pred <- bind_rows(both_county, both_city) %>%
+  filter(clmx == "both" | ens == "both") %>%
+  filter(!(Region %in% c("Connecticut", "New Jersey", "New York"))) %>%
+  select(clmx, ens, Region, Site)
+
+# Save results
+write.xlsx(mixed_pred, 
+           here("ENMTML", "Outfiles", val_dir, "CLMX_ens_poly_extract_mixed.xlsx"), overwrite = TRUE)
+
 #rm(list = ls())

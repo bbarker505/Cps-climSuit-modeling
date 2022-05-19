@@ -1,0 +1,65 @@
+###########################################################
+Start date : 2022-05-16 10:08:05
+End date : 2022-05-16 10:08:49
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_05-16-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_05-16-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-05-16 10:08:53
+End date : 2022-05-16 10:09:14
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_05-16-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_05-16-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-05-16 10:09:16
+End date : 2022-05-16 10:09:36
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_05-16-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_05-16-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-05-16 10:09:39
+End date : 2022-05-16 10:09:59
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_05-16-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_05-16-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata
+###########################################################
+Start date : 2022-05-16 10:10:02
+End date : 2022-05-16 10:10:22
+Algorithm:	MXS	RDF	GAU	BRT
+Ensemble:	W_MEAN	PCA	PCA_SUP
+Partition Method:	KFOLD
+Train percentage (random partition only):	1
+PA Mask: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_05-16-2022/Extent_Masks
+MSDM: 
+Resuls in: C:/Users/barkebri/Documents/Species/BOXB/ENMTML/Outfiles/run_PCA_4algs_05-16-2022
+No species: 1
+Threshold: MAX_TSS
+calonectria_pseudonaviculata

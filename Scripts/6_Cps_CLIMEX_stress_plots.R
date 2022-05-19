@@ -93,21 +93,22 @@ CLMX_pts_world <- Rasts_to_df2(rast_lst, ext_world, prj_world)[-1] # Remove GI
 ## Plots ----
 
 # Themes for plots
-mytheme <- theme(plot.margin = unit(c(0.01,0,0,0),"cm"),
-                 panel.grid.major = element_blank(), 
-                 panel.grid.minor = element_blank(), 
-                 panel.background = element_blank(), 
-                 panel.border = element_blank(),
-                 axis.title.x = element_blank(), axis.title.y = element_blank(), 
-                 axis.ticks = element_blank(),
-                 axis.text.x=element_blank(), axis.text.y=element_blank(), 
-                 legend.text=element_text(size = 9.5),
-                 legend.key.width = unit(0.5,"line"), 
-                 legend.key.height = unit(0.55,"line"),
-                 legend.title = element_text(size = 9.5, face = "bold"),
-                 #legend.position = c(0.15, 0.3),
-                 legend.margin=margin(0.1,0.1,0,0.1, unit="cm"),
-                 legend.background = element_rect(fill = "white"))
+mytheme <- theme(plot.margin = unit(c(t=0, b=0, l=0, r=0),"cm"),
+                plot.background = element_rect(fill = "transparent", color = NA), # bg of the plot
+                panel.border = element_blank(),
+                panel.background = element_rect(fill = "transparent"), # bg of the panel
+                panel.grid.major = element_blank(), # get rid of major grid
+                panel.grid.minor = element_blank(), # get rid of minor grid
+                axis.title.x = element_blank(), axis.title.y = element_blank(), 
+                axis.ticks = element_blank(),
+                axis.text.x=element_blank(), axis.text.y=element_blank(), 
+                legend.text=element_text(size = 8.5),
+                legend.title = element_text(size = 8.5, face = "bold"),
+                #legend.position = c(0.15, 0.3),
+                legend.margin=margin(0.1,0.1,0,0.1, unit="cm"),
+                legend.background = element_rect(fill = "white"), # get rid of legend bg
+                legend.key = element_rect(fill = "white", colour = NA),
+                legend.box.background = element_rect(fill = "white", colour = NA)) # get rid of legend panel bg)
 
 vars <- c("GI", "CS", "HS", "DS")
 
@@ -219,7 +220,7 @@ Stress_eur.p <- plot_grid(eur_maps[[1]], eur_maps[[2]], eur_maps[[3]], eur_maps[
                        ncol = 2, nrow = 2,
                        labels = c("(a) Growth index", "(b) Cold stress",
                                   "(c) Heat stress", "(d) Dry stress"),
-                       label_size = 14, hjust = 0.005 , vjust = 1)
+                       label_size = 14, hjust = 0.005 , vjust = 1.05)
 ggsave(Stress_eur.p, file= here("Final_figures", "CLIMEX_4Stress_Eurasia.png"),
        width = 8, height = 6.7, units = c('in'), dpi=300)
 
@@ -253,7 +254,7 @@ con_maps <- map(1:length(CLMX_pts_conus), function(i) {
   # Make the plot
   p <- ggplot() + 
     geom_sf(data = conus_states_p, color="gray20",  fill = "gray90", lwd = 0.3) +
-    geom_tile(data = df, aes(x = x, y = y, fill = value)) +
+    geom_raster(data = df, aes(x = x, y = y, fill = value)) +
     scale_fill_gradient2(low=low_cols[i], mid = mid_cols[i], high = high_cols[i], 
                         na.value = "transparent",
                         midpoint = midpoints_conus[i],

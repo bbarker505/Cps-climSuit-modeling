@@ -1,0 +1,6 @@
+Sp	Algorithm	Variables	Overall
+1	calonectria_pseudonaviculata	MXS	PC1	0.132311436628315
+2	calonectria_pseudonaviculata	MXS	PC2	0.198698460739803
+3	calonectria_pseudonaviculata	MXS	PC3	0.555724399503698
+4	calonectria_pseudonaviculata	MXS	PC4	0.0658175447923501
+5	calonectria_pseudonaviculata	MXS	PC5	0.0474481583358345
