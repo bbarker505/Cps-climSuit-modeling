@@ -1,19 +1,21 @@
 # Climate suitability modeling study of *Calonectria pseudonaviculata*
 
-Files in this repository replicate results presented in "Potential distribution of invasive boxwood blight pathogen (*Calonectria pseudonaviculata*) as predicted by process-based and correlative models" by Barker et al. (in review). The repository contents include one R project, 10 R scripts, raw and processed CliMond data used for modeling (27 variables), the full and subsampled occurrence record datasets used for modeling, and the CLIMEX outfiles. 
+Files in this repository replicate results presented in "Potential distribution of invasive boxwood blight pathogen (*Calonectria pseudonaviculata*) as predicted by process-based and correlative models" by Barker et al. (in review). The repository contents include one R project, 11 R scripts, raw and processed CliMond data used for modeling (27 variables), the full and subsampled occurrence record datasets used for modeling, and the CLIMEX outfiles. 
 
 All correlative modeling anlayses are conducted within the 
 project; however, the process-based CLIMEX model must be run within a 
 stand-alone software program using parameters presented in the manuscript. 
 The resulting maps and tables associated with correlative models may be slightly 
 different than those presented in the manuscript due to random sampling of 
-locations used for correlative models (both prior to and during modeling).
+locations used for correlative models (both prior to and during modeling).  
 
 Subsetted occurrence records and formatted climate data are provided in this
 repository; however, running the project will re-do the entire process
 of creating these files using the full occurrence records dataset
-(~/Records/Cps_locations_updated_Nov2021) and raw climate data (files in 
-~/CliMond_raw). 
+(~/Records/Cps_locations_updated_Apr2022_noORcoords.xlsx) and raw climate data (files in 
+~/CliMond_raw).  
+
+Please note that several OR coordinates could not be shared owing to confidentiality concerns.
 
 ## Installation
 
@@ -50,6 +52,7 @@ ENMTML is also available via my GitHub account.
 `knitr`  
 `maptools`  
 `openxlsx`  
+`patchwork`  
 `raster`  
 `rnaturalearth`  
 `RStoolbox`  
@@ -57,8 +60,10 @@ ENMTML is also available via my GitHub account.
 `sp`  
 `spatialEco`  
 `tidyverse`  
+`tigris`  
 
 ## History
 9/9/2021: Created repository  
 11/2/2021: Last updates before first manuscript submission    
 4/15/2022: Completed manuscript revisions; major updates to repository  
+5/19/2022: Final updates to repository upong re-submitting a revised manuscript
