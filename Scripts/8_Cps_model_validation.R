@@ -27,7 +27,7 @@ world_pres[world_pres >= 0.3] <- 1
 world_pres[world_pres < 0.3] <- 0
 
 # Occurrence records for North American and New Zealand 
-recs <- read.xlsx(here("Records", "Cps_locations_updated_Apr2022.xlsx"))
+recs <- read.xlsx(here("Records", "Cps_locations_updated_Apr2022_noORcoords.xlsx"))
 #recs <- read.csv(here("Records", "Subsampled", "Cps_locations_noDups_10min.csv"))
 recs_sf <- st_as_sf(recs, coords = c("Longitude", "Latitude"), crs = "+proj=longlat +datum=WGS84")
 recs_val <- filter(recs_sf, Continent %in% c("North America", "New Zealand"))

@@ -26,24 +26,25 @@ occ_file <- here("ENMTML", "Locations", "Cps_EurAsia_only_sites_03-28-2022.txt")
 # threshold types on the ensemble model so need to do separate runs for each
 thresholds <- c("MAX_TSS", "MAX_KAPPA", "JACCARD", "SORENSEN")
 thresholds <- c("MAX_TSS")
+predictors <- "EUR_CliMond"
 
 ## Run ENMTML ----
 
 # Run 1: Uses a subset of bioclimatic variables
 today <- format(Sys.Date(), "%m-%d-%Y")
-out_sub <- here("ENMTML", "Outfiles", paste0("run_r75_", today))
-dir.create(out_sub)
+#outdir <- here("ENMTML", "Outfiles", paste0("run_r75_", today))
+#dir.create(outdir)
 
-ENMTML_subset <- function(occ_file, out_sub) {
+ENMTML_subset <- function(occ_file, outdir) {
   
   # Climate data
-  pred_dir <- here("ENMTML", "Sub_vars", "Predictors", "EUR_only")
+  pred_dir <- here("ENMTML", "Sub_vars", "Predictors", predictors)
   proj_dir <- here("ENMTML", "Sub_vars", "Projection")
   
   for (thres in thresholds) {
     ENMTML(pred_dir = pred_dir, 
            proj_dir = proj_dir, 
-           result_dir = out_sub, 
+           result_dir = outdir, 
            occ_file = occ_file,
            sp = "species",
            x = "longitude", 
@@ -69,29 +70,29 @@ ENMTML_subset <- function(occ_file, out_sub) {
     
   }
     # Create and export evaluation statistic and variable contribution tables
-    Eval_stats_tbl(out_sub)
-    Var_contib_tbl(out_sub)
+    Eval_stats_tbl(outdir)
+    Var_contib_tbl(outdir)
   
 }
 
 # Run function
-ENMTML_subset(occ_file = occ_file, out_sub)
+#ENMTML_subset(occ_file = occ_file, outdir)
 
 # Run 2: Uses PCA transformed bioclimatic variables 
-out_PCA <- here("ENMTML", "Outfiles", paste0("run_PCA_4algs_", today))
-dir.create(out_PCA)
+outdir <- here("ENMTML", "Outfiles", paste0("run_PCA_4algs_", today))
+dir.create(outdir)
 
-ENMTML_PCA <- function(occ_file, out_PCA) {
+ENMTML_PCA <- function(occ_file, outdir) {
   
   # Climate data
   #pred_dir <- here("ENMTML", "All_vars", "Predictors")
-  pred_dir <- here("ENMTML", "All_vars", "Predictors", "EUR_eobs_21yr")
+  pred_dir <- here("ENMTML", "All_vars", "Predictors", predictors)
   proj_dir <- here("ENMTML", "All_vars", "Projection")
   
   for (thres in thresholds) {
     ENMTML(pred_dir = pred_dir, 
-           #proj_dir = proj_dir, 
-           result_dir = out_PCA, 
+           proj_dir = proj_dir, 
+           result_dir = outdir, 
            occ_file = occ_file,
            sp = "species",
            x = "longitude", 
@@ -116,17 +117,17 @@ ENMTML_PCA <- function(occ_file, out_PCA) {
            msdm = NULL,
            save_final = TRUE,
            ensemble = c(method = c("W_MEAN", "PCA", "PCA_SUP"), metric="Fpb"),
-           extrapolation = FALSE,
+           extrapolation = TRUE,
            cores = 4)
   }
     
   # Create and export evaluation statistic and variable contribution tables
-  Eval_stats_tbl(out_PCA)
-  Var_contib_tbl(out_PCA)
+  Eval_stats_tbl(outdir)
+  Var_contib_tbl(outdir)
 }
 
 # Run function
-ENMTML_PCA(occ_file = occ_file, out_PCA)
+ENMTML_PCA(occ_file = occ_file, outdir)
 
 # Create directory for final figures to use in manuscript
 if (!file.exists(here("Final_figures"))) {

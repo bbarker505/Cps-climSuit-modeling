@@ -38,6 +38,32 @@ fls <- all_fls[-grep("Projection", all_fls)]
 sf_use_s2(FALSE) # Avoid "Error in s2_geography_from_wkb..."
 
 # Extents and spatial features
+
+# For some reason st_crop is not working right so have to convert to sp obj first
+sf_use_s2(FALSE) # Avoid projection issue - unclear why this works but does
+
+# World
+ext_world <- c(xmin = -165,  xmax = 175, ymin= -59.47275, ymax = 83.6341)
+prj_world <- CRS("+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 
+                 +datum=WGS84 +units=m +no_defs")
+world <- ne_countries(scale = 10, type = "countries", returnclass = "sf") %>%
+  filter(!(admin == "Antarctica"))
+ext_world <- as(raster::extent(-165, 175, -59.47275, 83.6341), "SpatialPolygons")
+world <- st_crop(world, ext_world)
+
+# Remove very small countries and convert to poly and line feats
+data(wrld_simpl, package = "maptools")
+wrld_data <- as.data.frame(wrld_simpl@data)
+keep <- filter(wrld_data, FIPS %in% c("TW", "RB", "SV", "WI", "HK", "BE"))
+small_cntry <- wrld_data %>% 
+  filter(AREA > 400, !FIPS %in% c("FJ", "FP", "WS")) %>%
+  bind_rows(., keep)
+world2 <- semi_join(world, small_cntry, by = c("fips_10_" = "FIPS")) %>%
+  bind_rows(., filter(world, admin == "Norway")) # why does Norway get dropped?
+world_p <- st_transform(world2, prj_world)
+world_l <- st_cast(world2, "MULTILINESTRING") # Create line feature
+rm(world)
+
 # Eurasia
 ext_eur <- c(xmin = -10.5, xmax = 57, ymin = 35.67, ymax = 71.3)
 prj_eur <- CRS("+proj=lcc +lat_1=43 +lat_2=62 +lat_0=30 +lon_0=10 +x_0=0 +y_0=0 
@@ -49,7 +75,7 @@ eur_cntry_l <- eur_cntry_feats[[2]] # Line features
 # CONUS
 ext_conus <- c(xmin = -129, xmax = -51, ymin= 24.9, ymax = 52)
 prj_conus <- CRS("+init=epsg:5070")
-conus_states_feats <- RegionCrop(type = "states", ext = ext_conus, prj = prj_conus)
+pconus_states_feats <- RegionCrop(type = "states", ext = ext_conus, prj = prj_conus)
 conus_states_p <- conus_states_feats[[1]] # Polygon feature
 conus_states_l <- conus_states_feats[[2]] # Line features
 
@@ -65,33 +91,6 @@ prj_nz <- CRS("+init=epsg:2193")
 nz_cntry_feats <- RegionCrop(type = "countries", ext = ext_nz, prj = prj_nz)
 nz_cntry_p <- nz_cntry_feats[[1]] # Polygon feature
 nz_cntry_l <- nz_cntry_feats[[2]] # Line features
-
-# World
-ext_world <- c(xmin = -165,  xmax = 175, ymin= -59.47275, ymax = 83.6341)
-prj_world <- CRS("+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 
-                 +datum=WGS84 +units=m +no_defs")
-
-# Polygon and line for world countries
-world <- ne_countries(scale = 10, type = "countries", returnclass = "sf") %>%
-  filter(!(admin == "Antarctica"))
-ext_world <- as(raster::extent(-165, 175, -59.47275, 83.6341), "SpatialPolygons")
-
-# For some reason st_crop is not working right so have to convert to sp obj first
-sf_use_s2(FALSE) # Avoid projection issue - unclear why this works but does
-world <- st_crop(world, ext_world)
-
-# Remove very small countries and convert to poly and line feats
-data(wrld_simpl, package = "maptools")
-wrld_data <- as.data.frame(wrld_simpl@data)
-keep <- filter(wrld_data, FIPS %in% c("TW", "RB", "SV", "WI", "HK", "BE"))
-small_cntry <- wrld_data %>% 
-  filter(AREA > 400, !FIPS %in% c("FJ", "FP", "WS")) %>%
-  bind_rows(., keep)
-world2 <- semi_join(world, small_cntry, by = c("fips_10_" = "FIPS")) %>%
-  bind_rows(., filter(world, admin == "Norway")) # why does Norway get dropped?
-world_p <- st_transform(world2, prj_world)
-world_l <- st_cast(world2, "MULTILINESTRING") # Create line feature
-rm(world)
 
 # Occurrence records
 # Use models fit to region and subsetted occurrences used for fitting

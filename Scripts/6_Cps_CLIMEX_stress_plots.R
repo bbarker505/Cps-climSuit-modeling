@@ -20,7 +20,7 @@ DS_rast <- raster(here("CLIMEX", "Final_outfls", "TIFs", "DS_World.tif"))
 rast_lst <- list(GI_rast, CS_rast, HS_rast, DS_rast)
 
 # Occurrence records
-recs <- read.xlsx(here("Records", "Cps_locations_updated_Apr2021.xlsx")) 
+recs <- read.xlsx(here("Records", "Cps_locations_updated_Apr2022_noORcoords.xlsx")) 
 coordinates(recs) <- ~Longitude + Latitude
 crs(recs) <- CRS("+proj=longlat +datum=WGS84")
 recs_sf <- st_as_sf(recs)

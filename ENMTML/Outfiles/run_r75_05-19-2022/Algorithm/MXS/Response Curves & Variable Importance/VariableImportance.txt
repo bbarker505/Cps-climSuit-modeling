@@ -1,0 +1,11 @@
+Sp	Algorithm	Variables	Overall
+1	calonectria_pseudonaviculata	MXS	bio15	0.224385651378982
+2	calonectria_pseudonaviculata	MXS	bio33	0.151825277407933
+3	calonectria_pseudonaviculata	MXS	bio5	0.0586716828711595
+4	calonectria_pseudonaviculata	MXS	bio6	0.268909649680646
+5	calonectria_pseudonaviculata	MXS	bio7	0.29620773866128
+1	calonectria_pseudonaviculata	MXS	bio15	0.219895162991118
+2	calonectria_pseudonaviculata	MXS	bio33	0.144167027786371
+3	calonectria_pseudonaviculata	MXS	bio5	0.054618786715014
+4	calonectria_pseudonaviculata	MXS	bio6	0.283300613821911
+5	calonectria_pseudonaviculata	MXS	bio7	0.298018408685585

@@ -7,6 +7,7 @@ library(sp)
 library(spatialEco)
 library(dismo)
 library(openxlsx)
+library(gtools)
 
 # Load functions
 source(here("scripts", "Cps_model_functions.R"))
@@ -17,7 +18,7 @@ if (!file.exists(here("Records", "Subsampled"))) {
 }
 
 # Import and format data ----
-pts <- read.xlsx(here("Records", "Cps_locations_updated_Apr2021.xlsx")) %>%
+pts <- read.xlsx(here("Records", "Cps_locations_updated_Apr2022_noORcoords.xlsx")) %>%
   rename("x" =  "Longitude", "y" = "Latitude")
 output_dir <- here("Records")
 
@@ -165,4 +166,4 @@ for (i in seq_along(infls)) {
   
 }
 
-rm(list = ls())
+#rm(list = ls())

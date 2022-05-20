@@ -1,2 +1,2 @@
 "Species"	"UniqueOcc"
-"calonectria_pseudonaviculata"	78
+"calonectria_pseudonaviculata"	64
