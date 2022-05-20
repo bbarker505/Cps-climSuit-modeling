@@ -38,6 +38,13 @@ All figures (maps) of model outputs will be saved to a folder named "~/Final_fig
 
 Please read the comments within each R script for further clarity on the process.
 
+## Predictors
+Predictors used for analyses presented in the manuscript include the following:  
+/All_vars/Predictors/EUR_CliMond: CliMond data (bio1-19, bio28-35) for Europe/western Asia  
+/All_vars/Predictors/EUR_EOBS_21yr: E-OBS data (transformed to bio1-19) for 2000-2020 for Europe  
+/All_vars/Predictors/EUR_EOBS_30yr: E-OBS data (transformed to bio1-19) for 1961-1990 for Europe  
+/All_vars/Projection/World: CliMond data (bio1-19, bio28-35) for world
+
 ## Packages
 The below R packages are used in the project. Please note that the ENMTML
 source code was slightly edited (see manuscript for details). This slightly edited version of 

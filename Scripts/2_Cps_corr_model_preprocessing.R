@@ -141,29 +141,29 @@ for (i in seq_along(infls)) {
 
 # Subset of minimally correlated bioclimatic variables:
 # bio5, bio6, bio7, bio15, bio33
-s_5vars <- raster::subset(s_sub, grep("bio5|bio6|bio7|bio15|bio33", 
-                                     names(s_sub), value = TRUE))
-s_5vars_EurNA <- raster::subset(s_sub_EurNA, grep("bio5|bio6|bio7|bio15|bio33", 
-                                        names(s_sub_EurNA), value = TRUE))
-s_5_vars_Eur <- raster::subset(s_sub_Eur, grep("bio5|bio6|bio7|bio15|bio33", 
-                                                 names(s_sub_Eur), value = TRUE))
-
-# Save cropped bioclimatic variables  
-infls <- list(s_5vars, s_5vars_EurNA, s_5_vars_Eur)
-dirs <- c("Projection", "Predictors", "Predictors")
-flds <- c("World", "EUR_NA_CliMond", "EUR_CliMond")
-
-for (i in seq_along(infls)) {
-  
-  s <- infls[[i]]
-  
-  for (j in seq_along(1:nlayers(s))) {
-    nam <- names(s)[[j]]
-    writeRaster(s[[j]], 
-                filename = here("ENMTML", "Sub_vars", dirs[i], flds[i], paste0(nam, ".asc")),
-                format = "ascii", overwrite = TRUE)
-  }
-  
-}
+# s_5vars <- raster::subset(s_sub, grep("bio5|bio6|bio7|bio15|bio33", 
+#                                      names(s_sub), value = TRUE))
+# s_5vars_EurNA <- raster::subset(s_sub_EurNA, grep("bio5|bio6|bio7|bio15|bio33", 
+#                                         names(s_sub_EurNA), value = TRUE))
+# s_5_vars_Eur <- raster::subset(s_sub_Eur, grep("bio5|bio6|bio7|bio15|bio33", 
+#                                                  names(s_sub_Eur), value = TRUE))
+# 
+# # Save cropped bioclimatic variables  
+# infls <- list(s_5vars, s_5vars_EurNA, s_5_vars_Eur)
+# dirs <- c("Projection", "Predictors", "Predictors")
+# flds <- c("World", "EUR_NA_CliMond", "EUR_CliMond")
+# 
+# for (i in seq_along(infls)) {
+#   
+#   s <- infls[[i]]
+#   
+#   for (j in seq_along(1:nlayers(s))) {
+#     nam <- names(s)[[j]]
+#     writeRaster(s[[j]], 
+#                 filename = here("ENMTML", "Sub_vars", dirs[i], flds[i], paste0(nam, ".asc")),
+#                 format = "ascii", overwrite = TRUE)
+#   }
+#   
+# }
 
 #rm(list = ls())

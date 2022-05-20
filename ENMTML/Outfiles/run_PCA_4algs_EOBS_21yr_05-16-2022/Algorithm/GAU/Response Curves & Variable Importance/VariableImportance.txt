@@ -1,6 +1,0 @@
-Sp	Algorithm	Variables	Overall
-1	calonectria_pseudonaviculata	GAU	PC1	0.275
-2	calonectria_pseudonaviculata	GAU	PC2	0.163
-3	calonectria_pseudonaviculata	GAU	PC3	0.447
-4	calonectria_pseudonaviculata	GAU	PC4	0.103
-5	calonectria_pseudonaviculata	GAU	PC5	0.011
