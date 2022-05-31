@@ -1,6 +1,6 @@
 # Climate suitability modeling study of *Calonectria pseudonaviculata*
 
-Files in this repository replicate results presented in "Potential distribution of invasive boxwood blight pathogen (*Calonectria pseudonaviculata*) as predicted by process-based and correlative models" by Barker et al. (in review). The repository contents include one R project, 11 R scripts, raw and processed CliMond data used for modeling (27 variables), the full and subsampled occurrence record datasets used for modeling, and the CLIMEX outfiles. 
+Files in this repository replicate the majority of results presented in "Potential distribution of invasive boxwood blight pathogen (*Calonectria pseudonaviculata*) as predicted by process-based and correlative models" by Barker et al. (2022) *Biology* (in press). The repository contents include one R project, 11 R scripts, raw and processed CliMond data used for modeling (27 variables), the full and subsampled occurrence record datasets used for modeling, and the CLIMEX outfiles. 
 
 All correlative modeling anlayses are conducted within the 
 project; however, the process-based CLIMEX model must be run within a 
