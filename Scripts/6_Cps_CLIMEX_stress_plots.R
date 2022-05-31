@@ -12,12 +12,14 @@ ld_pkgs <- lapply(pkgs, library, character.only = TRUE) # load them
 # Load functions
 source(here("Scripts", "Cps_model_functions.R"))
 
-## Get CLIMEX model outputs and occurrence records ----
-GI_rast <- raster(here("CLIMEX", "Final_outfls", "TIFs", "GI_World.tif"))
-CS_rast <- raster(here("CLIMEX", "Final_outfls", "TIFs", "CS_World.tif"))
-HS_rast <- raster(here("CLIMEX", "Final_outfls", "TIFs", "HS_World.tif"))
-DS_rast <- raster(here("CLIMEX", "Final_outfls", "TIFs", "DS_World.tif"))
-rast_lst <- list(GI_rast, CS_rast, HS_rast, DS_rast)
+clmx_outs <- here("CLIMEX", "Final_outfls", "TIFs")
+clmx_outs <- here("CLIMEX", "TIF_files", "run10")
+
+##  Get CLIMEX model outputs and occurrence records ----
+var_lst <- c("GI", "CS", "HS", "DS")
+rast_lst <- map(var_lst, function(x) { 
+  raster(list.files(path = here(clmx_outs), pattern = x, full.names = TRUE))
+})
 
 # Occurrence records
 recs <- read.xlsx(here("Records", "Cps_locations_updated_Apr2022_noORcoords.xlsx")) 
@@ -143,11 +145,11 @@ eur_maps <- map(1:length(CLMX_pts_eur), function(i) {
                           levels = unique(df2$value_bin[order(df2$value)])) 
   
   # Change legend title for EI irrigated
-  if (var == "EI.ir") {
-    lgd_titl <- "EI"
-  } else {
+  # if (var == "EI.ir") {
+  #   lgd_titl <- "EI"
+  # } else {
     lgd_titl <- var
-  }
+  #}
   
   # Plot with continuous scale
   cols2 <- setNames(cols_binned[[i]], levels(df2$value_bin))
@@ -316,7 +318,7 @@ Stress_conus.p <- plot_grid(con_maps[[1]], con_maps[[2]], con_maps[[3]], con_map
                           labels = c("(a) Growth index", "(b) Cold stress",
                                      "(c) Heat stress", "(d) Dry stress"),
                           label_size = 14, hjust = 0 , vjust = 1.05)
-ggsave(Stress_conus.p, file= here("Final_figures", "CLIMEX_4Stress_CONUS.png"),
+ggsave(Stress_conus.p, file= here("Final_figures", "CLIMEX_4Stress_CONUS_DV1-17_DV2-22.png"),
        width = 8, height = 5.1, units = c('in'), dpi=300)
 
 

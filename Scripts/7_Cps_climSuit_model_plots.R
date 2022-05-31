@@ -14,10 +14,7 @@ ld_pkgs <- lapply(pkgs, library, character.only = TRUE) # load them
 source(here("Scripts", "Cps_model_functions.R"))
 
 # Outputs
-out_PCA <- here("ENMTML", "Outfiles", "run_PCA_4algs_kfold_prev1_03-29-2022")
-outdir <- out_PCA
-#out_PCA <- here("ENMTML", "Outfiles", "run_PCA_9-27-2021")
-#outdir <- here("ENMTML", "Outfiles", "run_r75_03-24-2022")
+outdir <- here("ENMTML", "run_PCA_4algs_kfold_prev1_03-29-2022")
 
 ## Get model outputs and occurrence records ----
 # CLIMEX model
@@ -176,7 +173,7 @@ CLMX_world.p <- CLMX_suit_plots(CLMX_mod, "world", ext_world, prj_world, world_p
   geom_sf(data = na_states_l, lwd = 0.1, color = "gray10")
 
 # Save world plot
-ggsave(CLMX_world.p, file = here("Final_figures", "World_CLIMEX.png"), 
+ggsave(CLMX_world.p, file = here("Final_figures", "World_CLIMEX_DV1-17_DV2-22.png"), 
        width = 8, height = 4, units = c('in'), dpi=300)
 knitr::plot_crop(here("Final_figures", "World_CLIMEX.png"))
 
