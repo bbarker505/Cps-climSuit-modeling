@@ -74,6 +74,7 @@ ENMTML is also available via my GitHub account.
 11/2/2021: Last updates before first manuscript submission    
 4/15/2022: Completed manuscript revisions; major updates to repository  
 5/19/2022: Final updates to repository upong re-submitting a revised manuscript
+5/31/2022: Final udpates (again) prior to submitting this repository to Zenodo for permanent archiving
 
 ## References
 Barker, B. S., L. Coop, and C. Hong. 2022. Potential distribution of invasive boxwood blight pathogen (*Calonectria pseudonaviculata*) as predicted by process-based and correlative models. *Biology* In Press.
