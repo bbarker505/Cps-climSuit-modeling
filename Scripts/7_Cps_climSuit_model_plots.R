@@ -14,7 +14,7 @@ ld_pkgs <- lapply(pkgs, library, character.only = TRUE) # load them
 source(here("Scripts", "Cps_model_functions.R"))
 
 # Outputs
-outdir <- here("ENMTML", "run_PCA_4algs_kfold_prev1_03-29-2022")
+#outdir <- here("ENMTML", "Outfiles", "run_PCA_4algs_kfold_prev1_03-29-2022")
 
 ## Get model outputs and occurrence records ----
 # CLIMEX model
@@ -72,7 +72,7 @@ eur_cntry_l <- eur_cntry_feats[[2]] # Line features
 # CONUS
 ext_conus <- c(xmin = -129, xmax = -51, ymin= 24.9, ymax = 52)
 prj_conus <- CRS("+init=epsg:5070")
-pconus_states_feats <- RegionCrop(type = "states", ext = ext_conus, prj = prj_conus)
+conus_states_feats <- RegionCrop(type = "states", ext = ext_conus, prj = prj_conus)
 conus_states_p <- conus_states_feats[[1]] # Polygon feature
 conus_states_l <- conus_states_feats[[2]] # Line features
 
@@ -302,9 +302,9 @@ Both_suit_world.p <- plot_grid(CLMX_world.p, world_ens.p, ncol = 1,
                           labels = c(str_pad(c(" (a) CLIMEX   "), 30, side = c("right")), "(b) Correlative (ensemble)"),                             
                           label_size = 11, vjust = 1, label_x = 0.05, align = "both", hjust = -0.3)
 
-ggsave(Both_suit_world.p, file = here("Final_figures", "World_CLIMEX_Ensemble.png"),
+ggsave(Both_suit_world.p, file = here("Final_figures", "World_CLIMEX_Ensemble.tiff"),
        width = 8, height = 7, units = c('in'), dpi=300)
-knitr::plot_crop(here("Final_figures", "World_CLIMEX_Ensemble.png"))
+knitr::plot_crop(here("Final_figures", "World_CLIMEX_Ensemble.tiff"))
 
 # Arrange and save plots for 4 algorithms (supporting info)
 labs1 <- c("(a) BRT", "(b) GAU", "(c) MXS", "(d) RDF")
@@ -364,15 +364,15 @@ ggsave(All_models_suit_nz.p, file= paste0(outdir, "/All_models_climSuit_NZ_noPts
        width = 8, height = 8, units = c('in'), dpi=300)
 
 # Save to "Final_figures" folder
-ggsave(All_models_suit_eur.p, file = here("Final_figures", "All_models_suit_Eurasia.png"),
+ggsave(All_models_suit_eur.p, file = here("Final_figures", "All_models_suit_Eurasia.tiff"),
        width = 7, height = 9.5, units = c('in'), dpi=300)
-knitr::plot_crop(here("Final_figures", "All_models_suit_Eurasia.png"))
-ggsave(All_models_suit_conus.p, file= here("Final_figures", "All_models_suit_CONUS.png"),
-       width = 7, height = 7.5, units = c('in'), dpi=300)
-knitr::plot_crop(here("Final_figures", "All_models_suit_CONUS.png"))
-ggsave(All_models_suit_nz.p, file = here("Final_figures", "/All_models_suit_NZ.png"),
+knitr::plot_crop(here("Final_figures", "All_models_suit_Eurasia.tiff"))
+ggsave(All_models_suit_conus.p, file= here("Final_figures", "All_models_suit_CONUS.tiff"),
+       width = 7.25, height = 7.5, units = c('in'), dpi=300)
+knitr::plot_crop(here("Final_figures", "All_models_suit_CONUS.tiff"))
+ggsave(All_models_suit_nz.p, file = here("Final_figures", "/All_models_suit_NZ.tiff"),
        width = 9, height = 8.25, units = c('in'), dpi=300)
-knitr::plot_crop(here("Final_figures", "All_models_suit_NZ.png"))
+knitr::plot_crop(here("Final_figures", "All_models_suit_NZ.tiff"))
 
 rm(CLMX_eur.p, CLMX_conus.p, CLMX_world.p, eur_alg_suit_plots, 
    conus_alg_suit_plots, world_alg_suit_plots)
@@ -480,46 +480,46 @@ both_regions_all_pres_plot <- plot_grid(eur_alg_pres_plot, conus_alg_pres_plot,
                                         eur_all_pres_plot, conus_all_pres_plot,
                                         nrow = 2, labels = c("(a) Europe and western Asia", "(b) North America", "", ""),
                                         label_size = 12, hjust = 0, vjust = 1)
-ggsave(both_regions_all_pres_plot, file= here("Final_figures", "All_models_pres_Eur_v_CONUS_0.3.png"),
-       width = 8, height = 6.2, units = c('in'), device = "png", dpi=300)
-knitr::plot_crop(here("Final_figures", "All_models_pres_Eur_v_CONUS_0.3.png"))
+ggsave(both_regions_all_pres_plot, file= here("Final_figures", "All_models_pres_Eur_v_CONUS_0.3.tiff"),
+       width = 8, height = 6.2, units = c('in'), dpi=300)
+knitr::plot_crop(here("Final_figures", "All_models_pres_Eur_v_CONUS_0.3.tiff"))
 
 both_regions_ens_pres_plot <- plot_grid(eur_alg_pres_plot, conus_alg_pres_plot, 
                                         eur_ens_pres_plot, conus_ens_pres_plot,
                                         nrow = 2, labels = c("(a) Europe and western Asia", "(b) North America", "", ""),
                                         label_size = 12, hjust = 0, vjust = 1)
-ggsave(both_regions_ens_pres_plot, file= here("Final_figures", "All_models_Ensemble_pres_Eur_v_CONUS_0.3.png"),
-       width = 8, height = 6.2, units = c('in'), device = "png", dpi=300)
-knitr::plot_crop(here("Final_figures", "All_models_Ensemble_pres_Eur_v_CONUS_0.3.png"))
+ggsave(both_regions_ens_pres_plot, file= here("Final_figures", "All_models_Ensemble_pres_Eur_v_CONUS_0.3.tiff"),
+       width = 8, height = 6.2, units = c('in'), dpi=300)
+knitr::plot_crop(here("Final_figures", "All_models_Ensemble_pres_Eur_v_CONUS_0.3.tiff"))
 
 # Plots for regions alone
 eur_only_ens_pres_plot <- plot_grid(eur_alg_pres_plot, eur_ens_pres_plot,
                                         nrow = 1, labels = c("(a)", "(b)"),
                                         label_size = 15, hjust = 0, vjust = 2.2)
-ggsave(eur_only_ens_pres_plot, file= here("Final_figures", "All_models_Ensemble_pres_Europe_only_0.3.png"),
-       width = 8.1, height = 3.75, units = c('in'), device = "png", dpi=300)
-knitr::plot_crop(here("Final_figures", "All_models_Ensemble_pres_Europe_only_0.3.png"))
+ggsave(eur_only_ens_pres_plot, file= here("Final_figures", "All_models_Ensemble_pres_Europe_only_0.3.tiff"),
+       width = 8.1, height = 3.45, units = c('in'), dpi=300)
+knitr::plot_crop(here("Final_figures", "All_models_Ensemble_pres_Europe_only_0.3.tiff"))
 
 conus_alg_pres_plot2 <- conus_alg_pres_plot + 
   theme(legend.text = element_text(size = 7.5), legend.position = c(0.88, 0.37))
 conus_only_ens_pres_plot <- plot_grid(conus_alg_pres_plot2, conus_ens_pres_plot,
                                     nrow = 1, labels = c("(a)", "(b)"),
                                     label_size = 15, hjust = 0, vjust = 1)
-ggsave(conus_only_ens_pres_plot, file= here("Final_figures", "All_models_Ensemble_pres_CONUS_only_0.3.png"),
-       width = 9.5, height = 2.9, units = c('in'), device = "png", dpi=300)
-knitr::plot_crop(here("Final_figures", "All_models_Ensemble_pres_CONUS_only_0.3.png"))
+ggsave(conus_only_ens_pres_plot, file= here("Final_figures", "All_models_Ensemble_pres_CONUS_only_0.3.tiff"),
+       width = 9.5, height = 2.9, units = c('in'), dpi=300)
+knitr::plot_crop(here("Final_figures", "All_models_Ensemble_pres_CONUS_only_0.3.tiff"))
 
 # Save world plot
-ggsave(world_all_pres_plot , filename = here(outdir, "World_CLIMEX_v_Corr_presence_0.3.png"),
+ggsave(world_all_pres_plot , filename = here(outdir, "World_CLIMEX_v_Corr_presence_0.3.tiff"),
        width = 8.5, height = 4, units = c('in'), device = "png", dpi=300) 
 ggsave(world_all_pres_plot, 
-       filename = here("Final_figures", "World_CLIMEX_v_Corr_presence.png"),
-       width = 8.5, height = 4, units = c('in'), device = "png", dpi=300) 
-knitr::plot_crop(here("Final_figures", "World_CLIMEX_v_Corr_presence.png"))
+       filename = here("Final_figures", "World_CLIMEX_v_Corr_presence.tiff"),
+       width = 8.5, height = 4, units = c('in'),  dpi=300) 
+knitr::plot_crop(here("Final_figures", "World_CLIMEX_v_Corr_presence.tiff"))
 
-ggsave(world_ens_pres_plot , filename = here(outdir, "World_CLIMEX_v_Corr_Ensemble_presence_0.3.png"),
+ggsave(world_ens_pres_plot , filename = here(outdir, "World_CLIMEX_v_Corr_Ensemble_presence_0.3.tiff"),
        width = 8.5, height = 4, units = c('in'), device = "png", dpi=300) 
 ggsave(world_ens_pres_plot, 
-       filename = here("Final_figures", "World_CLIMEX_v_Corr_Ensemble_presence.png"),
-       width = 8.5, height = 4, units = c('in'), device = "png", dpi=300) 
-knitr::plot_crop(here("Final_figures", "World_CLIMEX_v_Corr_Ensemble_presence.png"))
+       filename = here("Final_figures", "World_CLIMEX_v_Corr_Ensemble_presence.tiff"),
+       width = 8.5, height = 4, units = c('in'), dpi=300) 
+knitr::plot_crop(here("Final_figures", "World_CLIMEX_v_Corr_Ensemble_presence.tiff"))

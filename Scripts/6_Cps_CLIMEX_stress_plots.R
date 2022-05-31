@@ -13,7 +13,6 @@ ld_pkgs <- lapply(pkgs, library, character.only = TRUE) # load them
 source(here("Scripts", "Cps_model_functions.R"))
 
 clmx_outs <- here("CLIMEX", "Final_outfls", "TIFs")
-clmx_outs <- here("CLIMEX", "TIF_files", "run10")
 
 ##  Get CLIMEX model outputs and occurrence records ----
 var_lst <- c("GI", "CS", "HS", "DS")
@@ -223,8 +222,9 @@ Stress_eur.p <- plot_grid(eur_maps[[1]], eur_maps[[2]], eur_maps[[3]], eur_maps[
                        labels = c("(a) Growth index", "(b) Cold stress",
                                   "(c) Heat stress", "(d) Dry stress"),
                        label_size = 14, hjust = 0.005 , vjust = 1.05)
-ggsave(Stress_eur.p, file= here("Final_figures", "CLIMEX_4Stress_Eurasia.png"),
-       width = 8, height = 6.7, units = c('in'), dpi=300)
+ggsave(Stress_eur.p, file= here("Final_figures", "CLIMEX_4Stress_Eurasia.tiff"),
+       width = 8, height = 6.8, units = c('in'), dpi=300)
+knitr::plot_crop(here("Final_figures", "CLIMEX_4Stress_Eurasia.tiff"))
 
 ## Plots for North America ----
 midpoints_conus <- c(20, 500, 500, 60)
@@ -318,9 +318,9 @@ Stress_conus.p <- plot_grid(con_maps[[1]], con_maps[[2]], con_maps[[3]], con_map
                           labels = c("(a) Growth index", "(b) Cold stress",
                                      "(c) Heat stress", "(d) Dry stress"),
                           label_size = 14, hjust = 0 , vjust = 1.05)
-ggsave(Stress_conus.p, file= here("Final_figures", "CLIMEX_4Stress_CONUS_DV1-17_DV2-22.png"),
+ggsave(Stress_conus.p, file= here("Final_figures", "CLIMEX_4Stress_CONUS.tiff"),
        width = 8, height = 5.1, units = c('in'), dpi=300)
-
+knitr::plot_crop(here("Final_figures", "CLIMEX_4Stress_CONUS.tiff"))
 
 ## Plots for global scale ----
 
@@ -379,3 +379,4 @@ ggsave(strs_world.p, file = here("Final_figures", "World_CLIMEX_Stress.png"),
 knitr::plot_crop(here("Final_figures", "World_CLIMEX_Stress.png"))
 
 #rm(list = setdiff(ls(), "outdir"))
+

@@ -19,7 +19,7 @@ EI_rast <- raster(here("CLIMEX", "Final_outfls", "TIFs", "EI_World.tif"))
 GI_rast <- raster(here("CLIMEX", "Final_outfls", "TIFs", "GI_World.tif"))
 
 # Predictions of presence for correlative models
-outdir <- "run_PCA_4algs_kfold_prev1_03-29-2022"
+#outdir <- "run_PCA_4algs_kfold_prev1_03-29-2022"
 val_dir <- paste0(outdir, "/Validation")
 world_pres <- raster(here("ENMTML", "Outfiles", outdir, "Projection", "World", 
                           "Ensemble", "PCA", "calonectria_pseudonaviculata.tif"))

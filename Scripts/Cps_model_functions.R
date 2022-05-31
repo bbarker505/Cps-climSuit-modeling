@@ -38,21 +38,21 @@ Alg_suit_plots <- function(region_outs, region, types, ln_feat, pol_feat, lgd) {
                                  title = "Prob. of occurrence"))
     
     # Mask out areas with model extrapolation
-    if (region == "conus") {
-
-      ens_suit_msk <- df %>%
-        mutate(x = as.integer(x), y = as.integer(y)) %>%
-        left_join(., mop_df_conus, by = c("x", "y")) %>%
-        filter(mop == 0)
-
-      ens_suit_extr <- df %>%
-        mutate(x = as.integer(x), y = as.integer(y)) %>%
-        anti_join(., ens_suit_msk, by = c("x", "y"))
-
-      p <- p +
-        geom_raster(data = ens_suit_extr, aes(x = x, y = y), fill = "gray50") +
-        geom_sf(data = conus_states_l, lwd = 0.1, color = "gray10")
-    }
+    # if (region == "conus") {
+    # 
+    #   ens_suit_msk <- df %>%
+    #     mutate(x = as.integer(x), y = as.integer(y)) %>%
+    #     left_join(., mop_df_conus, by = c("x", "y")) %>%
+    #     filter(mop == 0)
+    # 
+    #   ens_suit_extr <- df %>%
+    #     mutate(x = as.integer(x), y = as.integer(y)) %>%
+    #     anti_join(., ens_suit_msk, by = c("x", "y"))
+    # 
+    #   p <- p +
+    #     geom_raster(data = ens_suit_extr, aes(x = x, y = y), fill = "gray50") +
+    #     geom_sf(data = conus_states_l, lwd = 0.1, color = "gray10")
+    # }
     
     if (region %in% c("europe", "conus")) {
       p <- p + geom_path(data = thres, aes(x = long, y = lat, group = group), 
@@ -205,6 +205,7 @@ Bin_pres <- function(df) {
                           levels = c("0-0.1", "0.1-0.2", "0.2-0.3", "0.3-0.4",
                           #levels = c("0.01-0.2", "0.2-0.3", "0.3-0.4",
                           "0.4-0.5", "0.5-0.6", "0.6-0.7", "0.7-0.8", "0.8-0.9", "0.9-1.0"))
+  df2$value_bin <- gsub("-", "\U2012", df2$value_bin)
   return(df2)
 }
 
@@ -223,6 +224,7 @@ Bin_pres2 <- function(df) {
   df2$value_bin <- factor(df2$value_bin, 
                           levels = c("<0.1", "0.1-0.2", "0.2-0.3", "0.3-0.4",
                                      "0.4-0.5", "0.5-0.6", "0.6-0.7", "0.7-0.8", "0.8-0.9", "0.9-1.0"))
+  df2$value_bin <- gsub("-", "\U2012", df2$value_bin)
   return(df2)
 }
 
@@ -261,8 +263,8 @@ CLMX_suit_plots <- function(rast, region, ext, prj, pol_feat, ln_feat, lgd, recs
   mod_df2 <- mod_df2[[3]]
   
   # Order factor levels 
-    mod_df2$value_bin <- factor(mod_df2$value_bin,
-                                levels = unique(mod_df2$value_bin[order(mod_df2$value)]))
+  mod_df2$value_bin <- factor(mod_df2$value_bin,
+                               levels = unique(mod_df2$value_bin[order(mod_df2$value)]))
   
   # Plot
   cols <- c("gray90", colorRampPalette(
@@ -515,11 +517,11 @@ Format_EI <- function(df, bins) {
   
   if (bins == 4) {
     EI_df <- df %>%
-      mutate(value_bin = factor(case_when(
+      mutate(value_bin = case_when(
         value > 0 & value <= 10 ~ "1-10",
         value > 10 & value <= 20 ~ "11-20",
         value > 20 & value <= 30 ~ "21-30",
-        value > 30 ~ "31-100")))
+        value > 30 ~ "31-100"))
     
   } else if (bins == 7) {
     EI_df <- df %>% 
@@ -553,6 +555,11 @@ Format_EI <- function(df, bins) {
                                    value > 35 & value <= 40 ~ "36-40",
                                    value > 40 ~ "41-100")) 
   }
+  
+  # Use en-dash and convert to factor
+  EI_df$value_bin <- gsub("-", "\U2012", EI_df$value_bin)
+  EI_df$value_bin <- factor(EI_df$value_bin,
+                              levels = unique(EI_df$value_bin[order(EI_df$value)]))
   
   return(EI_df)
 }
